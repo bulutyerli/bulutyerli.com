@@ -7,11 +7,17 @@ import icons from "../lib/Icons";
 export default function Hero() {
   const [positions, setPositions] = useState([]);
   const [fadeIn, setFadeIn] = useState(false);
+  const [iconSize, setIconSize] = useState(0);
 
   const heroRef = useRef(null);
 
   const generatePositions = () => {
-    const iconSize = 72;
+    const iconSize =
+      heroRef.current.clientWidth < 1000
+        ? 48
+        : heroRef.current.clientWidth < 600
+        ? 32
+        : 72;
     const positions = [];
 
     for (let i = 0; i < 14; i++) {
@@ -95,6 +101,7 @@ export default function Hero() {
                 icon={element.icon.icon}
                 height={element.y}
                 width={element.x}
+                iconSize={iconSize}
               />
             );
           })}

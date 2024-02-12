@@ -7,7 +7,7 @@ export default function IconSlider({ height, icon, width }) {
         left: `${width}px`,
       }}
     >
-      {icon}
+      <div className="text-5xl md:text-6xl xl:text-7xl">{icon}</div>
     </li>
   );
 }
