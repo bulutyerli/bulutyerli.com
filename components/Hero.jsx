@@ -6,6 +6,7 @@ import icons from "../lib/Icons";
 
 export default function Hero() {
   const [positions, setPositions] = useState([]);
+  const [fadeIn, setFadeIn] = useState(false);
 
   const heroRef = useRef(null);
 
@@ -41,10 +42,11 @@ export default function Hero() {
   useEffect(() => {
     const positions = generatePositions();
     setPositions(positions);
+    setFadeIn(true);
   }, []);
 
   return (
-    <div className="relative" ref={heroRef}>
+    <section className="relative">
       <div className="flex flex-col items-center justify-center gap-6 bg-gradient-to-t from-zinc-100 to-white min-h-96 md:h-[600px] xl:h-[700px] 2xl:h-[800px]">
         <h1 className="text-2xl md:text-4xl xl:text-6xl text-zinc-700">
           Hi, I am Bulut Yerli
@@ -67,8 +69,13 @@ export default function Hero() {
           fill="#fff"
         ></path>
       </svg>
-      <div className="opacity-15 text-inherit animate-infinite-slider-100 h-full min-w-full overflow-hidden absolute top-0">
-        <div className="relative min-w-full h-full">
+      <div
+        className={`${
+          fadeIn ? "opacity-10" : "opacity-0"
+        } transition-all duration-[5s] text-inherit h-5/6 min-w-full overflow-hidden absolute top-0 flex`}
+        ref={heroRef}
+      >
+        <ul className="relative min-w-full h-full animate-infinite-slider-100">
           {positions.map((element) => {
             return (
               <IconSlider
@@ -79,8 +86,20 @@ export default function Hero() {
               />
             );
           })}
-        </div>
+        </ul>
+        <ul className="relative min-w-full h-full animate-infinite-slider-100">
+          {positions.map((element) => {
+            return (
+              <IconSlider
+                key={element.icon.name}
+                icon={element.icon.icon}
+                height={element.y}
+                width={element.x}
+              />
+            );
+          })}
+        </ul>
       </div>
-    </div>
+    </section>
   );
 }
