@@ -78,7 +78,7 @@ export default function Hero() {
       <div
         className={`${
           fadeIn ? "opacity-10" : "opacity-0"
-        } transition-all duration-[5s] text-inherit h-5/6 min-w-full overflow-hidden absolute top-0 flex`}
+        } transition-all duration-[3s] text-inherit h-5/6 min-w-full overflow-hidden absolute top-0 flex`}
         ref={heroRef}
       >
         <ul className="relative min-w-full h-full animate-infinite-slider-100">

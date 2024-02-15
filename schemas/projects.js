@@ -10,18 +10,13 @@ const projectSchema = {
       description: "The title of the project.",
     },
     {
-      name: "images",
-      title: "Images",
-      type: "array",
-      of: [
-        {
-          type: "image",
-          options: {
-            hotspot: true,
-          },
-        },
-      ],
-      description: "Array of images related to the project.",
+      name: "image",
+      title: "Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      description: "Image related to the project.",
     },
     {
       name: "description",
@@ -51,6 +46,12 @@ const projectSchema = {
       title: "Live Site Link",
       type: "url",
       description: "Link to the live site of the project.",
+    },
+    {
+      name: "featured",
+      title: "Featured Project",
+      type: "boolean",
+      description: "Indicates whether the project is featured.",
     },
   ],
 };
