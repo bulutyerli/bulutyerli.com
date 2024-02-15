@@ -10,6 +10,12 @@ const testimonials = {
       description: "The name of the person providing the testimonial.",
     },
     {
+      name: "title",
+      title: "Title",
+      type: "string",
+      description: "Title of the person",
+    },
+    {
       name: "image",
       title: "Image",
       type: "image",

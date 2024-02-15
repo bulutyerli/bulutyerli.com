@@ -1,7 +1,7 @@
 export default function IconSlider({ height, icon, width }) {
   return (
     <li
-      className="absolute bg-transparent m-1"
+      className="absolute bg-transparent m-1 animate-bounce"
       style={{
         top: `${height}px`,
         left: `${width}px`,

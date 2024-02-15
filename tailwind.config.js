@@ -9,12 +9,15 @@ module.exports = {
     extend: {
       backgroundImage: {
         hero_pattern: "url('../assets/wave.svg')",
+        poly: "url('../assets/poly.svg')",
+      },
+      fontFamily: {
+        roboto: ["var(--font-roboto)"],
+        title: ["var(--font-spartan)"],
       },
       animation: {
         ["infinite-slider-100"]: "infiniteSlider 200s linear infinite",
-        ["infinite-slider-75"]: "infiniteSlider 75s linear infinite",
-        ["infinite-slider-50"]: "infiniteSlider 50s linear infinite",
-        ["infinite-slider-25"]: "infiniteSlider 5s linear infinite",
+        ["bounce"]: "bounceAnimation 15s infinite",
       },
       keyframes: {
         infiniteSlider: {
@@ -22,6 +25,10 @@ module.exports = {
           "100%": {
             transform: "translateX(-100%)",
           },
+        },
+        bounceAnimation: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(15%)" },
         },
       },
     },

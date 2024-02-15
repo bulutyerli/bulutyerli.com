@@ -1,9 +1,7 @@
-import { Roboto_Flex } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const roboto = Roboto_Flex({ subsets: ["latin"] });
+import { roboto } from "./fonts";
 
 export const metadata = {
   title: "Create Next App",
@@ -12,8 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
+    <html lang="en" className={roboto.className}>
+      <body className="flex flex-col w-full min-h-screen">
         <Header />
         {children}
         <Footer />

@@ -19,13 +19,14 @@ export default function Header() {
       href: "/projects",
     },
     {
-      title: "About Me",
-      href: "/about-me",
-    },
-    {
       title: "Testimonials",
       href: "/testimonials",
     },
+    {
+      title: "About Me",
+      href: "/about-me",
+    },
+
     {
       title: "Contact",
       href: "/contact-me",
@@ -51,15 +52,15 @@ export default function Header() {
   );
 
   return (
-    <header className="max-w-7xl mx-auto h-16 sticky z-10 w-full">
+    <header className="max-w-7xl mx-auto h-16 sticky z-10 w-full flex items-center justify-between mt-2">
+      <Link href={"/"}>
+        <Image
+          src={logo}
+          alt="bulutyerli logo"
+          className="w-16 xl:w-24 h-auto cursor-pointer ml-2"
+        ></Image>
+      </Link>
       <nav className="flex justify-between items-center px-3">
-        <Link href={"/"}>
-          <Image
-            src={logo}
-            alt="bulutyerli logo"
-            className="w-20 h-auto cursor-pointer"
-          ></Image>
-        </Link>
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
@@ -68,7 +69,7 @@ export default function Header() {
           {navLinks.map((nav) => {
             return (
               <li key={nav.title}>
-                <Link className="text-sm" href={nav.href}>
+                <Link className="text-md" href={nav.href}>
                   {nav.title}
                 </Link>
               </li>
