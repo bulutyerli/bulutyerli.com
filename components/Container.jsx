@@ -1,5 +1,9 @@
-export default function Container({ children }) {
+import clsx from "clsx";
+
+export default function Container({ className, children }) {
   return (
-    <section className="mx-auto max-w-7xl w-full px-2">{children}</section>
+    <section className={clsx("mx-auto max-w-7xl w-full px-2", className)}>
+      {children}
+    </section>
   );
 }

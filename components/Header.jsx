@@ -5,22 +5,17 @@ import logo from "@/public/logo.svg";
 import Image from "next/image";
 import { FiMenu } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const path = usePathname();
+  const isActive = (href) => path === href;
   const navLinks = [
-    {
-      title: "Home",
-      href: "/",
-    },
     {
       title: "Projects",
       href: "/projects",
-    },
-    {
-      title: "Testimonials",
-      href: "/testimonials",
     },
     {
       title: "About Me",
@@ -29,9 +24,17 @@ export default function Header() {
 
     {
       title: "Contact",
-      href: "/contact-me",
+      href: "/contact",
     },
   ];
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  }, [menuOpen]);
 
   const mobileMenu = () => (
     <div
@@ -42,7 +45,7 @@ export default function Header() {
       <ul className="px-3 text-right flex flex-col gap-6">
         {navLinks.map((nav) => {
           return (
-            <li key={nav.title}>
+            <li onClick={() => setMenuOpen(false)} key={nav.title}>
               <Link href={nav.href}>{nav.title}</Link>
             </li>
           );
@@ -52,12 +55,13 @@ export default function Header() {
   );
 
   return (
-    <header className="max-w-7xl mx-auto h-16 sticky z-10 w-full flex items-center justify-between mt-2">
+    <header className="max-w-7xl mx-auto h-16 z-10 w-full flex items-center justify-between mt-2 sticky top-0 bg-white">
       <Link href={"/"}>
         <Image
           src={logo}
           alt="bulutyerli logo"
           className="w-16 xl:w-24 h-auto cursor-pointer ml-2"
+          onClick={() => setMenuOpen(false)}
         ></Image>
       </Link>
       <nav className="flex justify-between items-center px-3">
@@ -65,11 +69,16 @@ export default function Header() {
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
         {mobileMenu()}
-        <ul className="gap-4 md:flex hidden ">
+        <ul className="gap-10 md:flex hidden ">
           {navLinks.map((nav) => {
             return (
               <li key={nav.title}>
-                <Link className="text-md" href={nav.href}>
+                <Link
+                  className={` ${
+                    isActive.length > 0 && isActive(nav.href) ? "underline" : ""
+                  }`}
+                  href={nav.href}
+                >
                   {nav.title}
                 </Link>
               </li>
