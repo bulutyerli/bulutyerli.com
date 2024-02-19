@@ -7,8 +7,6 @@ import icons from "../lib/Icons";
 export default function Hero() {
   const [positions, setPositions] = useState([]);
   const [fadeIn, setFadeIn] = useState(false);
-  const [iconSize, setIconSize] = useState(0);
-
   const heroRef = useRef(null);
 
   const generatePositions = () => {
@@ -26,7 +24,11 @@ export default function Hero() {
 
       while (!isUnique) {
         x = Math.round(
-          Math.random() * (heroRef.current.clientWidth - iconSize)
+          Math.random() *
+            ((heroRef.current.clientWidth < 1000
+              ? heroRef.current.clientWidth * 2
+              : heroRef.current.clientWidth) -
+              iconSize)
         );
         y = Math.round(
           Math.random() * (heroRef.current.clientHeight - iconSize)
@@ -101,7 +103,6 @@ export default function Hero() {
                 icon={element.icon.icon}
                 height={element.y}
                 width={element.x}
-                iconSize={iconSize}
               />
             );
           })}

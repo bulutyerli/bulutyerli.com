@@ -17,7 +17,7 @@ module.exports = {
       },
       animation: {
         ["infinite-slider-100"]: "infiniteSlider 200s linear infinite",
-        ["bounce"]: "bounceAnimation 15s infinite",
+        ["bounce"]: "bounceAnimation 10s infinite",
       },
       keyframes: {
         infiniteSlider: {
