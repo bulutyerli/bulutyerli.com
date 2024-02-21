@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import IconSlider from "./IconSlider";
 import icons from "../lib/Icons";
 
-export default function Hero() {
+export default function Hero({ title, secondTitle }) {
   const [positions, setPositions] = useState([]);
   const [fadeIn, setFadeIn] = useState(false);
   const heroRef = useRef(null);
@@ -25,10 +25,9 @@ export default function Hero() {
       while (!isUnique) {
         x = Math.round(
           Math.random() *
-            ((heroRef.current.clientWidth < 1000
-              ? heroRef.current.clientWidth * 2
-              : heroRef.current.clientWidth) -
-              iconSize)
+            (heroRef.current.clientWidth < 1000
+              ? heroRef.current.clientWidth * 1.5
+              : heroRef.current.clientWidth - iconSize)
         );
         y = Math.round(
           Math.random() * (heroRef.current.clientHeight - iconSize)
@@ -57,10 +56,10 @@ export default function Hero() {
     <section className="relative">
       <div className="flex flex-col items-center justify-center gap-6 bg-gradient-to-t from-zinc-100 to-white min-h-96 md:h-[600px] xl:h-[700px] 2xl:h-[800px]">
         <h1 className="text-2xl md:text-4xl xl:text-6xl text-zinc-700">
-          Hi, I am Bulut Yerli
+          {title}
         </h1>
         <h2 className="text-xl md:text-2xl xl:text-4xl text-zinc-600">
-          a Full-Stack Developer
+          {secondTitle}
         </h2>
       </div>
       <svg
