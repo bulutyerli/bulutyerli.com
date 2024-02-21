@@ -6,11 +6,11 @@ import Link from "next/link";
 import { BiLogoGithub } from "react-icons/bi";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
-
 import { useState } from "react";
 
-export default function ProjectCard({ data }) {
+export default function ProjectCard({ data, lang }) {
   const [detailsOpen, setDetailsOpen] = useState(false);
+
   return (
     <article className="flex flex-col gap-5 lg:grid lg:grid-cols-12 items-center mb-20">
       <h3 className="text-zinc-700 text-xl md:text-2xl xl:text-3xl row-start-1 row-end-2 col-start-7 text-nowrap">
@@ -55,7 +55,7 @@ export default function ProjectCard({ data }) {
               <HiOutlineExternalLink size={"1.5rem"} />
             </div>
             <span className="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline">
-              Visit
+              {lang === "tr" ? "Ziyaret Et" : "Visit"}
             </span>
           </Link>
         </li>
@@ -72,7 +72,7 @@ export default function ProjectCard({ data }) {
               )}
             </div>
             <span className="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline">
-              Details
+              {lang === "tr" ? "Detaylar" : "Details"}
             </span>
           </button>
         </li>

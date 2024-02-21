@@ -1,0 +1,25 @@
+{
+  "Hero": {
+    "title": "Hi, I am Bulut Yerli",
+    "secondTitle": "a Full-Stack Developer"
+  },
+  "Header": {
+    "projects": "Projects",
+    "aboutMe": "About Me",
+    "contact": "Contact"
+  },
+  "ProjectPage": {
+    "featuredTitle": "featured project.",
+    "title": "projects.",
+    "visit": "Visit",
+    "details": "Details"
+  },
+
+  "Contact": {
+    "title": "Have a project in mind or just want to say hi?",
+    "content": "Fill out the form below or reach out to me directly via social links"
+  },
+  "Footer": {
+    "copyright": "All rights reserved."
+  }
+}

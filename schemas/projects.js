@@ -1,3 +1,5 @@
+import { baseLanguage } from "./localeStringType";
+
 const projectSchema = {
   name: "projects",
   title: "Project",
@@ -6,7 +8,7 @@ const projectSchema = {
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "localeString",
       description: "The title of the project.",
     },
     {
@@ -21,7 +23,7 @@ const projectSchema = {
     {
       name: "description",
       title: "Description",
-      type: "text",
+      type: "localeText",
       description: "Description of the project.",
     },
     {
@@ -54,6 +56,11 @@ const projectSchema = {
       description: "Indicates whether the project is featured.",
     },
   ],
+  preview: {
+    select: {
+      title: `title.${baseLanguage.id}`,
+    },
+  },
 };
 
 export default projectSchema;

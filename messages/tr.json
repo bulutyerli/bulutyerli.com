@@ -1,0 +1,24 @@
+{
+  "Hero": {
+    "title": "Merhaba, ben Bulut Yerli",
+    "secondTitle": "Full-Stack Yazılım Uzmanıyım"
+  },
+  "Header": {
+    "projects": "Projeler",
+    "aboutMe": "Hakkımda",
+    "contact": "İletişim"
+  },
+  "ProjectPage": {
+    "featuredTitle": "öne çıkan proje.",
+    "title": "projeler."
+  },
+
+  "Contact": {
+    "title": "Aklınızda bir proje var ya da sadece merhaba demek mi istiyorsunuz?",
+    "content": "Aşağıdaki formu doldurarak ya da sosyal medya üzerinden bana ulaşabilirsiniz."
+  },
+
+  "Footer": {
+    "copyright": "Tüm hakları saklıdır."
+  }
+}
