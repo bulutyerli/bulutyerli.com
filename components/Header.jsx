@@ -1,13 +1,16 @@
 "use client";
 
 import { Link } from "@/navigation";
-import logo from "@/public/logo.svg";
-import Image from "next/image";
 import { FiMenu } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import LocaleSwitcher from "./LocaleSwitcher";
+import { usePathname } from "@/navigation";
+import ThemeSwitcher from "./ThemeSwitcher";
+import logo from "@/public/logo.svg";
+import logoDark from "@/public/logoDark.svg";
+import Image from "next/image";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +22,7 @@ export default function Header() {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "scroll";
+      document.body.style.overflow = "auto";
     }
   }, [menuOpen]);
 
@@ -44,7 +47,10 @@ export default function Header() {
         menuOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      <ul className="px-3 text-right flex flex-col gap-6">
+      <ul className="px-3 text-right flex flex-col gap-10 mr-6 mt-10">
+        <li className="self-end">
+          <LocaleSwitcher />
+        </li>
         {navLinks.map((nav) => {
           return (
             <li onClick={() => setMenuOpen(false)} key={nav.title}>
@@ -57,14 +63,18 @@ export default function Header() {
   );
 
   return (
-    <header className="max-w-7xl mx-auto h-16 z-10 w-full flex items-center justify-between mt-2 sticky top-0 lg:relative bg-white">
-      <Link href={"/"}>
+    <header className="max-w-7xl mx-auto w-full h-16 z-10 flex items-center justify-between mt-2 sticky top-0 lg:relative bg-white dark:bg-zinc-900">
+      <Link onClick={() => setMenuOpen(false)} href={"/"}>
         <Image
           src={logo}
           alt="bulutyerli logo"
-          className="w-16 xl:w-24 h-auto cursor-pointer ml-2"
-          onClick={() => setMenuOpen(false)}
-        ></Image>
+          className="w-16 xl:w-24 h-auto cursor-pointer ml-2 dark:hidden"
+        />
+        <Image
+          src={logoDark}
+          alt="bulutyerli logo"
+          className="w-16 xl:w-24 h-auto cursor-pointer ml-2 hidden dark:block"
+        />
       </Link>
       <nav className="flex justify-between items-center px-3">
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
@@ -86,6 +96,10 @@ export default function Header() {
           })}
         </ul>
       </nav>
+      <div className="hidden md:flex md:gap-6">
+        <ThemeSwitcher />
+        <LocaleSwitcher />
+      </div>
     </header>
   );
 }

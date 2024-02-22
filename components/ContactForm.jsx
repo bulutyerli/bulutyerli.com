@@ -55,7 +55,7 @@ export default function ContactForm() {
     >
       <label
         htmlFor="name"
-        className="block pl-4 text-sm font-medium leading-6 text-gray-900"
+        className="block pl-4 text-sm font-medium leading-6 text-gray-900 dark:text-zinc-200 text-start"
       >
         Full Name
       </label>
@@ -63,7 +63,7 @@ export default function ContactForm() {
         type="text"
         name="name"
         id="name"
-        className="block w-full rounded-full border-0 px-4 py-1.5 text-zinc-900 ring-1 ring-inset ring-zinc-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1"
+        className="block w-full rounded-full border-0 px-4 py-1.5 text-zinc-900 dark:text-zinc-200 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-500 dark:shadow-none focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1"
         {...register("name", { required: true, maxLength: 100 })}
       />
       {errors.name && (
@@ -73,7 +73,7 @@ export default function ContactForm() {
       )}
       <label
         htmlFor="email"
-        className="block pl-4 text-sm font-medium leading-6 text-gray-900 mt-4"
+        className="block pl-4 text-sm font-medium leading-6 text-gray-900 dark:text-zinc-200 text-start mt-4"
       >
         E-Mail
       </label>
@@ -81,7 +81,7 @@ export default function ContactForm() {
         type="text"
         name="email"
         id="email"
-        className="block w-full rounded-full border-0 px-4 py-1.5 text-zinc-900 ring-1 ring-inset ring-zinc-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1"
+        className="block w-full rounded-full border-0 px-4 py-1.5 text-zinc-900 dark:text-zinc-200 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-500 dark:shadow-none focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1"
         {...register("email", {
           required: "Please write your e-mail address",
           maxLength: 100,
@@ -98,7 +98,7 @@ export default function ContactForm() {
       )}
       <label
         htmlFor="message"
-        className="block pl-4 text-sm font-medium leading-6 text-gray-900 mt-4"
+        className="block pl-4 text-sm font-medium leading-6 text-gray-900 mt-4 dark:text-zinc-200 text-start"
       >
         Message
       </label>
@@ -106,7 +106,7 @@ export default function ContactForm() {
         type="text"
         name="message"
         id="message"
-        className="block w-full min-h-24 rounded-3xl border-0 px-4 py-1.5 text-zinc-900 ring-1 ring-inset ring-zinc-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1"
+        className="block w-full min-h-24 rounded-3xl border-0 px-4 py-1.5 text-zinc-900 dark:text-zinc-200 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-500 dark:shadow-none focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1"
         {...register("message", { required: true, maxLength: 1000 })}
       />
       {errors.message && (
@@ -114,16 +114,16 @@ export default function ContactForm() {
           Please write your message
         </span>
       )}
-      <button className="text-md border px-4 py-1 rounded-xl mt-4 items-center flex justify-center w-full bg-zinc-50 text-zinc-700 shadow-md hover:font-semibold hover:bg-zinc-100">
+      <button className="text-md border px-4 py-1 rounded-xl mt-4 items-center flex justify-center w-full bg-zinc-50 dark:bg-zinc-700 dark:border-none text-zinc-700 dark:text-zinc-200 shadow-md hover:font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-600">
         {loading ? <Loading /> : "Send"}
       </button>
       {error && (
-        <span className="absolute text-sm text-red-600 mt-4 w-full text-center">
+        <span className="absolute text-sm text-red-600 mt-4 w-full justify-center flex">
           Something went wrong, please try again.
         </span>
       )}
       {success && (
-        <span className=" absolute text-sm text-green-600 mt-4 w-full text-center">
+        <span className=" absolute text-sm text-green-600 mt-4 w-full text-center justify-center flex">
           Thank you for your message!
         </span>
       )}

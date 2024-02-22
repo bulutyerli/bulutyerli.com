@@ -13,7 +13,7 @@ export default function ProjectCard({ data, lang }) {
 
   return (
     <article className="flex flex-col gap-5 lg:grid lg:grid-cols-12 items-center mb-20">
-      <h3 className="text-zinc-700 text-xl md:text-2xl xl:text-3xl row-start-1 row-end-2 col-start-7 text-nowrap">
+      <h3 className="text-zinc-700 dark:text-zinc-200 text-xl md:text-2xl xl:text-3xl row-start-1 row-end-2 col-start-7 text-nowrap">
         {data.title}
       </h3>
 
@@ -78,13 +78,13 @@ export default function ProjectCard({ data, lang }) {
         </li>
       </ul>
       <p
-        className={`text-zinc-700 col-start-6 col-end-13 row-start-2 row-end-3 border border-zinc-300 rounded-3xl p-6 bg-zinc-100 shadow-md text-sm md:text-base max-w-xl lg:max-w-3xl relative lg:block ${
+        className={`text-zinc-700 col-start-6 col-end-13 row-start-2 row-end-3 border border-zinc-300 rounded-3xl p-6 bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-400 dark:border-zinc-700 shadow-md text-sm md:text-base max-w-xl lg:max-w-3xl relative lg:block ${
           detailsOpen ? "block" : "hidden"
         }`}
       >
         {data.description}
 
-        <span className="absolute -top-16 text-8xl left-16 -z-10 text-zinc-200/30 hidden lg:block">
+        <span className="absolute -top-16 text-8xl left-16 -z-10 text-zinc-200/30 dark:text-zinc-600/30 hidden lg:block">
           {data.title}
         </span>
       </p>
@@ -93,7 +93,9 @@ export default function ProjectCard({ data, lang }) {
           return (
             <li
               key={skill}
-              className="border rounded-full py-1 px-2 shadow-md bg-zinc-50 text-zinc-600"
+              className="border rounded-full py-1 px-2 shadow-md bg-zinc-50 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-300 dark:border-zinc-700 dark:shadow-zinc-700 dark:shadow-setTimeout(() => {
+                
+              }, timeout);"
             >
               {skill}
             </li>

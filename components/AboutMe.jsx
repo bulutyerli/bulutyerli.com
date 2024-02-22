@@ -3,7 +3,7 @@
 import { spartan } from "@/app/fonts";
 import Image from "next/image";
 import { useState } from "react";
-import AboutMeBg from "@/components/AboutMeBg";
+import BgPattern from "@/components/BgPattern";
 import { urlFor } from "@/lib/imageBuilder";
 import { PortableText } from "@portabletext/react";
 
@@ -11,7 +11,7 @@ export default function AboutMe({ data }) {
   const [loki, setLoki] = useState(false);
 
   return (
-    <article className="relative flex justify-around items-center w-full flex-col gap-4 mb-5 md:grid grid-rows-12 grid-cols-2 justify-items-center ">
+    <article className="relative flex justify-around items-center w-full flex-col gap-4 mb-5 md:grid grid-rows-12 grid-cols-2 justify-items-center">
       <h1
         className={`${spartan.className} mt-2 lg:mt-0 text-5xl md:text-6xl xl:text-7xl tracking-tighter font-semibold text-center col-span-1 row-start-1 row-end-4`}
       >
@@ -38,7 +38,7 @@ export default function AboutMe({ data }) {
         />
       </div>
 
-      <div className="max-w-xs lg:max-w-lg text-zinc-700 row-start-4 row-end-12 col-span-1 mx-4 lg:prose-lg">
+      <div className="max-w-xs lg:max-w-lg text-zinc-700 dark:text-zinc-400 row-start-4 row-end-12 col-span-1 mx-4 lg:prose-lg">
         <PortableText value={data.content} />
         <button
           className="underline font-semibold"
@@ -47,7 +47,7 @@ export default function AboutMe({ data }) {
           Loki
         </button>
       </div>
-      <AboutMeBg className="absolute inset-x-0 xl:-top-42 -z-10 h-[32rem] lg:h-[64rem] w-full stroke-zinc-200 [mask-image:radial-gradient(22rem_22rem_at_center,white,transparent)] lg:[mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]" />
+      <BgPattern className="absolute inset-x-0 xl:-top-42 -z-10 h-[32rem] lg:h-[62rem] w-full stroke-zinc-200 dark:stroke-zinc-700 [mask-image:radial-gradient(22rem_22rem_at_center,white,transparent)] lg:[mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]" />
     </article>
   );
 }

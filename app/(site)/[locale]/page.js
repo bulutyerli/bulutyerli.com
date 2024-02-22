@@ -5,8 +5,11 @@ import { featuredProjectQuery } from "@/lib/sanity.query";
 import ProjectCard from "@/components/ProjectCard";
 import SectionTitle from "@/components/SectionTitle";
 import { getTranslations } from "next-intl/server";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 export default async function Home({ params: { locale } }) {
+  unstable_setRequestLocale(locale);
+
   const project = await sanityFetch({
     query: featuredProjectQuery,
     tags: ["projects"],

@@ -1,4 +1,4 @@
-export default function AboutMeBg(props) {
+export default function BgPattern(props) {
   return (
     <svg {...props} aria-hidden="true">
       <defs>
