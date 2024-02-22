@@ -19,11 +19,13 @@ export default function ProjectCard({ data, lang }) {
 
       <div className="col-start-1 col-end-7 row-start-1 row-end-4 w-full max-w-lg lg:min-w-full flex flex-col gap-4">
         <Image
-          src={urlFor(data.image).width(800).url()}
+          src={urlFor(data.image).width(600).height(420).url()}
           alt={`${data.title} homepage`}
           width={600}
-          height={600}
+          height={420}
           className="rounded-3xl shadow-md"
+          placeholder="blur"
+          blurDataURL={data.blur}
         ></Image>
       </div>
       <ul className="flex col-start-9 col-end-13 row-start-3 row-end-4 justify-center lg:justify-end gap-6 w-full lg:self-baseline text-sm lg:text-base">

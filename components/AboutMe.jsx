@@ -19,13 +19,15 @@ export default function AboutMe({ data }) {
       </h1>
       <div className="relative col-start-2 col-end-3 row-start-1 row-end-12">
         <Image
-          src={urlFor(data.image).width(800).url()}
+          src={urlFor(data.image).width(800).height(800).url()}
           className={`rounded-2xl h-60 lg:h-96 w-auto  drop-shadow-lg shadow-md transform transition-all duration-500 ${
             loki ? "opacity-0 scale-75" : "opacity-100 scale-100"
           }`}
           alt="Bulut Yerli Profile Image"
           width={800}
           height={800}
+          placeholder="blur"
+          blurDataURL={data.blur}
         />
         <Image
           src={urlFor(data.loki).width(800).url()}
@@ -35,10 +37,12 @@ export default function AboutMe({ data }) {
           alt="Loki Profile Image"
           width={800}
           height={800}
+          placeholder="blur"
+          blurDataURL={data.lokiBlur}
         />
       </div>
 
-      <div className="max-w-xs lg:max-w-lg text-zinc-700 dark:text-zinc-400 row-start-4 row-end-12 col-span-1 mx-4 lg:prose-lg">
+      <div className="max-w-xs lg:max-w-lg space-y-2 indent-4 text-zinc-700 dark:text-zinc-400 row-start-4 row-end-12 col-span-1 mx-4 lg:prose-lg">
         <PortableText value={data.content} />
         <button
           className="underline font-semibold"
