@@ -19,11 +19,22 @@
   },
   "Error": {
     "title": "bir şeyler ters gitti.",
+    "error": "Hata!",
     "retry": "Tekrar Dene"
   },
   "Contact": {
     "title": "Aklınızda bir proje var ya da sadece merhaba demek mi istiyorsunuz?",
-    "content": "Aşağıdaki formu doldurarak ya da sosyal medya üzerinden bana ulaşabilirsiniz."
+    "content": "Aşağıdaki formu doldurarak ya da sosyal medya üzerinden bana ulaşabilirsiniz.",
+    "name": "Ad Soyad",
+    "email": "E-Posta",
+    "message": "Mesaj",
+    "send": "Gönder",
+    "write": "Lütfen mesajınızı yazın.",
+    "error": "Bir şeyler ters gitti, tekrar deneyin.",
+    "nameError": "Lütfen isminizi yazın.",
+    "emailError": "Lütfen E-Posta adresinizi yazın.",
+    "validEmail": "Lütfen geçerli bir E-Posta yazın.",
+    "success": "Mesajınız için teşekkürler!"
   },
 
   "Footer": {

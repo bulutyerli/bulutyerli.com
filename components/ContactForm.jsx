@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import Loading from "./Loading";
+import { useTranslations } from "next-intl";
 
 export default function ContactForm() {
   const {
@@ -17,6 +18,7 @@ export default function ContactForm() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const t = useTranslations("Contact");
 
   const sendEmail = async (data) => {
     try {
@@ -41,7 +43,6 @@ export default function ContactForm() {
       }
     } catch (error) {
       setError(true);
-      console.log(error);
     } finally {
       setLoading(false);
     }
@@ -57,7 +58,7 @@ export default function ContactForm() {
         htmlFor="name"
         className="block pl-4 text-sm font-medium leading-6 text-gray-900 dark:text-zinc-200 text-start"
       >
-        Full Name
+        {t("name")}
       </label>
       <input
         type="text"
@@ -67,15 +68,13 @@ export default function ContactForm() {
         {...register("name", { required: true, maxLength: 100 })}
       />
       {errors.name && (
-        <span className="text-red-600 text-sm pl-3">
-          Please write your name
-        </span>
+        <span className="text-red-600 text-sm pl-3">{t("nameError")}</span>
       )}
       <label
         htmlFor="email"
         className="block pl-4 text-sm font-medium leading-6 text-gray-900 dark:text-zinc-200 text-start mt-4"
       >
-        E-Mail
+        {t("email")}
       </label>
       <input
         type="text"
@@ -83,11 +82,11 @@ export default function ContactForm() {
         id="email"
         className="block w-full rounded-full border-0 px-4 py-1.5 text-zinc-900 dark:text-zinc-200 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-500 dark:shadow-none focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1"
         {...register("email", {
-          required: "Please write your e-mail address",
+          required: t("emailError"),
           maxLength: 100,
           pattern: {
             value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-            message: "Please enter a valid e-mail address",
+            message: t("validEmail"),
           },
         })}
       />
@@ -100,7 +99,7 @@ export default function ContactForm() {
         htmlFor="message"
         className="block pl-4 text-sm font-medium leading-6 text-gray-900 mt-4 dark:text-zinc-200 text-start"
       >
-        Message
+        {t("message")}
       </label>
       <textarea
         type="text"
@@ -110,21 +109,19 @@ export default function ContactForm() {
         {...register("message", { required: true, maxLength: 1000 })}
       />
       {errors.message && (
-        <span className="text-red-600 text-sm pl-3">
-          Please write your message
-        </span>
+        <span className="text-red-600 text-sm pl-3">{t("write")}</span>
       )}
       <button className="text-md border px-4 py-1 rounded-xl mt-4 items-center flex justify-center w-full bg-zinc-50 dark:bg-zinc-700 dark:border-none text-zinc-700 dark:text-zinc-200 shadow-md hover:font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-600">
-        {loading ? <Loading /> : "Send"}
+        {loading ? <Loading /> : t("send")}
       </button>
       {error && (
         <span className="absolute text-sm text-red-600 mt-4 w-full justify-center flex">
-          Something went wrong, please try again.
+          {t("error")}
         </span>
       )}
       {success && (
         <span className=" absolute text-sm text-green-600 mt-4 w-full text-center justify-center flex">
-          Thank you for your message!
+          {t("success")}
         </span>
       )}
     </form>

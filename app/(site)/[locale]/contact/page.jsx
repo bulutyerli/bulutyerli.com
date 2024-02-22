@@ -4,8 +4,13 @@ import macbook from "@/public/macbook2.webp";
 import BgPattern from "@/components/BgPattern";
 import ContactForm from "@/components/ContactForm";
 import SocialIcons from "@/components/SocialIcons";
-import { useTranslations } from "next-intl";
+import {
+  NextIntlClientProvider,
+  useMessages,
+  useTranslations,
+} from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
+import pick from "lodash/pick";
 
 export const metadata = {
   title: "Bulut Yerli",
@@ -16,6 +21,7 @@ export default function ContactPage({ params: { locale } }) {
   unstable_setRequestLocale(locale);
 
   const t = useTranslations("Contact");
+  const messages = useMessages();
 
   return (
     <Container className="mt-auto flex flex-col text-center">
@@ -34,7 +40,9 @@ export default function ContactPage({ params: { locale } }) {
           className={"lg:flex lg:flex-col lg:gap-16 text-zinc-500 hidden "}
           size={50}
         />
-        <ContactForm />
+        <NextIntlClientProvider messages={pick(messages, "Contact")}>
+          <ContactForm />
+        </NextIntlClientProvider>
       </div>
     </Container>
   );
