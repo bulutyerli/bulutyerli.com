@@ -10,9 +10,7 @@
   },
   "ProjectPage": {
     "featuredTitle": "featured project.",
-    "title": "projects.",
-    "visit": "Visit",
-    "details": "Details"
+    "title": "projects."
   },
   "NotFound": {
     "h1": "page not found.",
@@ -21,11 +19,22 @@
   },
   "Error": {
     "title": "something went wrong",
+    "error": "Error!",
     "retry": "Try Again"
   },
   "Contact": {
     "title": "Have a project in mind or just want to say hi?",
-    "content": "Fill out the form below or reach out to me directly via social links"
+    "content": "Fill out the form below or reach out to me directly via social links",
+    "name": "Full Name",
+    "email": "E-Mail",
+    "message": "Message",
+    "send": "Send",
+    "write": "Please write your message",
+    "error": "Something went wrong, please try again.",
+    "nameError": "Please write your name.",
+    "emailError": "Please write your E-Mail.",
+    "validEmail": "Please enter a valid E-Mail.",
+    "success": "Thank you for your message!"
   },
   "Footer": {
     "copyright": "All rights reserved."
