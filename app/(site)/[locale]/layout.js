@@ -8,6 +8,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { locales } from "@/navigation";
 import { Providers } from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Bulut Yerli",
@@ -32,6 +33,7 @@ export default function LocaleLayout({ children, params: { locale } }) {
           <NextIntlClientProvider messages={pick(messages, "Error")}>
             {children}
             <Analytics />
+            <SpeedInsights />
           </NextIntlClientProvider>
           <Footer locale={locale} />
         </Providers>
