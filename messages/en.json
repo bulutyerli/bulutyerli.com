@@ -14,7 +14,15 @@
     "visit": "Visit",
     "details": "Details"
   },
-
+  "NotFound": {
+    "h1": "page not found.",
+    "h2": "Sorry, there is no page that you are looking for.",
+    "button": "Go back home"
+  },
+  "Error": {
+    "title": "something went wrong",
+    "retry": "Try Again"
+  },
   "Contact": {
     "title": "Have a project in mind or just want to say hi?",
     "content": "Fill out the form below or reach out to me directly via social links"

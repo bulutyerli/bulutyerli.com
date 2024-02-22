@@ -20,7 +20,7 @@ export default function LocaleSwitcher() {
   }
 
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1 pr-2">
       <button
         className={`${
           locale === "en"

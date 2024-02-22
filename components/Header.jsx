@@ -76,7 +76,8 @@ export default function Header() {
           className="w-16 xl:w-24 h-auto cursor-pointer ml-2 hidden dark:block"
         />
       </Link>
-      <nav className="flex justify-between items-center px-3">
+      <nav className="flex justify-between items-center px-3 gap-3">
+        <ThemeSwitcher className={"md:hidden"} />
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
