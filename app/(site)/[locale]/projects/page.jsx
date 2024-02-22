@@ -6,6 +6,11 @@ import SectionTitle from "@/components/SectionTitle";
 import { getTranslations } from "next-intl/server";
 import { unstable_setRequestLocale } from "next-intl/server";
 
+export const metadata = {
+  title: "Bulut Yerli",
+  description: "Full-Stack Web Developer Projects Page",
+};
+
 export default async function ProjectsPage({ params: { locale } }) {
   unstable_setRequestLocale(locale);
 

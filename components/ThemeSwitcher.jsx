@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
-export default function ThemeSwitcher() {
+export default function ThemeSwitcher({ className }) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -16,8 +16,11 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-      {theme === "light" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
+    <button
+      className={className}
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+    >
+      {theme === "dark" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
     </button>
   );
 }

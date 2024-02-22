@@ -4,6 +4,11 @@ import { sanityFetch } from "@/lib/sanity.client";
 import { aboutMeQuery } from "@/lib/sanity.query";
 import { unstable_setRequestLocale } from "next-intl/server";
 
+export const metadata = {
+  title: "Bulut Yerli",
+  description: "About Bulut Yerli",
+};
+
 export default async function AboutMePage({ params: { locale } }) {
   unstable_setRequestLocale(locale);
 

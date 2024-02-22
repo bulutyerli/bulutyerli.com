@@ -7,6 +7,11 @@ import SocialIcons from "@/components/SocialIcons";
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 
+export const metadata = {
+  title: "Bulut Yerli",
+  description: "Contact Bulut Yerli",
+};
+
 export default function ContactPage({ params: { locale } }) {
   unstable_setRequestLocale(locale);
 

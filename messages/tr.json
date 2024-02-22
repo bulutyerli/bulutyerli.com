@@ -12,7 +12,15 @@
     "featuredTitle": "öne çıkan proje.",
     "title": "projeler."
   },
-
+  "NotFound": {
+    "h1": "sayfa bulunamadı.",
+    "h2": "Üzgünüz, böyle bir sayfa yok",
+    "button": "Anasayfaya dön"
+  },
+  "Error": {
+    "title": "bir şeyler ters gitti.",
+    "retry": "Tekrar Dene"
+  },
   "Contact": {
     "title": "Aklınızda bir proje var ya da sadece merhaba demek mi istiyorsunuz?",
     "content": "Aşağıdaki formu doldurarak ya da sosyal medya üzerinden bana ulaşabilirsiniz."

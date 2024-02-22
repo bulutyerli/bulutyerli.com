@@ -68,7 +68,7 @@ export default function Hero({ title, secondTitle }) {
         width="900"
         height="50"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full absolute bottom-0 h-auto fill-white dark:fill-zinc-900 dark:bg-black"
+        className="w-full absolute bottom-0 h-auto fill-white dark:fill-zinc-900 bg-inherit"
         version="1.1"
       >
         <path d="M0 25L50 20.8C100 16.7 200 8.3 300 9.7C400 11 500 22 600 23C700 24 800 15 850 10.5L900 6L900 51L850 51C800 51 700 51 600 51C500 51 400 51 300 51C200 51 100 51 50 51L0 51Z"></path>
@@ -79,7 +79,7 @@ export default function Hero({ title, secondTitle }) {
       >
         <ul
           className={`${
-            fadeIn ? "opacity-10" : "opacity-0"
+            fadeIn ? "opacity-10 dark:opacity-15" : "opacity-0"
           } relative min-w-full h-full animate-infinite-slider-100  transition-all duration-[3s]`}
         >
           {positions.map((element) => {
@@ -95,7 +95,7 @@ export default function Hero({ title, secondTitle }) {
         </ul>
         <ul
           className={`${
-            fadeIn ? "opacity-10" : "opacity-0"
+            fadeIn ? "opacity-10 dark:opacity-15" : "opacity-0"
           } relative min-w-full h-full animate-infinite-slider-100  transition-all duration-[3s]`}
         >
           {positions.map((element) => {
