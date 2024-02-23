@@ -34,7 +34,11 @@ export default function ContactPage({ params: { locale } }) {
         </p>
       </div>
       <div className="relative flex flex-col-reverse gap-10 lg:flex-row justify-around items-center">
-        <Image className="hidden lg:block" src={macbook} />
+        <Image
+          className="hidden lg:block"
+          src={macbook}
+          alt="laptop illustration"
+        />
         <BgPattern className="absolute inset-x-0 xl:-top-42 -z-10 h-[32rem] lg:h-[64rem] w-full stroke-zinc-200 dark:stroke-zinc-700 [mask-image:radial-gradient(22rem_22rem_at_center,white,transparent)] lg:[mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]" />
         <SocialIcons
           className={"lg:flex lg:flex-col lg:gap-16 text-zinc-500 hidden "}
