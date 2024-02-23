@@ -13,7 +13,7 @@ export default function ProjectCard({ data, lang }) {
 
   return (
     <article className="flex flex-col gap-5 lg:grid lg:grid-cols-12 items-center mb-20">
-      <h3 className="text-zinc-700 dark:text-zinc-200 text-xl md:text-2xl xl:text-3xl row-start-1 row-end-2 col-start-7 text-nowrap">
+      <h3 className="text-zinc-700 dark:text-zinc-200 text-xl md:text-2xl xl:text-3xl row-start-1 row-end-2 col-start-7 text-nowrap lg:self-end">
         {data.title}
       </h3>
 
@@ -38,7 +38,7 @@ export default function ProjectCard({ data, lang }) {
               className="flex items-center gap-2"
             >
               <div className="text-zinc-700 hover:text-zinc-800">
-                <BiLogoGithub size={"1.5rem"} />
+                <BiLogoGithub size={24} />
               </div>
               <span className="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline">
                 GitHub
@@ -54,7 +54,7 @@ export default function ProjectCard({ data, lang }) {
             className="flex items-center gap-2"
           >
             <div className="text-zinc-700 hover:text-zinc-800">
-              <HiOutlineExternalLink size={"1.5rem"} />
+              <HiOutlineExternalLink size={24} />
             </div>
             <span className="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline">
               {lang === "tr" ? "Ziyaret Et" : "Visit"}
@@ -68,9 +68,9 @@ export default function ProjectCard({ data, lang }) {
           >
             <div className="text-zinc-700 hover:text-zinc-800">
               {detailsOpen ? (
-                <MdArrowDropUp size={"1.5rem"} />
+                <MdArrowDropUp size={24} />
               ) : (
-                <MdArrowDropDown size={"1.5rem"} />
+                <MdArrowDropDown size={24} />
               )}
             </div>
             <span className="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline">
@@ -85,10 +85,6 @@ export default function ProjectCard({ data, lang }) {
         }`}
       >
         {data.description}
-
-        <span className="absolute -top-16 text-8xl left-16 -z-10 text-zinc-200/30 dark:text-zinc-600/30 hidden lg:block">
-          {data.title}
-        </span>
       </p>
       <ul className="flex flex-wrap gap-2 text-xs col-start-1 col-end-7 justify-center">
         {data.skills.map((skill) => {
