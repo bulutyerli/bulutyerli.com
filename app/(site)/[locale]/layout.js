@@ -1,18 +1,19 @@
-import "@/app/globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { roboto } from "../../fonts";
-import pick from "lodash/pick";
-import { NextIntlClientProvider, useMessages } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
-import { locales } from "@/navigation";
-import { Providers } from "@/components/Providers";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import '@/app/globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { roboto } from '../../fonts';
+import pick from 'lodash/pick';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { locales } from '@/navigation';
+import { Providers } from '@/components/Providers';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
-  title: "Bulut Yerli",
-  description: "Full-Stack Web Developer",
+  title: 'Bulut Yerli',
+  description: 'Full-Stack Web Developer',
+  verification: { google: '6arujRnN1DBVvHtHiK-Ydzq7OYReR34RvilFphSiqY8' },
 };
 
 export function generateStaticParams() {
@@ -27,10 +28,10 @@ export default function LocaleLayout({ children, params: { locale } }) {
     <html lang={locale} className={roboto.className} suppressHydrationWarning>
       <body className="flex flex-col w-full min-h-screen dark:bg-zinc-900">
         <Providers attribute="class">
-          <NextIntlClientProvider messages={pick(messages, "Header")}>
+          <NextIntlClientProvider messages={pick(messages, 'Header')}>
             <Header />
           </NextIntlClientProvider>
-          <NextIntlClientProvider messages={pick(messages, "Error")}>
+          <NextIntlClientProvider messages={pick(messages, 'Error')}>
             {children}
             <Analytics />
             <SpeedInsights />
