@@ -1,14 +1,15 @@
-import Container from "@/components/Container";
-import { sanityFetch } from "@/lib/sanity.client";
-import { projectQuery } from "@/lib/sanity.query";
-import ProjectCard from "@/components/ProjectCard";
-import SectionTitle from "@/components/SectionTitle";
-import { getTranslations } from "next-intl/server";
-import { unstable_setRequestLocale } from "next-intl/server";
+import Container from '@/components/Container';
+import { sanityFetch } from '@/lib/sanity.client';
+import { projectQuery } from '@/lib/sanity.query';
+import ProjectCard from '@/components/ProjectCard';
+import SectionTitle from '@/components/SectionTitle';
+import { getTranslations } from 'next-intl/server';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 export const metadata = {
-  title: "Bulut Yerli",
-  description: "Full-Stack Web Developer Projects Page",
+  title: 'Bulut Yerli',
+  description:
+    'Full-Stack Web Developer Projects Page, Created with React, Nextjs, JavaScript, Tailwind, CSS, HMTL',
 };
 
 export default async function ProjectsPage({ params: { locale } }) {
@@ -16,15 +17,15 @@ export default async function ProjectsPage({ params: { locale } }) {
 
   const projects = await sanityFetch({
     query: projectQuery,
-    tags: ["projects"],
+    tags: ['projects'],
     qParams: { lang: locale },
   });
 
-  const t = await getTranslations("ProjectPage");
+  const t = await getTranslations('ProjectPage');
 
   return (
     <Container>
-      <SectionTitle title={t("title")} />
+      <SectionTitle title={t('title')} />
       <ul className="flex flex-col gap-0 lg:gap-20 mt-20">
         {projects.map((data) => {
           return (

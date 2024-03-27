@@ -11,8 +11,9 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
-  title: 'Bulut Yerli',
-  description: 'Full-Stack Web Developer',
+  title: 'Bulut Yerli Full-Stack Web Developer ',
+  description:
+    'Specialized in React, Nextjs, Nodejs, Postgresql, MongoDB, Tailwind, CSS, HTML, Creating Websites',
   verification: { google: '6arujRnN1DBVvHtHiK-Ydzq7OYReR34RvilFphSiqY8' },
 };
 
