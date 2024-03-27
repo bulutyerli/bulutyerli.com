@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { urlFor } from "@/lib/imageBuilder";
-import Link from "next/link";
-import { BiLogoGithub } from "react-icons/bi";
-import { HiOutlineExternalLink } from "react-icons/hi";
-import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
-import { useState } from "react";
+import Image from 'next/image';
+import { urlFor } from '@/lib/imageBuilder';
+import Link from 'next/link';
+import { BiLogoGithub } from 'react-icons/bi';
+import { HiOutlineExternalLink } from 'react-icons/hi';
+import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
+import { useState } from 'react';
 
 export default function ProjectCard({ data, lang }) {
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -57,7 +57,7 @@ export default function ProjectCard({ data, lang }) {
               <HiOutlineExternalLink size={24} />
             </div>
             <span className="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline">
-              {lang === "tr" ? "Ziyaret Et" : "Visit"}
+              {lang === 'tr' ? 'Ziyaret Et' : 'Visit'}
             </span>
           </Link>
         </li>
@@ -66,22 +66,22 @@ export default function ProjectCard({ data, lang }) {
             onClick={() => setDetailsOpen(!detailsOpen)}
             className="flex items-center gap-2"
           >
-            <div className="text-zinc-700 hover:text-zinc-800">
+            <span className="text-zinc-700 hover:text-zinc-800">
               {detailsOpen ? (
                 <MdArrowDropUp size={24} />
               ) : (
                 <MdArrowDropDown size={24} />
               )}
-            </div>
+            </span>
             <span className="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline">
-              {lang === "tr" ? "Detaylar" : "Details"}
+              {lang === 'tr' ? 'Detaylar' : 'Details'}
             </span>
           </button>
         </li>
       </ul>
       <p
         className={`text-zinc-700 col-start-6 col-end-13 row-start-2 row-end-3 border border-zinc-300 rounded-3xl p-6 bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-400 dark:border-zinc-700 shadow-md text-sm md:text-base max-w-xl lg:max-w-3xl relative lg:block ${
-          detailsOpen ? "block" : "hidden"
+          detailsOpen ? 'block' : 'hidden'
         }`}
       >
         {data.description}
