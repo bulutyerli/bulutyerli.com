@@ -1,9 +1,14 @@
 {
   "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"]
-    },
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/components/*": ["components/*"],
+      "@/types/*": ["types/*"],
+      "@/lib/*": ["lib/*"],
+      "@/messages/*": ["messages/*"],
+      "@/schemas/*": ["schemas/*"]
+    },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
