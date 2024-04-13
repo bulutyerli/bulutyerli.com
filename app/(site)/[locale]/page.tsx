@@ -1,11 +1,11 @@
-import Hero from '@/app/components/Hero';
-import Container from '@/app/components/Container';
-import { sanityFetch } from '@/app/lib/sanity.client';
-import { featuredProjectQuery } from '@/app/lib/sanity.query';
-import ProjectCard from '@/app/components/ProjectCard';
-import SectionTitle from '@/app/components/SectionTitle';
 import { getTranslations } from 'next-intl/server';
 import { unstable_setRequestLocale } from 'next-intl/server';
+import { sanityFetch } from '../../lib/sanity.client';
+import { featuredProjectQuery } from '../../lib/sanity.query';
+import Hero from '../../components/Hero';
+import Container from '../../components/Container';
+import SectionTitle from '../../components/SectionTitle';
+import ProjectCard from '../../components/ProjectCard';
 
 export default async function Home({
   params: { locale },
