@@ -1,8 +1,8 @@
-import Container from '@/components/Container';
-import { sanityFetch } from '@/lib/sanity.client';
-import { projectQuery } from '@/lib/sanity.query';
-import ProjectCard from '@/components/ProjectCard';
-import SectionTitle from '@/components/SectionTitle';
+import Container from '@/app/components/Container';
+import { sanityFetch } from '@/app/lib/sanity.client';
+import { projectQuery } from '@/app/lib/sanity.query';
+import ProjectCard from '@/app/components/ProjectCard';
+import SectionTitle from '@/app/components/SectionTitle';
 import { getTranslations } from 'next-intl/server';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';

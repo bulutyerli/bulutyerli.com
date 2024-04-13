@@ -1,9 +1,9 @@
-import Container from '@/components/Container';
+import Container from '@/app/components/Container';
 import Image from 'next/image';
 import macbook from '@/public/macbook2.webp';
-import BgPattern from '@/components/BgPattern';
-import ContactForm from '@/components/ContactForm';
-import SocialIcons from '@/components/SocialIcons';
+import BgPattern from '@/app/components/BgPattern';
+import ContactForm from '@/app/components/ContactForm';
+import SocialIcons from '@/app/components/SocialIcons';
 import {
   NextIntlClientProvider,
   useMessages,

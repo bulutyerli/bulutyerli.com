@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { urlFor } from '@/lib/imageBuilder';
+import { urlFor } from '@/app/lib/imageBuilder';
 import Link from 'next/link';
 import { BiLogoGithub } from 'react-icons/bi';
 import { HiOutlineExternalLink } from 'react-icons/hi';

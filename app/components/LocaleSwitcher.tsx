@@ -1,7 +1,6 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useParams } from 'next/navigation';
 import { useTransition } from 'react';
 import { useRouter, usePathname } from '@/navigation';
 
@@ -11,7 +10,6 @@ export default function LocaleSwitcher() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const pathname = usePathname();
-  const params = useParams();
 
   function onLanguageChange(lang: string) {
     startTransition(() => {
