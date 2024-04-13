@@ -1,7 +1,7 @@
 'use client';
 
-import { spartan } from '@/app/fonts';
 import Container from '@/app/components/Container';
+import { spartan } from '@/app/fonts';
 import { useTranslations } from 'next-intl';
 
 export default function Error({
