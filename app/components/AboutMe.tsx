@@ -3,8 +3,8 @@
 import { spartan } from '@/app/fonts';
 import Image from 'next/image';
 import { useState } from 'react';
-import BgPattern from '@/components/BgPattern';
-import { urlFor } from '@/lib/imageBuilder';
+import BgPattern from '@/app/components/BgPattern';
+import { urlFor } from '@/app/lib/imageBuilder';
 import { PortableText } from '@portabletext/react';
 
 export default function AboutMe({ data }: { data: AboutMeData }) {
