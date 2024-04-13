@@ -1,9 +1,9 @@
-import AboutMe from '@/components/AboutMe';
 import Container from '@/components/Container';
 import { sanityFetch } from '@/lib/sanity.client';
 import { aboutMeQuery } from '@/lib/sanity.query';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import AboutMe from '@/components/AboutMe';
 
 export const metadata: Metadata = {
   title: 'Bulut Yerli',
