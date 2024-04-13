@@ -1,6 +1,5 @@
 'use client';
 
-import { Link } from '@/navigation';
 import { FiMenu } from 'react-icons/fi';
 import { FiX } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
@@ -8,9 +7,8 @@ import { useTranslations } from 'next-intl';
 import LocaleSwitcher from './LocaleSwitcher';
 import { usePathname } from 'next/navigation';
 import ThemeSwitcher from './ThemeSwitcher';
-import logo from '@/public/logo.svg';
-import logoDark from '@/public/logoDark.svg';
 import Image from 'next/image';
+import { Link } from '../../navigation';
 
 type NavLink = {
   title: string;
@@ -71,14 +69,18 @@ export default function Header() {
     <header className="max-w-7xl mx-auto w-full h-16 z-10 flex items-center justify-between mt-2 sticky top-0 lg:relative bg-white dark:bg-zinc-900">
       <Link onClick={() => setMenuOpen(false)} href={'/'}>
         <Image
-          src={logo}
+          src="/logo.svg"
           alt="bulutyerli logo"
           className="w-16 xl:w-24 h-auto cursor-pointer ml-2 dark:hidden"
+          width={300}
+          height={300}
         />
         <Image
-          src={logoDark}
+          src="/logoDark.svg"
           alt="bulutyerli logo"
           className="w-16 xl:w-24 h-auto cursor-pointer ml-2 hidden dark:block"
+          width={300}
+          height={300}
         />
       </Link>
       <nav className="flex justify-between items-center px-3 gap-3">

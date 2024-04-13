@@ -1,11 +1,12 @@
 'use client';
 
-import { spartan } from '@/app/fonts';
 import Image from 'next/image';
 import { useState } from 'react';
-import BgPattern from '@/app/components/BgPattern';
-import { urlFor } from '@/app/lib/imageBuilder';
+
 import { PortableText } from '@portabletext/react';
+import { spartan } from '../fonts';
+import { urlFor } from '../lib/imageBuilder';
+import BgPattern from './BgPattern';
 
 export default function AboutMe({ data }: { data: AboutMeData }) {
   const [loki, setLoki] = useState(false);

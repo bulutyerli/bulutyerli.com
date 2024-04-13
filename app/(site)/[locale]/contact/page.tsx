@@ -1,9 +1,5 @@
-import Container from '@/app/components/Container';
 import Image from 'next/image';
-import macbook from '@/public/macbook2.webp';
-import BgPattern from '@/app/components/BgPattern';
-import ContactForm from '@/app/components/ContactForm';
-import SocialIcons from '@/app/components/SocialIcons';
+
 import {
   NextIntlClientProvider,
   useMessages,
@@ -12,6 +8,10 @@ import {
 import { unstable_setRequestLocale } from 'next-intl/server';
 import pick from 'lodash/pick';
 import type { Metadata } from 'next';
+import Container from '../../../components/Container';
+import BgPattern from '../../../components/BgPattern';
+import SocialIcons from '../../../components/SocialIcons';
+import ContactForm from '../../../components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Bulut Yerli',
@@ -42,8 +42,10 @@ export default function ContactPage({
       <div className="relative flex flex-col-reverse gap-10 lg:flex-row justify-around items-center">
         <Image
           className="hidden lg:block"
-          src={macbook}
+          src="/macbook2.webp"
           alt="laptop illustration"
+          width={300}
+          height={300}
         />
         <BgPattern classname="absolute inset-x-0 xl:-top-42 -z-10 h-[32rem] lg:h-[64rem] w-full stroke-zinc-200 dark:stroke-zinc-700 [mask-image:radial-gradient(22rem_22rem_at_center,white,transparent)] lg:[mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]" />
         <SocialIcons

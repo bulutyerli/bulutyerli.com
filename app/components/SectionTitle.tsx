@@ -1,4 +1,4 @@
-import { spartan } from '@/app/fonts';
+import { spartan } from '../fonts';
 
 export default function SectionTitle({ title }: { title: string }) {
   return (

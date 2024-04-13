@@ -1,12 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { urlFor } from '@/app/lib/imageBuilder';
 import Link from 'next/link';
 import { BiLogoGithub } from 'react-icons/bi';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 import { useState } from 'react';
+import { urlFor } from '../lib/imageBuilder';
 
 export default function ProjectCard({
   data,

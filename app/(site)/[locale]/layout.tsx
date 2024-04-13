@@ -1,14 +1,14 @@
-import '@/app/globals.css';
-import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
+import '/app/globals.css';
 import { roboto } from '../../fonts';
 import pick from 'lodash/pick';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import { locales } from '@/navigation';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import ThemeProvider from '@/app/components/Providers';
+import { locales } from '../../../navigation';
+import ThemeProvider from '../../components/Providers';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export const metadata = {
   title: 'Bulut Yerli Full-Stack Web Developer ',

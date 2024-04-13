@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { spartan } from "./fonts";
-import "@/app/globals.css";
+import Link from 'next/link';
+import { spartan } from './fonts';
+import './globals.css';
 
 export default function NotFound() {
   return (

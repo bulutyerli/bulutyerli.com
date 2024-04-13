@@ -1,9 +1,9 @@
-import Container from '@/app/components/Container';
-import { sanityFetch } from '@/app/lib/sanity.client';
-import { aboutMeQuery } from '@/app/lib/sanity.query';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
-import AboutMe from '@/app/components/AboutMe';
+import { sanityFetch } from '../../../lib/sanity.client';
+import { aboutMeQuery } from '../../../lib/sanity.query';
+import Container from '../../../components/Container';
+import AboutMe from '../../../components/AboutMe';
 
 export const metadata: Metadata = {
   title: 'Bulut Yerli',
