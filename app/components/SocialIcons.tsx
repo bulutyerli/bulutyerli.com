@@ -32,7 +32,7 @@ export default function SocialIcons({
         </li>
         <li className="hover:text-zinc-600">
           <Link
-            href="mailTo:bulutyerli@gmail.com"
+            href="mailTo:info@bulutyerli.com"
             rel="noopener noreferrer"
             target="_blank"
           >
