@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { sanityFetch } from '../../lib/sanity.client';
-import { featuredProjectQuery } from '../../lib/sanity.query';
+import { projectQuery } from '../../lib/sanity.query';
 import Hero from '../../components/Hero';
 import Container from '../../components/Container';
 import SectionTitle from '../../components/SectionTitle';
@@ -14,8 +14,8 @@ export default async function Home({
 }) {
   unstable_setRequestLocale(locale);
 
-  const project: ProjectType = await sanityFetch({
-    query: featuredProjectQuery,
+  const projects: ProjectType[] = await sanityFetch({
+    query: projectQuery,
     tags: ['projects'],
     qParams: { lang: locale },
   });
@@ -26,8 +26,16 @@ export default async function Home({
     <main>
       <Hero title={t('title')} secondTitle={t('secondTitle')} />
       <Container>
-        <SectionTitle title={'featured project.'} />
-        <ProjectCard data={project} lang={locale} />
+        <SectionTitle title={'projects.'} />
+        <ul className="flex flex-col gap-0 lg:gap-20 mt-20">
+          {projects.map((data) => {
+            return (
+              <li key={data.title}>
+                <ProjectCard data={data} lang={locale} />
+              </li>
+            );
+          })}
+        </ul>
       </Container>
     </main>
   );

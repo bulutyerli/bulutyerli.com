@@ -31,10 +31,6 @@ export default function Header() {
 
   const navLinks: NavLink[] = [
     {
-      title: t('projects'),
-      href: '/projects',
-    },
-    {
       title: t('aboutMe'),
       href: '/about-me',
     },

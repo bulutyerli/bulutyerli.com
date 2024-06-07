@@ -49,12 +49,6 @@ const projectSchema = {
       type: 'url',
       description: 'Link to the live site of the project.',
     },
-    {
-      name: 'featured',
-      title: 'Featured Project',
-      type: 'boolean',
-      description: 'Indicates whether the project is featured.',
-    },
   ],
   preview: {
     select: {
