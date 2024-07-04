@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { BiLogoGithub } from 'react-icons/bi';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { urlFor } from '../lib/imageBuilder';
+import { useInView, motion } from 'framer-motion';
 
 export default function ProjectCard({
   data,
@@ -17,11 +18,29 @@ export default function ProjectCard({
 }) {
   const [detailsOpen, setDetailsOpen] = useState(false);
 
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   return (
-    <article className="flex flex-col gap-5 lg:grid lg:grid-cols-12 items-center mb-20">
-      <h3 className="text-zinc-700 dark:text-zinc-200 text-xl md:text-2xl xl:text-3xl row-start-1 row-end-2 col-start-7 text-nowrap lg:self-end">
+    <motion.article
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isInView ? 1 : 0 }}
+      transition={{ duration: 1, delay: 0.1 }}
+      className="flex flex-col gap-5 lg:grid lg:grid-cols-12 items-center mb-20"
+    >
+      <motion.h3
+        ref={ref}
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: isInView ? 0 : 100, opacity: isInView ? 1 : 0 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.3,
+        }}
+        className="text-zinc-700 dark:text-zinc-200 text-xl md:text-2xl xl:text-3xl row-start-1 row-end-2 col-start-7 text-nowrap lg:self-end"
+      >
         {data.title}
-      </h3>
+      </motion.h3>
 
       <div className="col-start-1 col-end-7 row-start-1 row-end-4 w-full max-w-lg lg:min-w-full flex flex-col gap-4">
         <Image
@@ -106,6 +125,6 @@ export default function ProjectCard({
           );
         })}
       </ul>
-    </article>
+    </motion.article>
   );
 }
