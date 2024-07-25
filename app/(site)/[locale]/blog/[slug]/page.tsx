@@ -2,11 +2,25 @@ import { notFound } from 'next/navigation';
 import { client, sanityFetch } from '../../../../lib/sanity.client';
 import { blogDetailQuery, blogListQuery } from '../../../../lib/sanity.query';
 import { BlogType } from '../../../../types/types';
-import { urlFor } from '../../../../lib/imageBuilder';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import Image from 'next/image';
-import { PortableText } from '@portabletext/react';
 import BlogPost from '../../../../components/BlogPost';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  params: { locale, slug },
+}: {
+  params: { locale: string; slug: string };
+}): Promise<Metadata> {
+  const post: BlogType = await sanityFetch({
+    query: blogDetailQuery,
+    params: { slug, lang: locale },
+    tags: ['blogPost'],
+  });
+
+  return {
+    title: post.title,
+  };
+}
 
 export async function generateStaticParams({ params: { locale } }) {
   unstable_setRequestLocale(locale);

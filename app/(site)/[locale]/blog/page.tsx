@@ -7,6 +7,13 @@ import { urlFor } from '../../../lib/imageBuilder';
 import SectionTitle from '../../../components/SectionTitle';
 import Container from '../../../components/Container';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog of Bulut Yerli',
+  description:
+    'Blogs about web development, react, javascript, typescript, programming, databases',
+};
 
 export default async function BlogPage({
   params: { locale },
