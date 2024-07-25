@@ -45,13 +45,13 @@ export default async function BlogPage({
               className="cursor-pointer group"
             >
               <SectionTitle title={'blog.'} />
-              <div className="flex gap-4 p-4 border border-zinc-300 dark:border-zinc-600 rounded-lg">
-                <div className="relative overflow-hidden">
+              <div className="flex flex-wrap gap-4 p-4 border border-zinc-300 dark:border-zinc-600 rounded-lg">
+                <div className="flex justify-center w-full md:w-fit">
                   <Image
-                    className="h-[150px] w-auto transition-transform duration-300 ease-in-out transform group-hover:scale-[103%]"
-                    src={urlFor(post.image).width(300).url()}
-                    width={300}
-                    height={300}
+                    className="h-32 w-auto xl:h-40 transition-transform duration-300 ease-in-out transform group-hover:scale-[103%]"
+                    src={urlFor(post.image).width(600).url()}
+                    width={600}
+                    height={600}
                     alt={post.title}
                   />
                 </div>
@@ -59,7 +59,7 @@ export default async function BlogPage({
                   <span className="text-zinc-700 dark:text-zinc-400">
                     {formattedDate}
                   </span>
-                  <h2 className="max-w-96 transition-all group-hover:text-zinc-200">
+                  <h2 className="max-w-96 transition-all group-hover:text-zinc-600 dark:group-hover:text-zinc-400">
                     {post.title}
                   </h2>
                 </div>

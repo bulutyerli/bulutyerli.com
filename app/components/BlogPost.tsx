@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { BlogType } from '../types/types';
-import { PortableText } from '@portabletext/react';
+import { PortableText, PortableTextReactComponents } from '@portabletext/react';
 import { urlFor } from '../lib/imageBuilder';
 
 export default function BlogPost({
@@ -10,12 +10,23 @@ export default function BlogPost({
   post: BlogType;
   locale: string;
 }) {
-  const components = {
+  const components: Partial<PortableTextReactComponents> = {
     types: {
       code: (props) => (
         <pre className="prose prose-sm prose-zinc dark:prose-invert">
           <code>{props.value.code}</code>
         </pre>
+      ),
+    },
+    marks: {
+      link: ({ children, value }) => (
+        <a
+          href={value.href}
+          target={value.blank ? '_blank' : '_self'}
+          rel={value.blank ? 'noopener noreferrer' : undefined}
+        >
+          {children}
+        </a>
       ),
     },
   };
