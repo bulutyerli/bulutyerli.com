@@ -4,6 +4,7 @@ import { sanityFetch } from '../../../lib/sanity.client';
 import { aboutMeQuery } from '../../../lib/sanity.query';
 import Container from '../../../components/Container';
 import AboutMe from '../../../components/AboutMe';
+import { AboutMeData } from '../../../types/types';
 
 export const metadata: Metadata = {
   title: 'Bulut Yerli',
@@ -21,7 +22,7 @@ export default async function AboutMePage({
   const data: AboutMeData = await sanityFetch({
     query: aboutMeQuery,
     tags: ['about'],
-    qParams: { lang: locale },
+    params: { lang: locale },
   });
 
   return (

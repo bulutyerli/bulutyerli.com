@@ -1,3 +1,9 @@
+interface SliderType {
+  width: string;
+  height: string;
+  icon: React.ReactNode;
+}
+
 export default function IconSlider({ height, icon, width }: SliderType) {
   return (
     <li

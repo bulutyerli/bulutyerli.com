@@ -6,6 +6,7 @@ import Hero from '../../components/Hero';
 import Container from '../../components/Container';
 import SectionTitle from '../../components/SectionTitle';
 import ProjectCard from '../../components/ProjectCard';
+import { ProjectType } from '../../types/types';
 
 export default async function Home({
   params: { locale },
@@ -17,7 +18,7 @@ export default async function Home({
   const projects: ProjectType[] = await sanityFetch({
     query: projectQuery,
     tags: ['projects'],
-    qParams: { lang: locale },
+    params: { lang: locale },
   });
 
   const t = await getTranslations('Hero');

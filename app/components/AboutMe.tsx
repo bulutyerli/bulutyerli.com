@@ -7,6 +7,7 @@ import { PortableText } from '@portabletext/react';
 import { spartan } from '../fonts';
 import { urlFor } from '../lib/imageBuilder';
 import BgPattern from './BgPattern';
+import { AboutMeData } from '../types/types';
 
 export default function AboutMe({ data }: { data: AboutMeData }) {
   const [loki, setLoki] = useState(false);

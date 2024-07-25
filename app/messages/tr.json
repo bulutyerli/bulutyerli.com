@@ -6,7 +6,8 @@
   "Header": {
     "projects": "Projeler",
     "aboutMe": "Hakkımda",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "blog": "Blog"
   },
   "ProjectPage": {
     "title": "projeler."

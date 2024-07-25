@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import {
   BiLogoMongodb,
   BiLogoPostgresql,
@@ -14,6 +13,7 @@ import {
   BiLogoTypescript,
 } from 'react-icons/bi';
 import { SiExpress, SiNextdotjs } from 'react-icons/si';
+import { Icons } from '../types/types';
 
 const icons: Icons[] = [
   {

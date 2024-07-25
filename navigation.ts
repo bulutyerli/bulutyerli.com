@@ -6,10 +6,6 @@ export const localePrefix = 'always'; // Default
 export const pathnames = {
   '/': '/',
 
-  '/projects': {
-    en: '/projects',
-    tr: '/projeler',
-  },
   '/about-me': {
     en: '/about-me',
     tr: '/hakkimda',
@@ -17,6 +13,10 @@ export const pathnames = {
   '/contact': {
     en: '/contact',
     tr: '/iletisim',
+  },
+  '/blog': {
+    en: '/blog',
+    tr: '/blog',
   },
 };
 

@@ -1,10 +1,6 @@
-// ./schemas/localeStringType.ts
-
 import { defineType, defineField } from 'sanity';
 
-// Since schemas are code, we can programmatically build
-// fields to hold translated values. We'll use this array
-// of languages to determine which fields to define.
+// Supported languages
 const supportedLanguages = [
   { id: 'en', title: 'English', isDefault: true },
   { id: 'tr', title: 'Turkish' },
@@ -12,13 +8,11 @@ const supportedLanguages = [
 
 export const baseLanguage = supportedLanguages.find((l) => l.isDefault);
 
+// Localized string schema
 export const localeString = defineType({
   title: 'Localized string',
   name: 'localeString',
   type: 'object',
-  // Fieldsets can be used to group object fields.
-  // Here we omit a fieldset for the "default language",
-  // making it stand out as the main field.
   fieldsets: [
     {
       title: 'Translations',
@@ -26,7 +20,6 @@ export const localeString = defineType({
       options: { collapsible: true },
     },
   ],
-  // Dynamically define one field per language
   fields: supportedLanguages.map((lang) =>
     defineField({
       title: lang.title,
@@ -37,13 +30,11 @@ export const localeString = defineType({
   ),
 });
 
+// Localized text schema
 export const localeText = defineType({
   title: 'Localized text',
   name: 'localeText',
   type: 'object',
-  // Fieldsets can be used to group object fields.
-  // Here we omit a fieldset for the "default language",
-  // making it stand out as the main field.
   fieldsets: [
     {
       title: 'Translations',
@@ -51,7 +42,6 @@ export const localeText = defineType({
       options: { collapsible: true },
     },
   ],
-  // Dynamically define one field per language
   fields: supportedLanguages.map((lang) =>
     defineField({
       title: lang.title,
@@ -62,13 +52,11 @@ export const localeText = defineType({
   ),
 });
 
+// Localized block schema
 export const localeBlock = defineType({
   title: 'Localized block',
   name: 'localeBlock',
   type: 'object',
-  // Fieldsets can be used to group object fields.
-  // Here we omit a fieldset for the "default language",
-  // making it stand out as the main field.
   fieldsets: [
     {
       title: 'Translations',
@@ -76,14 +64,56 @@ export const localeBlock = defineType({
       options: { collapsible: true },
     },
   ],
-  // Dynamically define one field per language
   fields: supportedLanguages.map((lang) =>
     defineField({
       title: lang.title,
       name: lang.id,
       type: 'array',
-      //@ts-ignore
-      of: [{ type: 'block' }],
+      of: [
+        {
+          type: 'block',
+          marks: {
+            annotations: [
+              {
+                name: 'internalLink',
+                type: 'object',
+                title: 'Internal link',
+                fields: [
+                  {
+                    name: 'reference',
+                    type: 'reference',
+                    title: 'Reference',
+                    to: [{ type: 'blogPost' }],
+                  },
+                ],
+              },
+
+              {
+                name: 'link',
+                type: 'object',
+                title: 'External link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                  },
+                  {
+                    title: 'Open in new tab',
+                    name: 'blank',
+                    description:
+                      'Read https://css-tricks.com/use-target_blank/',
+                    type: 'boolean',
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        {
+          type: 'code',
+        },
+      ],
       fieldset: lang.isDefault ? undefined : 'translations',
     })
   ),

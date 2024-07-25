@@ -12,7 +12,7 @@ import { Link } from '../../navigation';
 
 type NavLink = {
   title: string;
-  href: '/projects' | '/about-me' | '/contact';
+  href: '/about-me' | '/contact' | '/blog';
 };
 
 export default function Header() {
@@ -30,6 +30,10 @@ export default function Header() {
   }, [menuOpen]);
 
   const navLinks: NavLink[] = [
+    {
+      title: t('blog'),
+      href: '/blog',
+    },
     {
       title: t('aboutMe'),
       href: '/about-me',

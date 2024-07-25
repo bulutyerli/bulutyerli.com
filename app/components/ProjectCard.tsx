@@ -8,6 +8,7 @@ import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 import { useRef, useState } from 'react';
 import { urlFor } from '../lib/imageBuilder';
 import { useInView, motion } from 'framer-motion';
+import { ProjectType } from '../types/types';
 
 export default function ProjectCard({
   data,

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import IconSlider from './IconSlider';
 import icons from '../lib/Icons';
+import { Icons } from '../types/types';
 
 export default function Hero({
   title,
@@ -26,8 +27,8 @@ export default function Hero({
         heroRef.current.clientWidth < 1000
           ? 48
           : heroRef.current.clientWidth < 600
-          ? 32
-          : 72;
+            ? 32
+            : 72;
 
       for (let i = 0; i < 14; i++) {
         let isUnique = false;
