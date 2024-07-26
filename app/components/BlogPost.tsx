@@ -32,6 +32,7 @@ export default function BlogPost({
   };
 
   const date = new Date(post._createdAt);
+
   const publishDate = date.toLocaleDateString(locale, {
     day: '2-digit',
     month: 'long',
