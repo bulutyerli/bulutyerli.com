@@ -1,9 +1,14 @@
 import { baseLanguage } from './localeStringType';
+import {
+  orderRankField,
+  orderRankOrdering,
+} from '@sanity/orderable-document-list';
 
 const projectSchema = {
   name: 'projects',
   title: 'Project',
   type: 'document',
+  orderings: [orderRankOrdering],
   fields: [
     {
       name: 'title',
@@ -49,6 +54,7 @@ const projectSchema = {
       type: 'url',
       description: 'Link to the live site of the project.',
     },
+    orderRankField({ type: 'projects' }),
   ],
   preview: {
     select: {

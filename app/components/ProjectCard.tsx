@@ -20,7 +20,7 @@ export default function ProjectCard({
   const [detailsOpen, setDetailsOpen] = useState(false);
 
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <motion.article

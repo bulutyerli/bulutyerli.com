@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 
-export const projectQuery = groq`*[_type == "projects"] | order(_createdAt asc) {
+export const projectQuery = groq`*[_type == "projects"] | order(orderRank) {
   _createdAt,
   "title": coalesce(title[$lang]),
   "description": coalesce(description[$lang]),
