@@ -13,7 +13,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const post: BlogType = await sanityFetch({
     query: blogDetailQuery,
-    params: { slug, lang: locale },
+    qParams: { slug, lang: locale },
     tags: ['blogPost'],
   });
 
@@ -45,7 +45,7 @@ export default async function Page({
 
   const post: BlogType = await sanityFetch({
     query: blogDetailQuery,
-    params: { slug, lang: locale },
+    qParams: { slug, lang: locale },
     tags: ['blogPost'],
   });
 

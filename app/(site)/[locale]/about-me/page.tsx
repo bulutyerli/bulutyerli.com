@@ -22,7 +22,7 @@ export default async function AboutMePage({
   const data: AboutMeData = await sanityFetch({
     query: aboutMeQuery,
     tags: ['about'],
-    params: { lang: locale },
+    qParams: { lang: locale },
   });
 
   return (

@@ -25,7 +25,7 @@ export default async function BlogPage({
   const posts: BlogType[] = await sanityFetch({
     query: blogListQuery,
     tags: ['blogPost'],
-    params: { lang: locale },
+    qParams: { lang: locale },
   });
 
   return (

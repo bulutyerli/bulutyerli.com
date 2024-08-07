@@ -18,7 +18,7 @@ export default async function Home({
   const projects: ProjectType[] = await sanityFetch({
     query: projectQuery,
     tags: ['projects'],
-    params: { lang: locale },
+    qParams: { lang: locale },
   });
 
   const t = await getTranslations('Hero');
