@@ -1,4 +1,7 @@
-'use client'; // Error components must be Client Components
+'use client';
+import { useEffect } from 'react';
+
+// Error components must be Client Components
 
 export default function Error({
   error,
@@ -7,6 +10,10 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
+
   return (
     <div>
       <h2>Something went wrong!</h2>

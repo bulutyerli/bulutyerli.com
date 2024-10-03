@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { spartan } from '../../fonts';
 import Container from '../../components/Container';
+import { useEffect } from 'react';
 
 export default function Error({
   error,
@@ -12,6 +13,10 @@ export default function Error({
   reset: () => void;
 }) {
   const t = useTranslations('Error');
+
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
 
   return (
     <Container className="mt-auto gap-10 flex flex-col text-center">

@@ -47,6 +47,7 @@ export default function ContactForm() {
         throw new Error();
       }
     } catch (error) {
+      console.log(error);
       setError(true);
     } finally {
       setLoading(false);
