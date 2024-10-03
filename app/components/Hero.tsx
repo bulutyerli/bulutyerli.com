@@ -20,7 +20,7 @@ export default function Hero({
 
   const generatePositions = () => {
     let iconSize: number;
-    let positions = [];
+    const positions = [];
 
     if (heroRef.current) {
       iconSize =

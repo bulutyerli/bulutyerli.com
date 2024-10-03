@@ -6,7 +6,7 @@ export interface AboutMeData {
     _type: string;
     style: string;
     _key: string;
-    markDefs: any[];
+    markDefs: unknown[];
   }[];
   image: { asset: { _ref: string; _type: string } };
   lokiBlur: string;
@@ -40,7 +40,7 @@ export interface BlogContentBlock {
     text: string;
     marks: string[];
   }[];
-  markDefs: any[];
+  markDefs: unknown[];
 }
 
 export interface BlogType {

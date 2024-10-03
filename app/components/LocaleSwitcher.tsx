@@ -7,7 +7,7 @@ import { usePathname, useRouter } from '../../navigation';
 export default function LocaleSwitcher() {
   const locale = useLocale();
 
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
   const router = useRouter();
   const pathname = usePathname();
 
