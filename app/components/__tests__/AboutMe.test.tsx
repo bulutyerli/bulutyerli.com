@@ -47,7 +47,7 @@ describe('About Me component test suite', () => {
     jest.clearAllMocks();
   });
 
-  it.only('should render component with content and image', async () => {
+  it('should render component with content and image', async () => {
     const user = userEvent.setup();
     render(<AboutMe data={mockData} />);
 
