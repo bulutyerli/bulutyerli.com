@@ -12,6 +12,14 @@ import { AboutMeData } from '../types/types';
 export default function AboutMe({ data }: { data: AboutMeData }) {
   const [loki, setLoki] = useState(false);
 
+  const components = {
+    types: {
+      span: (props) => {
+        return <p className="my-2 text-base">{props.children}</p>;
+      },
+    },
+  };
+
   return (
     <article className="relative flex justify-around items-center w-full flex-col gap-4 mb-5 md:grid grid-rows-12 grid-cols-2 justify-items-center">
       <h1
@@ -32,7 +40,7 @@ export default function AboutMe({ data }: { data: AboutMeData }) {
           blurDataURL={data.blur}
         />
         <Image
-          src={urlFor(data.loki).width(800).url()}
+          src={urlFor(data.loki).width(800).height(800).url()}
           className={`absolute top-0 rounded-2xl h-60 lg:h-96 w-auto drop-shadow-lg shadow-md transform transition-all duration-500 ${
             loki ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
           }`}
@@ -45,7 +53,7 @@ export default function AboutMe({ data }: { data: AboutMeData }) {
       </div>
 
       <div className="max-w-xs lg:max-w-lg space-y-2 indent-4 text-zinc-700 dark:text-zinc-400 row-start-4 row-end-12 col-span-1 mx-4 lg:prose-lg">
-        <PortableText value={data.content} />
+        <PortableText components={components} value={data.content} />
         <button
           className="underline font-semibold"
           onClick={() => setLoki(!loki)}
