@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-import clsx from 'clsx';
 import Container from '../Container';
 
 describe('container render test suite', () => {

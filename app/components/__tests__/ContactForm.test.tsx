@@ -1,34 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import ContactForm from '../ContactForm';
-import { NextIntlClientProvider } from 'next-intl';
-import pick from 'lodash/pick';
-import messages from '../../messages/en.json';
+
 import userEvent from '@testing-library/user-event';
 import emailjs from '@emailjs/browser';
+import { renderWithProvider } from './utils';
 
 jest.mock('@emailjs/browser');
-
-jest.mock('next/navigation', () => ({
-  usePathname: () => '/',
-  useRouter: () => ({
-    back: jest.fn(),
-    forward: jest.fn(),
-    refresh: jest.fn(),
-    push: jest.fn(),
-    prefetch: jest.fn(),
-    replace: jest.fn(),
-  }),
-  useParams: () => ({ locale: 'en' }),
-  useSelectedLayoutSegment: () => ({ locale: 'en' }),
-}));
-
-const renderWithProvider = (ui) => {
-  return render(
-    <NextIntlClientProvider locale="en" messages={pick(messages, ['Contact'])}>
-      {ui}
-    </NextIntlClientProvider>
-  );
-};
 
 describe('Contact Form Component', () => {
   beforeAll(() => {
@@ -40,7 +17,7 @@ describe('Contact Form Component', () => {
   });
 
   it('should render the form correctly', () => {
-    renderWithProvider(<ContactForm />);
+    renderWithProvider(<ContactForm />, 'Contact');
 
     expect(screen.getByLabelText(/full name/i)).toBeInTheDocument();
 
@@ -53,7 +30,7 @@ describe('Contact Form Component', () => {
 
   it('should show validation error when fields are empty', async () => {
     const user = userEvent.setup();
-    renderWithProvider(<ContactForm />);
+    renderWithProvider(<ContactForm />, 'Contact');
 
     const sendButton = screen.getByRole('button', { name: /send/i });
 
@@ -75,7 +52,7 @@ describe('Contact Form Component', () => {
       new Error('Failed to send message')
     );
     const user = userEvent.setup();
-    renderWithProvider(<ContactForm />);
+    renderWithProvider(<ContactForm />, 'Contact');
     const nameField = screen.getByLabelText(/full name/i);
 
     const emailField = screen.getByLabelText(/e-mail/i);
@@ -99,7 +76,7 @@ describe('Contact Form Component', () => {
   it('should show success message when emailjs sends the message and resets form', async () => {
     (emailjs.send as jest.Mock).mockResolvedValueOnce({ status: 200 });
     const user = userEvent.setup();
-    renderWithProvider(<ContactForm />);
+    renderWithProvider(<ContactForm />, 'Contact');
     const nameField = screen.getByLabelText(/full name/i);
 
     const emailField = screen.getByLabelText(/e-mail/i);

@@ -9,11 +9,8 @@ import { usePathname } from 'next/navigation';
 import ThemeSwitcher from './ThemeSwitcher';
 import Image from 'next/image';
 import { Link } from '../../navigation';
-
-type NavLink = {
-  title: string;
-  href: '/about-me' | '/contact' | '/blog';
-};
+import { NavLink } from '../types/types';
+import MobileMenu from './MobileMenu';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,52 +41,44 @@ export default function Header() {
     },
   ];
 
-  const mobileMenu = () => (
-    <div
-      className={`fixed top-16 left-0 w-full h-full bg-white/30 backdrop-blur-md transition-all  ease-in-out duration-300 ${
-        menuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}
-    >
-      <ul className="px-3 text-right flex flex-col gap-10 mr-6 mt-10">
-        <li className="self-end">
-          <LocaleSwitcher />
-        </li>
-        {navLinks.map((nav) => {
-          return (
-            <li onClick={() => setMenuOpen(false)} key={nav.title}>
-              <Link href={nav.href}>{nav.title}</Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-
   return (
     <header className="max-w-7xl mx-auto w-full h-16 z-10 flex items-center justify-between mt-2 sticky top-0 lg:relative bg-white dark:bg-zinc-900">
       <Link onClick={() => setMenuOpen(false)} href={'/'}>
         <Image
           src="/logo.svg"
-          alt="bulutyerli logo"
+          alt="bulutyerli.com logo"
           className="w-16 xl:w-24 h-auto cursor-pointer ml-2 dark:hidden"
           width={300}
           height={300}
         />
         <Image
           src="/logoDark.svg"
-          alt="bulutyerli logo"
+          alt="bulutyerli.com dark logo"
           className="w-16 xl:w-24 h-auto cursor-pointer ml-2 hidden dark:block"
           width={300}
           height={300}
         />
       </Link>
       <nav className="flex justify-between items-center px-3 gap-3">
-        <ThemeSwitcher classname={'md:hidden'} />
-        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+        <ThemeSwitcher
+          classname={'md:hidden'}
+          aria-label="Toggle Theme Mobile"
+        />
+        <button
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          className="md:hidden"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
-        {mobileMenu()}
-        <ul className="gap-10 md:flex hidden ">
+        {
+          <MobileMenu
+            navLinks={navLinks}
+            menuOpen={menuOpen}
+            setMenuOpen={() => setMenuOpen(false)}
+          />
+        }
+        <ul aria-label="desktop-nav" className="gap-10 md:flex hidden ">
           {navLinks.map((nav) => {
             return (
               <li key={nav.title}>
@@ -105,7 +94,7 @@ export default function Header() {
         </ul>
       </nav>
       <div className="hidden md:flex md:gap-6">
-        <ThemeSwitcher />
+        <ThemeSwitcher aria-label="Toggle Theme Desktop" />
         <LocaleSwitcher />
       </div>
     </header>
