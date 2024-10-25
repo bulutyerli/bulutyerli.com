@@ -20,6 +20,7 @@ export default function LocaleSwitcher() {
   return (
     <div className="flex gap-1 pr-2">
       <button
+        aria-label="Switch to English"
         className={`${
           locale === 'en'
             ? 'text-zinc-700 font-semibold dark:text-zinc-300'
@@ -33,6 +34,7 @@ export default function LocaleSwitcher() {
       </button>
       <div className="border border-l-0 border-zinc-400"></div>
       <button
+        aria-label="Switch to Turkish"
         className={`${
           locale === 'tr'
             ? 'text-zinc-700 font-semibold dark:text-zinc-300'
