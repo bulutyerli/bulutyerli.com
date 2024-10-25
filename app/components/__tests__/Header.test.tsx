@@ -5,21 +5,29 @@ import { screen, within } from '@testing-library/dom';
 import ThemeSwitcher from '../ThemeSwitcher';
 import userEvent from '@testing-library/user-event';
 
-jest.mock('../LocaleSwitcher', () => () => <div>locale switcher mock</div>);
-jest.mock('../MobileMenu', () => ({ navLinks, menuOpen }) => (
-  <div
-    data-testid="mobile-menu"
-    className={`fixed top-16 left-0 w-full h-full bg-white/30 backdrop-blur-md transition-all ease-in-out duration-300 ${
-      menuOpen ? 'translate-x-0' : 'translate-x-full'
-    }`}
-  >
-    {navLinks.map((link) => (
-      <a key={link.title} href={link.href}>
-        {link.title}
-      </a>
-    ))}
-  </div>
-));
+jest.mock('../LocaleSwitcher', () => {
+  const MockLocaleSwitcher = () => <div>locale switcher mock</div>;
+  Object.assign(MockLocaleSwitcher, { displayName: 'LocaleSwitcher' });
+  return MockLocaleSwitcher;
+});
+jest.mock('../MobileMenu', () => {
+  const MockMobileMenu = ({ navLinks, menuOpen }) => (
+    <div
+      data-testid="mobile-menu"
+      className={`fixed top-16 left-0 w-full h-full bg-white/30 backdrop-blur-md transition-all ease-in-out duration-300 ${
+        menuOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}
+    >
+      {navLinks.map((link) => (
+        <a key={link.title} href={link.href}>
+          {link.title}
+        </a>
+      ))}
+    </div>
+  );
+  Object.assign(MockMobileMenu, { displayName: 'MobileMenu' });
+  return MockMobileMenu;
+});
 
 describe('Header component test suite', () => {
   beforeEach(() => {
