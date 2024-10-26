@@ -8,7 +8,6 @@ Welcome to the repository for my portfolio website, [bulutyerli.com](https://bul
 - **Sanity**: Headless CMS for content management.
 - **Tailwind CSS**: Utility-first CSS framework for rapid styling.
 - **Next.js Intl**: Localization library for multi-language support.
--
 
 ## Testing
 
@@ -18,7 +17,7 @@ This project includes a suite of automated tests to ensure the functionality and
 
 - **Jest** for unit tests and coverage
 - **React Testing Library** for component testing
-- **Cypress** for end-to-end testing (will be implemented)
+- **Cypress** for end-to-end testing
 
 ## Features
 
@@ -35,7 +34,8 @@ To run this website locally:
 2. Install dependencies with `npm install`.
 3. Run the development server with `npm run dev`.
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-5. Running tests `npm test`
+5. Running unit tests `npm test`
+6. E2E tests `npm run cypress:open`
 
 ## Localization
 
