@@ -15,6 +15,7 @@ export default function MobileMenu({
 }) {
   return (
     <div
+      data-testid={'mobile-menu'}
       className={`fixed top-16 left-0 w-full h-full bg-white/30 backdrop-blur-md transition-all  ease-in-out duration-300 ${
         menuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
