@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectCard Component should render correctly 1`] = `
+<div>
+  <article
+    class="flex flex-col gap-5 lg:grid lg:grid-cols-12 items-center mb-20"
+    style="opacity: 0;"
+  >
+    <h3
+      class="text-zinc-700 dark:text-zinc-200 text-xl md:text-2xl xl:text-3xl row-start-1 row-end-2 col-start-7 text-nowrap lg:self-end"
+      style="opacity: 0; transform: translateX(100px) translateZ(0);"
+    >
+      Project Title
+    </h3>
+    <div
+      class="col-start-1 col-end-7 row-start-1 row-end-4 w-full max-w-lg lg:min-w-full flex flex-col gap-4"
+    >
+      <img
+        alt="Project Title homepage"
+        class="rounded-3xl shadow-md"
+        data-nimg="1"
+        decoding="async"
+        height="420"
+        loading="lazy"
+        src="/_next/image?url=%2Ftest-image-link&w=1200&q=75"
+        srcset="/_next/image?url=%2Ftest-image-link&w=640&q=75 1x, /_next/image?url=%2Ftest-image-link&w=1200&q=75 2x"
+        style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+        width="600"
+      />
+    </div>
+    <ul
+      class="flex col-start-9 col-end-13 row-start-3 row-end-4 justify-center lg:justify-end gap-6 w-full lg:self-baseline text-sm lg:text-base"
+    >
+      <li>
+        <a
+          class="flex items-center gap-2"
+          href="https://github.com/test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div
+            class="text-zinc-700 hover:text-zinc-800"
+          >
+            <svg
+              fill="currentColor"
+              height="24"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <span
+            class="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline"
+          >
+            GitHub
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="flex items-center gap-2"
+          href="https://live-site.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div
+            class="text-zinc-700 hover:text-zinc-800"
+          >
+            <svg
+              aria-hidden="true"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <span
+            class="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline"
+          >
+            Visit
+          </span>
+        </a>
+      </li>
+      <li
+        class="lg:hidden"
+      >
+        <button
+          class="flex items-center gap-2"
+        >
+          <span
+            class="text-zinc-700 hover:text-zinc-800"
+          >
+            <svg
+              fill="currentColor"
+              height="24"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="m7 10 5 5 5-5z"
+              />
+            </svg>
+          </span>
+          <span
+            class="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline"
+          >
+            Details
+          </span>
+        </button>
+      </li>
+    </ul>
+    <p
+      class="text-zinc-700 col-start-6 col-end-13 row-start-2 row-end-3 border border-zinc-300 rounded-3xl p-6 bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-400 dark:border-zinc-700 shadow-md text-sm md:text-base max-w-xl lg:max-w-3xl relative lg:block hidden"
+    >
+      This is a test description.
+    </p>
+    <ul
+      class="flex flex-wrap gap-2 text-xs col-start-1 col-end-7 justify-center"
+    >
+      <li
+        class="border rounded-full py-1 px-2 shadow-md bg-zinc-50 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-300 dark:border-zinc-700 dark:shadow-zinc-700 dark:shadow-setTimeout(() => {  }, timeout);"
+      >
+        React
+      </li>
+      <li
+        class="border rounded-full py-1 px-2 shadow-md bg-zinc-50 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-300 dark:border-zinc-700 dark:shadow-zinc-700 dark:shadow-setTimeout(() => {  }, timeout);"
+      >
+        TypeScript
+      </li>
+      <li
+        class="border rounded-full py-1 px-2 shadow-md bg-zinc-50 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-300 dark:border-zinc-700 dark:shadow-zinc-700 dark:shadow-setTimeout(() => {  }, timeout);"
+      >
+        Next.js
+      </li>
+    </ul>
+  </article>
+</div>
+`;
