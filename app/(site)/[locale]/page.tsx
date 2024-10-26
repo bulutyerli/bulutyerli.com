@@ -28,7 +28,10 @@ export default async function Home({
       <Hero title={t('title')} secondTitle={t('secondTitle')} />
       <Container>
         <SectionTitle title={'projects.'} />
-        <ul className="flex flex-col gap-0 lg:gap-20 mt-20">
+        <ul
+          aria-label="Projects"
+          className="flex flex-col gap-0 lg:gap-20 mt-20"
+        >
           {projects.map((data) => {
             return (
               <li key={data.title}>
