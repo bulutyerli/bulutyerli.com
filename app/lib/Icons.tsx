@@ -11,6 +11,9 @@ import {
   BiLogoHtml5,
   BiLogoRedux,
   BiLogoTypescript,
+  SiJest,
+  SiVitest,
+  SiCypress,
 } from 'react-icons/bi';
 import { SiExpress, SiNextdotjs } from 'react-icons/si';
 import { Icons } from '../types/types';
@@ -71,6 +74,18 @@ const icons: Icons[] = [
   {
     name: 'postgre',
     icon: <BiLogoPostgresql />,
+  },
+  {
+    name: 'jest',
+    icon: <SiJest />,
+  },
+  {
+    name: 'vitest',
+    icon: <SiVitest />,
+  },
+  {
+    name: 'cypress',
+    icon: <SiCypress />,
   },
 ];
 
