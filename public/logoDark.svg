@@ -1,45 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="308.33035"
+   width="308"
    zoomAndPan="magnify"
    viewBox="0 0 231.24776 99.046495"
-   height="132.062"
+   height="132"
    preserveAspectRatio="xMidYMid"
    version="1.0"
    id="svg27"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs3">
-    <clipPath
-       id="7fc2643b27">
-      <path
-         d="m 269,110 h 51 v 52 h -51 z m 0,0"
-         clip-rule="nonzero"
-         id="path1" />
-    </clipPath>
-    <clipPath
-       id="969e18eb50">
-      <path
-         d="m 263.01953,115.58203 44.91406,-12.03515 13.97657,52.16015 -44.91407,12.03516 z m 0,0"
-         clip-rule="nonzero"
-         id="path2" />
-    </clipPath>
-    <clipPath
-       id="f72306dbed">
-      <path
-         d="M 307.77734,103.58984 262.86328,115.625 276.83594,167.78516 321.75391,155.75 Z m 0,0"
-         clip-rule="nonzero"
-         id="path3" />
-    </clipPath>
-  </defs>
+
   <g
      fill="#ffffff"
      fill-opacity="1"
      id="g6"
-     transform="translate(-88.642875,-110.01172)">
+     transform="translate(-88,-110)">
     <g
-       transform="translate(83.67413,207.80821)"
+       transform="translate(83,207)"
        id="g5">
       <g
          id="g4">
@@ -53,9 +30,9 @@
      fill="#ffffff"
      fill-opacity="1"
      id="g9"
-     transform="translate(-88.642875,-110.01172)">
+     transform="translate(-88,-110)">
     <g
-       transform="translate(132.03107,207.80821)"
+       transform="translate(132,207)"
        id="g8">
       <g
          id="g7">
@@ -69,9 +46,9 @@
      fill="#ffffff"
      fill-opacity="1"
      id="g12"
-     transform="translate(-88.642875,-110.01172)">
+     transform="translate(-88,-110)">
     <g
-       transform="translate(178.15229,207.80821)"
+       transform="translate(178,207)"
        id="g11">
       <g
          id="g10">
@@ -85,9 +62,9 @@
      fill="#ffffff"
      fill-opacity="1"
      id="g15"
-     transform="translate(-88.642875,-110.01172)">
+     transform="translate(-88,-110)">
     <g
-       transform="translate(194.54666,207.80821)"
+       transform="translate(194,207)"
        id="g14">
       <g
          id="g13">
@@ -101,9 +78,9 @@
      fill="#ffffff"
      fill-opacity="1"
      id="g18"
-     transform="translate(-88.642875,-110.01172)">
+     transform="translate(-88,-110)">
     <g
-       transform="translate(240.66788,207.80821)"
+       transform="translate(240,207)"
        id="g17">
       <g
          id="g16">
@@ -117,9 +94,9 @@
      fill="#ffffff"
      fill-opacity="1"
      id="g24"
-     transform="translate(-88.642875,-110.01172)">
+     transform="translate(-88,-110)">
     <g
-       transform="translate(279.58415,207.80821)"
+       transform="translate(279,207)"
        id="g23">
       <g
          id="g22">
@@ -132,7 +109,7 @@
   <g
      clip-path="url(#7fc2643b27)"
      id="g27"
-     transform="translate(-88.642875,-110.01172)">
+     transform="translate(-88,-110)">
     <g
        clip-path="url(#969e18eb50)"
        id="g26">

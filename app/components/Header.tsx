@@ -7,10 +7,10 @@ import { useTranslations } from 'next-intl';
 import LocaleSwitcher from './LocaleSwitcher';
 import { usePathname } from 'next/navigation';
 import ThemeSwitcher from './ThemeSwitcher';
-import Image from 'next/image';
 import { Link } from '../../navigation';
 import { NavLink } from '../types/types';
 import MobileMenu from './MobileMenu';
+import Logo from './Logo';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,20 +44,9 @@ export default function Header() {
   return (
     <header className="max-w-7xl mx-auto w-full h-16 z-10 flex items-center justify-between mt-2 sticky top-0 lg:relative bg-white dark:bg-zinc-900">
       <Link onClick={() => setMenuOpen(false)} href={'/'}>
-        <Image
-          src="/logo.svg"
-          alt="bulutyerli.com logo"
-          className="w-16 xl:w-24 h-auto cursor-pointer ml-2 dark:hidden"
-          width={300}
-          height={300}
-        />
-        <Image
-          src="/logoDark.svg"
-          alt="bulutyerli.com dark logo"
-          className="w-16 xl:w-24 h-auto cursor-pointer ml-2 hidden dark:block"
-          width={300}
-          height={300}
-        />
+        <div className="w-16 xl:w-24 h-auto cursor-pointer ml-2">
+          <Logo />
+        </div>
       </Link>
       <nav className="flex justify-between items-center px-3 gap-3">
         <ThemeSwitcher

@@ -75,23 +75,6 @@ describe('Header component test suite', () => {
     ).toBeInTheDocument();
   });
 
-  it('should change the theme to the dark and have right logo versions', async () => {
-    renderWithProvider(<HeaderComponent />, 'Header');
-    const user = userEvent.setup();
-    const logo = screen.getByAltText(/bulutyerli.com logo/i);
-    const darkLogo = screen.getByAltText(/bulutyerli.com dark logo/i);
-
-    const { toggleButton, spy } = setup('dark');
-
-    expect(spy).toHaveTextContent('dark');
-    expect(logo).toHaveClass('dark:hidden');
-    expect(darkLogo).toHaveClass('hidden dark:block');
-
-    await user.click(toggleButton[1]);
-
-    expect(spy).toHaveTextContent('light');
-  });
-
   it('should open hamburger menu on menu button click', async () => {
     const user = userEvent.setup();
     renderWithProvider(<HeaderComponent />, 'Header');
