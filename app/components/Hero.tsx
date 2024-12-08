@@ -1,9 +1,10 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import IconSlider from './IconSlider';
 import icons from '../lib/Icons';
 import { Icons } from '../types/types';
+import { generatePositions } from './Hero.helpers';
 
 function Hero({ title, secondTitle }: { title: string; secondTitle: string }) {
   const [positions, setPositions] = useState<
@@ -14,57 +15,14 @@ function Hero({ title, secondTitle }: { title: string; secondTitle: string }) {
 
   console.log('Re-Rendered');
 
-  const generatePositions = useCallback(() => {
-    console.log('generate positions ran');
-
-    let iconSize: number;
-    const positions = [];
-
-    if (heroRef.current) {
-      iconSize =
-        heroRef.current.clientWidth < 1000
-          ? 48
-          : heroRef.current.clientWidth < 600
-            ? 32
-            : 72;
-
-      for (let i = 0; i < 14; i++) {
-        let isUnique = false;
-        let x: number = 0;
-        let y: number = 0;
-
-        while (!isUnique) {
-          x = Math.round(
-            Math.random() *
-              (heroRef.current.clientWidth < 1000
-                ? heroRef.current.clientWidth * 1.5
-                : heroRef.current.clientWidth - iconSize)
-          );
-          y = Math.round(
-            Math.random() * (heroRef.current.clientHeight - iconSize)
-          );
-
-          isUnique = positions.every((pos) => {
-            if (pos.x && pos.y) {
-              return (
-                Math.abs(pos.x - x) > iconSize ||
-                (Math.abs(pos.x - x) < iconSize &&
-                  Math.abs(pos.y - y) > iconSize)
-              );
-            }
-          });
-        }
-
-        positions.push({ x, y, icon: icons[i] });
-      }
-    }
-
-    return positions;
-  }, []);
-
   useEffect(() => {
-    const positions = generatePositions();
-    setPositions(positions);
+    const height = heroRef.current.clientHeight;
+    const width = heroRef.current.clientWidth;
+
+    const iconSize = width < 1000 ? 48 : width < 600 ? 32 : 72;
+
+    const newPositions = generatePositions({ icons, iconSize, height, width });
+    setPositions(newPositions);
     setFadeIn(true);
   }, []);
 
@@ -90,7 +48,7 @@ function Hero({ title, secondTitle }: { title: string; secondTitle: string }) {
         <path d="M0 25L50 20.8C100 16.7 200 8.3 300 9.7C400 11 500 22 600 23C700 24 800 15 850 10.5L900 6L900 51L850 51C800 51 700 51 600 51C500 51 400 51 300 51C200 51 100 51 50 51L0 51Z"></path>
       </svg>
       <div
-        className={`text-inherit h-5/6 min-w-full overflow-hidden absolute top-0 flex`}
+        className={`text-inherit h-5/6 min-w-full overflow-hidden absolute inset-0 flex`}
         ref={heroRef}
       >
         <ul
