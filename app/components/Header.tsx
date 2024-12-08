@@ -28,10 +28,6 @@ export default function Header() {
 
   const navLinks: NavLink[] = [
     {
-      title: t('blog'),
-      href: '/blog',
-    },
-    {
       title: t('aboutMe'),
       href: '/about-me',
     },
@@ -60,13 +56,13 @@ export default function Header() {
         >
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
-        {
+        {menuOpen && (
           <MobileMenu
             navLinks={navLinks}
             menuOpen={menuOpen}
             setMenuOpen={() => setMenuOpen(false)}
           />
-        }
+        )}
         <ul aria-label="desktop-nav" className="gap-10 md:flex hidden ">
           {navLinks.map((nav) => {
             return (

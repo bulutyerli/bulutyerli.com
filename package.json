@@ -19,6 +19,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/orderable-document-list": "^1.2.1",
     "@sanity/vision": "^3.28.0",
+    "@testing-library/cypress": "^10.0.2",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "clsx": "^2.1.0",
@@ -37,7 +38,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.2",
+    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.14",

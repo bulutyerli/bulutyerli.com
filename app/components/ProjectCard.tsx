@@ -117,9 +117,7 @@ export default function ProjectCard({
           return (
             <li
               key={skill}
-              className="border rounded-full py-1 px-2 shadow-md bg-zinc-50 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-300 dark:border-zinc-700 dark:shadow-zinc-700 dark:shadow-setTimeout(() => {
-                
-              }, timeout);"
+              className="border rounded-full py-1 px-2 shadow-md bg-zinc-50 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-300 dark:border-zinc-700 dark:shadow-zinc-700 dark:shadow-sm ;"
             >
               {skill}
             </li>

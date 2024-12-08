@@ -1,24 +1,22 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import IconSlider from './IconSlider';
 import icons from '../lib/Icons';
 import { Icons } from '../types/types';
 
-export default function Hero({
-  title,
-  secondTitle,
-}: {
-  title: string;
-  secondTitle: string;
-}) {
+function Hero({ title, secondTitle }: { title: string; secondTitle: string }) {
   const [positions, setPositions] = useState<
     Array<{ x: number; y: number; icon: Icons }>
   >([]);
   const [fadeIn, setFadeIn] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
 
-  const generatePositions = () => {
+  console.log('Re-Rendered');
+
+  const generatePositions = useCallback(() => {
+    console.log('generate positions ran');
+
     let iconSize: number;
     const positions = [];
 
@@ -62,7 +60,7 @@ export default function Hero({
     }
 
     return positions;
-  };
+  }, []);
 
   useEffect(() => {
     const positions = generatePositions();
@@ -131,3 +129,5 @@ export default function Hero({
     </section>
   );
 }
+
+export default Hero;
