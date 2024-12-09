@@ -40,7 +40,7 @@ export default function LocaleLayout({
             <Header />
           </NextIntlClientProvider>
           <NextIntlClientProvider messages={pick(messages, 'Error')}>
-            {children}
+            <main>{children}</main>
             <Analytics />
             <SpeedInsights />
           </NextIntlClientProvider>

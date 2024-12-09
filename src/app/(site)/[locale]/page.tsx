@@ -24,7 +24,7 @@ export default async function Home({
   const t = await getTranslations('Hero');
 
   return (
-    <main>
+    <>
       <Hero title={t('title')} secondTitle={t('secondTitle')} />
       <Container>
         <SectionTitle title={'projects.'} />
@@ -41,6 +41,6 @@ export default async function Home({
           })}
         </ul>
       </Container>
-    </main>
+    </>
   );
 }

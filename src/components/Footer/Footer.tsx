@@ -10,9 +10,9 @@ export default function Footer({ locale }: { locale: string }) {
   return (
     <footer className="w-full relative h-16 items-center flex bg-white mt-auto dark:bg-zinc-900">
       <section className="flex items-center justify-between mx-auto max-w-7xl w-full px-2">
-        <h3 className="text-xs md:text-sm xl:text-md text-zinc-400">{`© ${year} Bulut Yerli. ${t(
+        <p className="text-xs md:text-sm xl:text-md text-zinc-400">{`© ${year} Bulut Yerli. ${t(
           'copyright'
-        )}`}</h3>
+        )}`}</p>
         <SocialIcons size={32} />
       </section>
     </footer>

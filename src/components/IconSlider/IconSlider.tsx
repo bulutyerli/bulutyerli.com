@@ -7,6 +7,7 @@ interface SliderType {
 export default function IconSlider({ height, icon, width }: SliderType) {
   return (
     <li
+      aria-hidden
       className="absolute bg-transparent m-1 animate-bounce"
       style={{
         top: `${height}px`,

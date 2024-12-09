@@ -6,7 +6,7 @@ import { spartan } from 'fonts';
 export default function NotFound() {
   const t = useTranslations('NotFound');
   return (
-    <main className="grid min-h-full place-items-center bg-white dark:bg-zinc-900 px-6 py-24 sm:py-32 lg:px-8 my-auto">
+    <div className="grid min-h-full place-items-center bg-white dark:bg-zinc-900 px-6 py-24 sm:py-32 lg:px-8 my-auto">
       <div className="text-center">
         <p className="text-base font-semibold text-red-600">404</p>
         <h1
@@ -26,6 +26,6 @@ export default function NotFound() {
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
