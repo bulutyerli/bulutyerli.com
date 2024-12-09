@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { spartan } from '../fonts';
+import { spartan } from 'fonts';
 import './globals.css';
 
 export default function NotFound() {
