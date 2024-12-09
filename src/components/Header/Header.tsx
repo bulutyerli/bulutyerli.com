@@ -39,7 +39,7 @@ export default function Header() {
 
   return (
     <header className="max-w-7xl mx-auto w-full h-16 z-10 flex items-center justify-between mt-2 sticky top-0 lg:relative bg-white dark:bg-zinc-900">
-      <Link onClick={() => setMenuOpen(false)} href={'/'}>
+      <Link aria-label="Homepage" onClick={() => setMenuOpen(false)} href={'/'}>
         <div className="w-16 xl:w-24 h-auto cursor-pointer ml-2">
           <Logo />
         </div>

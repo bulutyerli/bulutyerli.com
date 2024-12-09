@@ -62,6 +62,7 @@ export default function ProjectCard({
               rel="noopener noreferrer"
               target="_blank"
               className="flex items-center gap-2"
+              aria-label={`${data.title} Github Link`}
             >
               <div className="text-zinc-700 hover:text-zinc-800">
                 <BiLogoGithub size={24} />
@@ -78,6 +79,7 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             target="_blank"
             className="flex items-center gap-2"
+            aria-label={`${data.title} Live Website Link`}
           >
             <div className="text-zinc-700 hover:text-zinc-800">
               <HiOutlineExternalLink size={24} />

@@ -14,7 +14,7 @@ export default function SocialIcons({
       <ul className={clsx('flex gap-2 text-zinc-400 ', className)}>
         <li className="hover:text-zinc-600">
           <Link
-            aria-label="GitHub"
+            aria-label="Bulut Yerli's GitHub Profile"
             href="https://github.com/bulutyerli"
             rel="noopener noreferrer"
             target="_blank"
@@ -24,7 +24,7 @@ export default function SocialIcons({
         </li>
         <li className="hover:text-zinc-600">
           <Link
-            aria-label="LinkedIn"
+            aria-label="Bulut Yerli's LinkedIn Profile"
             href="https://www.linkedin.com/in/bulutyerli/"
             rel="noopener noreferrer"
             target="_blank"
@@ -34,7 +34,7 @@ export default function SocialIcons({
         </li>
         <li className="hover:text-zinc-600">
           <Link
-            aria-label="Gmail"
+            aria-label="Bulut Yerli's Gmail Address"
             href="mailTo:hello@bulutyerli.com"
             rel="noopener noreferrer"
             target="_blank"
