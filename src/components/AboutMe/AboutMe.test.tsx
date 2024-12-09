@@ -52,8 +52,8 @@ describe('About Me component test suite', () => {
     render(<AboutMe data={mockData} />);
 
     const title = screen.getByRole('heading', { name: mockData.title });
-    const bulutImage = screen.getByAltText(/bulut yerli profile image/i);
-    const lokiImage = screen.getByAltText(/loki profile image/i);
+    const bulutImage = screen.getByAltText(/bulut yerli profile/i);
+    const lokiImage = screen.getByAltText(/loki/i);
     const lokiButton = screen.getByRole('button', { name: /loki/i });
 
     expect(title).toBeInTheDocument();

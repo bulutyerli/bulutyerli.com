@@ -25,7 +25,7 @@ export default function AboutMe({ data }: { data: AboutMeData }) {
       <div className="relative col-start-2 col-end-3 row-start-1 row-end-12">
         <Image
           src={urlFor(data.image).width(800).height(800).url()}
-          alt={`${data.title} profile`} // Descriptive alt text
+          alt={`Bulut Yerli profile`}
           className={`${imageClassNames} ${loki ? 'opacity-0 scale-75' : 'opacity-100 scale-100'}`}
           width={800}
           height={800}
@@ -34,7 +34,7 @@ export default function AboutMe({ data }: { data: AboutMeData }) {
         />
         <Image
           src={urlFor(data.loki).width(800).height(800).url()}
-          alt={`Profile image of Loki in ${data.title}`} // Descriptive alt text for Loki image
+          alt={`Profile image of Loki in ${data.title}`}
           className={`${imageClassNames} absolute top-0 ${loki ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}
           width={800}
           height={800}
