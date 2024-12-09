@@ -21,7 +21,7 @@ export default function ThemeSwitcher({
   }, []);
 
   if (!mounted) {
-    return null;
+    return <div className="w-[24px] h-[24px] hidden md:block" />;
   }
 
   return (

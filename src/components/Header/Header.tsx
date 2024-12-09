@@ -5,12 +5,12 @@ import { FiX } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
-import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
 import { Link } from 'navigation';
 import { NavLink } from 'types/types';
 import Logo from '../Logo/Logo';
 import LocaleSwitcher from 'components/LocaleSwitcher/LocaleSwitcher';
 import MobileMenu from 'components/MobileMenu/MobileMenu';
+import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,10 +45,9 @@ export default function Header() {
         </div>
       </Link>
       <nav className="flex justify-between items-center px-3 gap-3">
-        <ThemeSwitcher
-          classname={'md:hidden'}
-          aria-label="Toggle Theme Mobile"
-        />
+        <div className="md:hidden">
+          <ThemeSwitcher aria-label="Toggle Theme Mobile" />
+        </div>
         <button
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           className="md:hidden"
