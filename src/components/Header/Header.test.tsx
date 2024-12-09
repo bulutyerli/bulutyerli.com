@@ -35,13 +35,13 @@ describe('Header component test suite', () => {
     renderWithThemeContext(
       <>
         <ThemeSpy />
-        <ThemeSwitcher aria-label="Toggle Theme Desktop" />
+        <ThemeSwitcher aria-label="Toggle Dark Mode" />
       </>,
       { theme }
     );
     const spy = screen.getByTestId('theme-spy');
 
-    const toggleButton = screen.getAllByLabelText(/toggle theme desktop/i);
+    const toggleButton = screen.getAllByLabelText(/toggle dark mode/i);
 
     return { toggleButton, spy };
   };

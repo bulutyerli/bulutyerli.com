@@ -27,6 +27,7 @@ export default function ThemeSwitcher({
   return (
     <button
       className={classname}
+      aria-label="Toggle Dark Mode"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       {...rest} // Spread other props here
     >

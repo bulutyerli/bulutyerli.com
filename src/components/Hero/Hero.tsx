@@ -52,6 +52,7 @@ function Hero({ title, secondTitle }: { title: string; secondTitle: string }) {
         ref={heroRef}
       >
         <ul
+          aria-hidden
           className={`${
             fadeIn ? 'opacity-10 dark:opacity-15' : 'opacity-0'
           } relative min-w-full h-full animate-infinite-slider-100  transition-all duration-[3s]`}

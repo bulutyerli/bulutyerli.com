@@ -79,7 +79,7 @@ export default function Header() {
         </ul>
       </nav>
       <div className="hidden md:flex md:gap-6">
-        <ThemeSwitcher aria-label="Toggle Theme Desktop" />
+        <ThemeSwitcher />
         <LocaleSwitcher />
       </div>
     </header>
