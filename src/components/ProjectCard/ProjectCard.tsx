@@ -38,7 +38,7 @@ export default function ProjectCard({
           duration: 0.5,
           delay: 0.3,
         }}
-        className="text-zinc-700 dark:text-zinc-200 text-xl md:text-2xl xl:text-3xl row-start-1 row-end-2 col-start-7 text-nowrap lg:self-end"
+        className="text-zinc-700 dark:text-zinc-200 contrast-100 text-xl md:text-2xl xl:text-3xl row-start-1 row-end-2 col-start-7 text-nowrap lg:self-end"
       >
         {data.title}
       </motion.h3>
