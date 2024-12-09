@@ -34,7 +34,7 @@ export default function LocaleLayout({
 
   return (
     <html lang={locale} className={roboto.className} suppressHydrationWarning>
-      <body className="flex flex-col w-full min-h-screen dark:bg-zinc-900">
+      <body className="dark:bg-zinc-900">
         <ThemeProvider attribute="class">
           <NextIntlClientProvider messages={pick(messages, 'Header')}>
             <Header />

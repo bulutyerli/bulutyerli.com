@@ -30,8 +30,8 @@ export default function ContactPage({
   const messages = useMessages();
 
   return (
-    <Container className="mt-auto flex flex-col text-center">
-      <div className="flex-col gap-3 flex mb-10 lg:mb-20 mt-10 lg:mt-0">
+    <Container className="text-center">
+      <div className="flex-col gap-3 mb-7">
         <h1 className="text-2xl lg:text-3xl text-zinc-700 dark:text-zinc-300">
           {t('title')}
         </h1>

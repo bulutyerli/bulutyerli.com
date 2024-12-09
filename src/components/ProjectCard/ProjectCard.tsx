@@ -28,7 +28,7 @@ export default function ProjectCard({
       initial={{ opacity: 0 }}
       animate={{ opacity: isInView ? 1 : 0 }}
       transition={{ duration: 1, delay: 0.1 }}
-      className="flex flex-col gap-5 lg:grid lg:grid-cols-12 items-center mb-20"
+      className="flex flex-col gap-5 lg:grid lg:grid-cols-12 items-center mb-20 mx-10"
     >
       <motion.h3
         ref={ref}

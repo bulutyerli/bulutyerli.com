@@ -56,7 +56,7 @@ export default function ContactForm() {
 
   return (
     <form
-      className="w-full max-w-sm relative"
+      className="w-4/5 lg:w-full max-w-sm relative"
       onSubmit={handleSubmit(sendEmail)}
     >
       <label
