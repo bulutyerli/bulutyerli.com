@@ -8,10 +8,16 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const config: Config = {
+  moduleDirectories: ['node_modules', '<rootDir>/'],
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  testPathIgnorePatterns: ['app/components/__tests__/utils.tsx'],
+  testPathIgnorePatterns: ['src/components/__tests__/utils.tsx'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^lib/(.*)$': '<rootDir>/src/lib/$1',
+    '^components$': '<rootDir>/src/components',
+  },
 
   // Add more setup options before each test is run
   // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],

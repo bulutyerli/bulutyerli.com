@@ -1,7 +1,7 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
-import { schemaTypes } from './app/schemas';
+import { schemaTypes } from './src/schemas';
 import { codeInput } from '@sanity/code-input';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 
