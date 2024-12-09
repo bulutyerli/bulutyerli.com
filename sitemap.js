@@ -19,12 +19,6 @@ export default function sitemap() {
       priority: 0.2,
     },
     {
-      url: 'https://www.bulutyerli.com/en/blog',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
       url: 'https://www.bulutyerli.com/tr',
       lastModified: new Date(),
       changeFrequency: 'yearly',

@@ -11,7 +11,7 @@ export default function SocialIcons({
 }) {
   return (
     <div>
-      <ul className={clsx('flex gap-2 text-zinc-500 ', className)}>
+      <ul className={clsx('flex gap-2 text-zinc-400 ', className)}>
         <li className="hover:text-zinc-600">
           <Link
             aria-label="GitHub"

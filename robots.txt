@@ -1,3 +1,5 @@
 User-Agent: *
 Allow: /
+Disallow: /studio/
+
 Sitemap: https://www.bulutyerli.com/sitemap.xml

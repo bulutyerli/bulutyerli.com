@@ -66,7 +66,7 @@ export default function ProjectCard({
               <div className="text-zinc-700 hover:text-zinc-800">
                 <BiLogoGithub size={24} />
               </div>
-              <span className="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline">
+              <span className="font-semibold text-zinc-400 hover:text-zinc-600 hover:underline">
                 GitHub
               </span>
             </Link>
@@ -82,7 +82,7 @@ export default function ProjectCard({
             <div className="text-zinc-700 hover:text-zinc-800">
               <HiOutlineExternalLink size={24} />
             </div>
-            <span className="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline">
+            <span className="font-semibold text-zinc-400 hover:text-zinc-600 hover:underline">
               {lang === 'tr' ? 'Ziyaret Et' : 'Visit'}
             </span>
           </Link>
@@ -99,7 +99,7 @@ export default function ProjectCard({
                 <MdArrowDropDown size={24} />
               )}
             </span>
-            <span className="font-semibold text-zinc-500 hover:text-zinc-600 hover:underline">
+            <span className="font-semibold text-zinc-400 hover:text-zinc-600 hover:underline">
               {lang === 'tr' ? 'Detaylar' : 'Details'}
             </span>
           </button>
