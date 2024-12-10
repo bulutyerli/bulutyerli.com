@@ -5,7 +5,6 @@ Welcome to the repository for my portfolio website, [bulutyerli.com](https://bul
 ## Technologies Used
 
 - **Next.js**: React framework for server-side rendering.
-- **Sanity**: Headless CMS for content management.
 - **Tailwind CSS**: Utility-first CSS framework for rapid styling.
 - **Next.js Intl**: Localization library for multi-language support.
 

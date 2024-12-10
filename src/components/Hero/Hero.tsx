@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import icons from 'lib/Icons';
+import icons from 'data/Icons';
 import { Icons } from 'types/types';
 import { generatePositions } from './Hero.helpers';
 import IconSlider from 'components/IconSlider/IconSlider';
@@ -12,8 +12,6 @@ function Hero({ title, secondTitle }: { title: string; secondTitle: string }) {
   >([]);
   const [fadeIn, setFadeIn] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
-
-  console.log('Re-Rendered');
 
   useEffect(() => {
     const height = heroRef.current.clientHeight;
@@ -28,7 +26,7 @@ function Hero({ title, secondTitle }: { title: string; secondTitle: string }) {
 
   return (
     <section className="relative">
-      <div className="flex flex-col items-center justify-center gap-6 bg-gradient-to-t from-zinc-100 to-white dark:from-black dark:to-zinc-900 min-h-96 md:h-[600px] xl:h-[700px] 2xl:h-[800px]">
+      <div className="flex flex-col items-center justify-center gap-6 bg-gradient-to-t from-zinc-100 to-white dark:from-black dark:to-zinc-900 min-h-96 md:h-[600px] xl:h-[700px] 2xl:h-[500px]">
         <h1 className="text-2xl md:text-4xl xl:text-6xl text-zinc-700 dark:text-zinc-200">
           {title}
         </h1>
