@@ -7,8 +7,8 @@ interface ContainerType {
 
 export default function Container({ className, children }: ContainerType) {
   return (
-    <section className={clsx('mx-auto max-w-7xl w-full px-5', className)}>
+    <div className={clsx('mx-auto max-w-7xl w-full px-5', className)}>
       {children}
-    </section>
+    </div>
   );
 }

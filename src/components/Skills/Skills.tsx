@@ -6,6 +6,7 @@ import { Icons } from 'types/types';
 import { generatePositions } from './Skills.helpers';
 import IconSlider from 'components/IconSlider/IconSlider';
 import SectionTitle from 'components/SectionTitle/SectionTitle';
+import skills from './Skills.constants';
 
 export default function Skills() {
   const [positions, setPositions] = useState<
@@ -25,10 +26,13 @@ export default function Skills() {
     setFadeIn(true);
   }, []);
 
-  return (
-    <section className="relative min-h-96 md:h-[300px] xl:h-[400px] 2xl:h-[500px] bg-gradient-to-t from-zinc-100 to-white dark:from-black dark:to-zinc-900">
-      <SectionTitle>my skills.</SectionTitle>
+  const skillList = skills;
 
+  return (
+    <section className="relative min-h-[300px] xl:h-[400px] 2xl:h-[500px] bg-gradient-to-b from-zinc-100 via-zinc-100 to-zinc-100 dark:from-zinc-950 dark:via-zinc-800 dark:to-zinc-950">
+      <SectionTitle className="dark:bg-zinc-950 bg-zinc-100">
+        my skills.
+      </SectionTitle>
       <div
         className={`text-inherit h-full min-w-full overflow-hidden absolute inset-0 flex `}
         ref={heroRef}
@@ -67,6 +71,14 @@ export default function Skills() {
           })}
         </ul>
       </div>
+      <ol className="list-none grid grid-cols-2 text-xs sm:text-base sm:grid-cols-3 md:grid-cols-4 text-zinc-700 dark:text-zinc-400 place-self-center gap-4 md:gap-10 h-full py-6 md:py-14">
+        {skillList.map((skill) => (
+          <li key={skill.id} className="pl-4 relative flex items-center gap-2">
+            <span className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 rounded-full border-zinc-300 dark:border-zinc-600 border-2" />
+            {skill.name}
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }
