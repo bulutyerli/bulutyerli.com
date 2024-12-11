@@ -4,7 +4,6 @@ import {
   BiLogoJavascript,
   BiLogoReact,
   BiLogoNodejs,
-  BiLogoFigma,
   BiLogoCss3,
   BiLogoTailwindCss,
   BiLogoGithub,
@@ -19,77 +18,89 @@ import {
   SiVitest,
   SiCypress,
 } from 'react-icons/si';
-import { Icons } from '../types/types';
 
-const icons: Icons[] = [
+const skills = [
   {
-    name: 'javascript',
+    id: 1,
+    name: 'JavaScript',
     icon: <BiLogoJavascript />,
   },
   {
-    name: 'typescript',
+    id: 2,
+    name: 'TypeScript',
     icon: <BiLogoTypescript />,
   },
   {
-    name: 'html',
+    id: 3,
+    name: 'HTML',
     icon: <BiLogoHtml5 />,
   },
   {
-    name: 'css',
+    id: 4,
+    name: 'CSS',
     icon: <BiLogoCss3 />,
   },
+
   {
-    name: 'tailwind',
-    icon: <BiLogoTailwindCss />,
-  },
-  {
-    name: 'react',
+    id: 5,
+    name: 'React',
     icon: <BiLogoReact />,
   },
   {
-    name: 'next',
+    id: 6,
+    name: 'Next.js',
     icon: <SiNextdotjs />,
   },
   {
-    name: 'node',
+    id: 7,
+    name: 'Node.js',
     icon: <BiLogoNodejs />,
   },
   {
-    name: 'express',
+    id: 8,
+    name: 'Express',
     icon: <SiExpress />,
   },
   {
-    name: 'redux',
-    icon: <BiLogoRedux />,
-  },
-  {
-    name: 'github',
-    icon: <BiLogoGithub />,
-  },
-  {
-    name: 'figma',
-    icon: <BiLogoFigma />,
-  },
-  {
-    name: 'mongo',
-    icon: <BiLogoMongodb />,
-  },
-  {
-    name: 'postgre',
+    id: 9,
+    name: 'PostgreSQL',
     icon: <BiLogoPostgresql />,
   },
   {
-    name: 'jest',
+    id: 10,
+    name: 'MongoDB',
+    icon: <BiLogoMongodb />,
+  },
+  {
+    id: 11,
+    name: 'Tailwind CSS',
+    icon: <BiLogoTailwindCss />,
+  },
+  {
+    id: 12,
+    name: 'Jest',
     icon: <SiJest />,
   },
   {
-    name: 'vitest',
+    id: 13,
+    name: 'React Testing Library',
     icon: <SiVitest />,
   },
   {
-    name: 'cypress',
+    id: 14,
+    name: 'Cypress',
     icon: <SiCypress />,
+  },
+  {
+    id: 15,
+    name: 'Redux',
+    icon: <BiLogoRedux />,
+  },
+  {
+    id: 16,
+    name: 'Git',
+    icon: <BiLogoGithub />,
   },
 ];
 
-export default icons;
+export default skills;

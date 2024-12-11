@@ -43,7 +43,7 @@ export default function AboutMe() {
             </div>
           </div>
 
-          <div className="max-w-sm sm:max-w-4xl space-y-2 columns-1 sm:columns-2 gap-24 text-zinc-700 dark:text-zinc-400">
+          <div className="max-w-sm sm:max-w-4xl space-y-2 columns-1 sm:columns-2 gap-24 text-zinc-700 dark:text-zinc-400 text-sm md:text-base">
             <p className="break-inside-avoid">
               For 12 years, I worked in the logistics department of corporate
               aviation firms, where I developed strong problem-solving skills
