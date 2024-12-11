@@ -1,6 +1,10 @@
 import { spartan } from 'fonts';
 
-export default function SectionTitle({ title }: { title: string }) {
+export default function SectionTitle({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div className="relative my-10 mt-10 lg:mt-20 max-w-3xl mx-auto">
       <div className="absolute inset-0 flex items-center" aria-hidden="true">
@@ -10,7 +14,7 @@ export default function SectionTitle({ title }: { title: string }) {
         <h2
           className={`${spartan.className} text-2xl md:text-3xl xl:text-4xl tracking-tighter font-semibold text-center bg-white dark:bg-zinc-900 pr-3 leading-6 text-zinc-700 dark:text-zinc-300`}
         >
-          {title}
+          {children}
         </h2>
       </div>
     </div>

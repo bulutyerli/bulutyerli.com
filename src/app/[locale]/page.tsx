@@ -1,8 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import Hero from 'components/Hero/Hero';
-import Container from 'components/Container/Container';
-import SectionTitle from 'components/SectionTitle/SectionTitle';
+import ContactSection from 'components/ContactSection/ContactSection';
+import Skills from 'components/Skills/Skills';
 
 export default async function Home({
   params: { locale },
@@ -15,14 +15,9 @@ export default async function Home({
 
   return (
     <>
-      <Hero title={t('title')} secondTitle={t('secondTitle')} />
-      <Container>
-        <SectionTitle title={'projects.'} />
-        <ul
-          aria-label="Projects"
-          className="flex flex-col gap-0 lg:gap-20 mt-20"
-        ></ul>
-      </Container>
+      <Hero />
+      <Skills />
+      <ContactSection />
     </>
   );
 }
