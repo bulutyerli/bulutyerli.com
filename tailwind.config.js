@@ -10,16 +10,12 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage: {
-        hero_pattern: "url('../assets/wave.svg')",
-        poly: "url('../assets/poly.svg')",
-      },
       fontFamily: {
         roboto: ['var(--font-roboto)'],
         title: ['var(--font-spartan)'],
       },
       animation: {
-        ['infinite-slider-100']: 'infiniteSlider 200s linear infinite',
+        ['infinite-slider-100']: 'infiniteSlider 75s linear infinite',
         ['bounce']: 'bounceAnimation 10s infinite',
       },
       keyframes: {
@@ -31,7 +27,7 @@ module.exports = {
         },
         bounceAnimation: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(15%)' },
+          '50%': { transform: 'translateY(30%)' },
         },
       },
     },

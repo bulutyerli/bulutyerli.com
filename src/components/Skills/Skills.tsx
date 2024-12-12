@@ -4,15 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 import { Icons } from 'types/types';
 import { generatePositions } from './Skills.helpers';
 import IconSlider from 'components/IconSlider/IconSlider';
-import SectionTitle from 'components/SectionTitle/SectionTitle';
 import skills from './Skills.constants';
+import clsx from 'clsx';
 
 export default function Skills() {
   const [positions, setPositions] = useState<
     Array<{ x: number; y: number; icon: Icons }>
   >([]);
   const [fadeIn, setFadeIn] = useState(false);
-  const [animated, setAnimated] = useState<number | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,68 +25,66 @@ export default function Skills() {
     setFadeIn(true);
   }, []);
 
-  const hoverAnimateHandler = (id: number) => {
-    setAnimated(id);
-  };
-
   return (
-    <section className="relative min-h-[300px] xl:h-[400px] 2xl:h-[500px] bg-gradient-to-b from-zinc-100 via-zinc-100 to-zinc-100 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950">
-      <SectionTitle className="dark:bg-zinc-950 bg-zinc-100">
-        my skills.
-      </SectionTitle>
+    <section className="relative min-h-[400px] xl:h-[500px] 2xl:h-[600px] bg-gradient-to-b from-zinc-100 via-zinc-100 to-zinc-100 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 pt-4">
       <div
         className={`text-inherit h-full min-w-full overflow-hidden absolute inset-0 flex `}
         ref={heroRef}
       >
         <ul
           aria-hidden
-          className={`${
-            fadeIn ? 'opacity-10 dark:opacity-15' : 'opacity-0'
-          } relative min-w-full h-full animate-infinite-slider-100  transition-all duration-[3s]`}
+          className={clsx(
+            'relative min-w-[150%] md:min-w-full h-full animate-infinite-slider-100  transition-all duration-[3s]',
+            fadeIn ? 'opacity-100 dark:opacity-70' : 'opacity-0'
+          )}
         >
           {positions.map((element) => {
+            const Icon = element.icon.icon;
             return (
               <IconSlider
                 key={element.icon.name}
-                icon={element.icon.icon}
                 height={element.y.toString()}
                 width={element.x.toString()}
-                animated={element.icon.id === animated}
-              />
+              >
+                <div className="flex flex-col items-center justify-center cursor-pointer grayscale hover:grayscale-0 transition-all duration-500 hover:scale-150 opacity-75 dark:opacity-75 hover:opacity-100 dark:hover:opacity-100">
+                  <span>
+                    <Icon className="w-12 h-12" />
+                  </span>
+                  <p className="text-xs md:text-base text-center text-zinc-800 dark:text-zinc-100">
+                    {element.icon.name}
+                  </p>
+                </div>
+              </IconSlider>
             );
           })}
         </ul>
         <ul
-          className={`${
-            fadeIn ? 'opacity-10 dark:opacity-15' : 'opacity-0'
-          } relative min-w-full h-full animate-infinite-slider-100  transition-all duration-[3s]`}
+          className={clsx(
+            'relative min-w-[150%] md:min-w-full h-full animate-infinite-slider-100 transition-all duration-[3s]    will-change-transform, opacity',
+            fadeIn ? 'opacity-100 dark:opacity-70' : 'opacity-0'
+          )}
         >
           {positions.map((element) => {
+            const Icon = element.icon.icon;
             return (
               <IconSlider
                 key={element.icon.name}
-                icon={element.icon.icon}
                 height={element.y.toString()}
                 width={element.x.toString()}
-                animated={element.icon.id === animated}
-              />
+              >
+                <div className="flex flex-col items-center justify-center cursor-pointer grayscale hover:grayscale-0 transition-all duration-500 hover:scale-150 opacity-75 dark:opacity-75 hover:opacity-100 dark:hover:opacity-100">
+                  <span>
+                    <Icon className="w-12 h-12" />
+                  </span>
+                  <p className="text-xs md:text-base text-center text-zinc-800 dark:text-zinc-100">
+                    {element.icon.name}
+                  </p>
+                </div>
+              </IconSlider>
             );
           })}
         </ul>
       </div>
-      <ol className="list-none grid grid-cols-2 text-xs sm:text-base sm:grid-cols-3 md:grid-cols-4 text-zinc-700 dark:text-zinc-400 place-self-center gap-4 md:gap-10 h-full py-6 md:py-14">
-        {skills.map((skill) => (
-          <li
-            onMouseEnter={() => hoverAnimateHandler(skill.id)}
-            onMouseLeave={() => setAnimated(null)}
-            key={skill.id}
-            className="pl-4 relative flex items-center gap-2 cursor-pointer"
-          >
-            <span className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 rounded-full border-zinc-300 dark:border-zinc-600 border-2" />
-            {skill.name}
-          </li>
-        ))}
-      </ol>
     </section>
   );
 }

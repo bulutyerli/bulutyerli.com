@@ -1,105 +1,94 @@
-import {
-  BiLogoMongodb,
-  BiLogoPostgresql,
-  BiLogoJavascript,
-  BiLogoReact,
-  BiLogoNodejs,
-  BiLogoCss3,
-  BiLogoTailwindCss,
-  BiLogoGithub,
-  BiLogoHtml5,
-  BiLogoRedux,
-  BiLogoTypescript,
-} from 'react-icons/bi';
-import {
-  SiExpress,
-  SiNextdotjs,
-  SiJest,
-  SiVitest,
-  SiCypress,
-} from 'react-icons/si';
+import JavascriptLogo from '/public/icons/javascript.svg';
+import TypeScriptLogo from '/public/icons/typescript.svg';
+import CssLogo from '/public/icons/css.svg';
+import HtmlLogo from '/public/icons/html.svg';
+import ExpressLogo from '/public/icons/express.svg';
+import CypressLogo from '/public/icons/cypress.svg';
+import ReactLogo from '/public/icons/react.svg';
+import TailwindLogo from '/public/icons/tailwind.svg';
+import NextjsLogo from '/public/icons/nextjs.svg';
+import JestLogo from '/public/icons/jest.svg';
+import MongoLogo from '/public/icons/mongo.svg';
+import PostgresqlLogo from '/public/icons/postgresql.svg';
+import NodejsLogo from '/public/icons/nodejs.svg';
+import ReduxLogo from '/public/icons/redux.svg';
+import GitLogo from '/public/icons/git.svg';
 
 const skills = [
   {
     id: 1,
     name: 'JavaScript',
-    icon: <BiLogoJavascript />,
+    icon: JavascriptLogo, // React component reference
   },
   {
     id: 2,
     name: 'TypeScript',
-    icon: <BiLogoTypescript />,
+    icon: TypeScriptLogo,
   },
   {
     id: 3,
     name: 'HTML',
-    icon: <BiLogoHtml5 />,
+    icon: HtmlLogo,
   },
   {
     id: 4,
     name: 'CSS',
-    icon: <BiLogoCss3 />,
+    icon: CssLogo,
   },
-
   {
     id: 5,
     name: 'React',
-    icon: <BiLogoReact />,
+    icon: ReactLogo,
   },
   {
     id: 6,
     name: 'Next.js',
-    icon: <SiNextdotjs />,
+    icon: NextjsLogo,
   },
   {
     id: 7,
     name: 'Node.js',
-    icon: <BiLogoNodejs />,
+    icon: NodejsLogo,
   },
   {
     id: 8,
     name: 'Express',
-    icon: <SiExpress />,
+    icon: ExpressLogo,
   },
   {
     id: 9,
     name: 'PostgreSQL',
-    icon: <BiLogoPostgresql />,
+    icon: PostgresqlLogo,
   },
   {
     id: 10,
     name: 'MongoDB',
-    icon: <BiLogoMongodb />,
+    icon: MongoLogo,
   },
   {
     id: 11,
     name: 'Tailwind CSS',
-    icon: <BiLogoTailwindCss />,
+    icon: TailwindLogo,
   },
   {
     id: 12,
     name: 'Jest',
-    icon: <SiJest />,
-  },
-  {
-    id: 13,
-    name: 'React Testing Library',
-    icon: <SiVitest />,
+    icon: JestLogo,
   },
   {
     id: 14,
     name: 'Cypress',
-    icon: <SiCypress />,
+    icon: CypressLogo,
   },
   {
     id: 15,
     name: 'Redux',
-    icon: <BiLogoRedux />,
+    icon: ReduxLogo,
   },
   {
     id: 16,
     name: 'Git',
-    icon: <BiLogoGithub />,
+    icon: GitLogo,
   },
 ];
 

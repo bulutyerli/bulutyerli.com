@@ -1,7 +1,9 @@
+import { FC, SVGProps } from 'react';
+
 export interface Icons {
   id: number;
   name: string;
-  icon: React.ReactNode;
+  icon: FC<SVGProps<SVGElement>>;
 }
 
 export type NavLink = {

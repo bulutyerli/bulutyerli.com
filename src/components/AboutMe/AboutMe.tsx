@@ -12,7 +12,7 @@ export default function AboutMe() {
   const imageClassNames = `rounded-2xl transform transition-all duration-500`;
 
   return (
-    <section className="relative">
+    <section className="relative -mb-1">
       <Container>
         <article className="relative flex flex-col items-center gap-5 md:gap-10 sm:py-20 py-10 h-full">
           <div className="flex items-center justify-center gap-6">
@@ -34,8 +34,8 @@ export default function AboutMe() {
               <Image
                 src="/lokiphoto.png"
                 alt={`Profile image of Loki`}
-                className={`w-full h-full absolute translate-x-10 md:translate-x-20 translate-y-9 bottom-0 scale-[65%] ${imageClassNames} ${
-                  loki ? 'opacity-100' : 'opacity-0 '
+                className={`w-full h-full absolute translate-x-10 md:translate-x-20 translate-y-10 bottom-0 scale-[60%] ${imageClassNames} ${
+                  loki ? 'translate-y-full -rotate-45' : 'rotate-0'
                 }`}
                 width={800}
                 height={800}
@@ -78,7 +78,7 @@ export default function AboutMe() {
         width="900"
         height="50"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-auto rotate-180 fill-white bg-zinc-100 dark:fill-zinc-900 dark:bg-zinc-950 pt-2"
+        className="w-full h-auto rotate-180 fill-white bg-zinc-100 dark:fill-zinc-900 dark:bg-zinc-950 "
         version="1.1"
       >
         <path d="M0 25L50 20.8C100 16.7 200 8.3 300 9.7C400 11 500 22 600 23C700 24 800 15 850 10.5L900 6L900 51L850 51C800 51 700 51 600 51C500 51 400 51 300 51C200 51 100 51 50 51L0 51Z"></path>
