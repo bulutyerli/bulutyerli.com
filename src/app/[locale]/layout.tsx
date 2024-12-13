@@ -10,6 +10,7 @@ import { locales } from 'navigation';
 import ThemeProvider from 'providers/ThemeProvider';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
+import Container from 'components/Container/Container';
 
 export const metadata = {
   title: 'Bulut Yerli Full-Stack Web Developer ',

@@ -35,7 +35,7 @@ export default function AboutMe() {
                 src="/lokiphoto.png"
                 alt={`Profile image of Loki`}
                 className={`w-full h-full absolute translate-x-10 md:translate-x-20 translate-y-10 bottom-0 scale-[60%] ${imageClassNames} ${
-                  loki ? 'translate-y-full -rotate-45' : 'rotate-0'
+                  !loki ? 'translate-y-full -rotate-45' : 'rotate-0'
                 }`}
                 width={800}
                 height={800}
@@ -72,17 +72,6 @@ export default function AboutMe() {
           <BgPattern classname="absolute inset-0 h-full w-full -z-10 stroke-zinc-300 dark:stroke-zinc-700 [mask-image:radial-gradient(22rem_22rem_at_center,white,transparent)] " />
         </article>
       </Container>
-      <svg
-        id="visual"
-        viewBox="0 0 900 50"
-        width="900"
-        height="50"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-auto rotate-180 fill-white bg-zinc-100 dark:fill-zinc-900 dark:bg-zinc-950 "
-        version="1.1"
-      >
-        <path d="M0 25L50 20.8C100 16.7 200 8.3 300 9.7C400 11 500 22 600 23C700 24 800 15 850 10.5L900 6L900 51L850 51C800 51 700 51 600 51C500 51 400 51 300 51C200 51 100 51 50 51L0 51Z"></path>
-      </svg>
     </section>
   );
 }
