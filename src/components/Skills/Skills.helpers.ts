@@ -23,12 +23,12 @@ export const generatePositions = ({
     let y: number = 0;
     let attempts = 0;
 
+    console.log(iconSize);
+
     while (!isUnique && attempts < maxAttempts) {
       attempts++;
 
       // Adjust width for very small screens
-
-      console.log(newWidth);
 
       x = Math.round(Math.random() * (newWidth - iconSize));
       y = Math.round(Math.random() * (height - iconSize));
@@ -54,7 +54,6 @@ export const generatePositions = ({
 
     positions.push({ x, y, icon: skills[i] });
   }
-
   console.log(positions);
 
   return positions;

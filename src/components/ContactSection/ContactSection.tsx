@@ -17,7 +17,7 @@ export default function ContactSection() {
   const messages = useMessages();
 
   return (
-    <Container className="text-center">
+    <Container className="text-center relative">
       <SectionTitle>contact.</SectionTitle>
       <div className="flex-col gap-3 mb-7">
         <h1 className="text-2xl lg:text-3xl text-zinc-700 dark:text-zinc-300">
@@ -44,7 +44,7 @@ export default function ContactSection() {
           <ContactForm />
         </NextIntlClientProvider>
       </div>
-      <BgPattern classname="absolute inset-0 h-full w-full -z-10 stroke-zinc-300 dark:stroke-zinc-700 [mask-image:radial-gradient(22rem_22rem_at_center,white,transparent)] " />
+      <BgPattern classname="absolute inset-0 h-full w-full stroke-zinc-300 dark:stroke-zinc-700 [mask-image:radial-gradient(22rem_22rem_at_center,white,transparent)]" />
     </Container>
   );
 }
