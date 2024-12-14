@@ -18,7 +18,7 @@ export default function Skills() {
   useEffect(() => {
     const height = heroRef.current.clientHeight;
     const width = heroRef.current.clientWidth;
-    const newIconSize = (width < 800 ? 10 : 14) * 4; // *4 because of rem to px change
+    const newIconSize = (width < 800 ? 10 : 12) * 4; // *4 because of rem to px change
     const newPositions = generatePositions({
       skills,
       iconSize: newIconSize,
@@ -80,7 +80,7 @@ export default function Skills() {
                     )}
                   >
                     <span>
-                      <Icon className="w-10 h-10 md:w-14 md:h-14" />
+                      <Icon className="w-10 h-10 md:w-13 md:h-13" />
                     </span>
                     <p className="text-xs md:text-base text-center text-zinc-800 dark:text-zinc-100">
                       {element.icon.name}
@@ -113,7 +113,7 @@ export default function Skills() {
                     )}
                   >
                     <span>
-                      <Icon className="w-10 h-10 md:w-14 md:h-14" />
+                      <Icon className="w-10 h-10 md:w-13 md:h-13" />
                     </span>
                     <p className="text-xs md:text-base text-center text-zinc-800 dark:text-zinc-100">
                       {element.icon.name}
