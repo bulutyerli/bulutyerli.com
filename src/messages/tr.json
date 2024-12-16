@@ -37,6 +37,29 @@
     "success": "Mesajınız için teşekkürler!"
   },
 
+  "projects": {
+    "patilerce": {
+      "title": "patilerce.com",
+      "summary": "a website",
+      "image": "/projects/patilerce/patilerce.webp",
+      "slug": "patilerce",
+      "liveUrl": "https://www.patilerce.com"
+    },
+    "workwise": {
+      "title": "WorkWise",
+      "summary": "a website hr management",
+      "image": "/projects/workwise/workwise.webp",
+      "slug": "workwise",
+      "liveUrl": "https://work-wisee.vercel.app"
+    },
+    "nuvola-coffee-shop": {
+      "title": "Nuvola Coffee Shop",
+      "summary": "a website about coffee shop",
+      "image": "/projects/nuvola-coffee-shop/nuvolacoffeeshop.webp",
+      "slug": "nuvola-coffee-shop",
+      "liveUrl": "https://www.nuvolacoffee.store"
+    }
+  },
   "Footer": {
     "copyright": "Tüm hakları saklıdır."
   }
