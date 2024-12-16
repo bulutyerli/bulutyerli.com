@@ -14,10 +14,6 @@ export const pathnames = {
     en: '/contact',
     tr: '/iletisim',
   },
-  '/blog': {
-    en: '/blog',
-    tr: '/blog',
-  },
 };
 
 export const { Link, redirect, usePathname, useRouter, getPathname } =
