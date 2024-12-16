@@ -8,5 +8,5 @@ export interface Icons {
 
 export type NavLink = {
   title: string;
-  href: '/about-me' | '/contact' | '/blog';
+  href: '/about-me' | '/contact';
 };

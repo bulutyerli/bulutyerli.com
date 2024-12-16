@@ -15,11 +15,11 @@ export default async function Home({
   const t = await getTranslations('Hero');
 
   return (
-    <>
+    <main className="flex flex-col gap-20">
       <AboutMe />
       <Skills />
       <Projects />
       <ContactSection />
-    </>
+    </main>
   );
 }

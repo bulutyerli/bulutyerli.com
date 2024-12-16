@@ -80,7 +80,7 @@ export default function Skills() {
                     )}
                   >
                     <span>
-                      <Icon className="w-10 h-10 md:w-13 md:h-13" />
+                      <Icon className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14" />
                     </span>
                     <p className="text-xs md:text-base text-center text-zinc-800 dark:text-zinc-100">
                       {element.icon.name}
@@ -113,7 +113,7 @@ export default function Skills() {
                     )}
                   >
                     <span>
-                      <Icon className="w-10 h-10 md:w-13 md:h-13" />
+                      <Icon className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14" />
                     </span>
                     <p className="text-xs md:text-base text-center text-zinc-800 dark:text-zinc-100">
                       {element.icon.name}
