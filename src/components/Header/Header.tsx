@@ -38,14 +38,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="max-w-7xl mx-auto w-full h-16 z-10 flex items-center justify-between mt-2 sticky top-0 lg:relative bg-white dark:bg-zinc-900">
+    <header className="max-w-7xl mx-auto w-full h-16 z-20 flex items-center justify-between mt-2 sticky top-0 bg-white/50 dark:bg-zinc-900/80 backdrop-blur-md">
       <Link aria-label="Homepage" onClick={() => setMenuOpen(false)} href={'/'}>
-        <div className="w-16 xl:w-24 h-auto cursor-pointer ml-2">
+        <div className="w-16 xl:w-24 h-auto cursor-pointer ml-2 mb-4">
           <Logo />
         </div>
       </Link>
       <nav className="flex justify-between items-center px-3 gap-3">
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center">
           <ThemeSwitcher aria-label="Toggle Theme Mobile" />
         </div>
         <button
