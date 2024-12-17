@@ -27,22 +27,25 @@ export default function ProjectCard({
     <div
       className={clsx(
         'flex flex-col',
-        featured ? 'w-full text-center' : 'lg:flex-grow',
+        featured ? 'w-full md:text-center' : 'max-w-full md:max-w-[45%]',
         className
       )}
     >
       <div
         className={clsx(
-          'relative overflow-hidden rounded-lg shadow-md drop-shadow-md',
-          featured ? 'aspect-[2/1] md:aspect-[3/1]' : 'aspect-[4/2]'
+          'relative overflow-hidden rounded-lg shadow-md drop-shadow-md'
         )}
       >
         <Link href={formattedLinks(slug)}>
           <Image
-            className="object-cover hover:scale-110 transition-transform duration-500"
+            className={clsx(
+              'hover:scale-110 transition-transform duration-500 object-cover',
+              featured ? 'aspect-[4/2] lg:aspect-[4/1]' : 'aspect-[2/1]'
+            )}
             src={formattedLinks(imageLink)}
             alt={`${title} screenshot`}
-            fill
+            width={featured ? 2800 : 1400}
+            height={700}
           />
         </Link>
       </div>
@@ -50,7 +53,7 @@ export default function ProjectCard({
       <div
         className={clsx(
           ' flex flex-col gap-3 max-w-96',
-          featured ? 'self-center' : 'self-start '
+          featured ? 'md:self-center' : 'self-start '
         )}
       >
         <h2

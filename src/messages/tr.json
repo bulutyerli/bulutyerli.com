@@ -48,14 +48,14 @@
     "workwise": {
       "title": "WorkWise",
       "summary": "a website hr management",
-      "image": "/projects/workwise/workwise.webp",
+      "image": "/projects/workwise/work-wise.webp",
       "slug": "workwise",
       "liveUrl": "https://work-wisee.vercel.app"
     },
     "nuvola-coffee-shop": {
       "title": "Nuvola Coffee Shop",
       "summary": "a website about coffee shop",
-      "image": "/projects/nuvola-coffee-shop/nuvolacoffeeshop.webp",
+      "image": "/projects/nuvola-coffee-shop/nuvola-coffee-shop.webp",
       "slug": "nuvola-coffee-shop",
       "liveUrl": "https://www.nuvolacoffee.store"
     }
