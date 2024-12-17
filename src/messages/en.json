@@ -43,21 +43,21 @@
       "summary": "A pet adoption website uses listings, community & breed sections and messaging.",
       "imageLink": "/projects/patilerce/patilerce.webp",
       "slug": "patilerce",
-      "liveUrl": "https://www.patilerce.com"
+      "liveLink": "https://www.patilerce.com"
     },
     "workwise": {
-      "title": "WorkWise",
+      "title": "workwise",
       "summary": "Company management system with role based user access, graphics and more",
       "imageLink": "/projects/workwise/workwise.webp",
       "slug": "workwise",
-      "liveUrl": "https://work-wisee.vercel.app"
+      "liveLink": "https://work-wisee.vercel.app"
     },
     "nuvola-coffee-shop": {
-      "title": "Nuvola Coffee Shop",
+      "title": "nuvola coffee shop",
       "summary": "Developed a e-commerce application with Next.js for a coffee roasting company.",
       "imageLink": "/projects/nuvola-coffee-shop/nuvolacoffeeshop.webp",
       "slug": "nuvola-coffee-shop",
-      "liveUrl": "https://www.nuvolacoffee.store"
+      "liveLink": "https://www.nuvolacoffee.store"
     }
   },
   "Footer": {

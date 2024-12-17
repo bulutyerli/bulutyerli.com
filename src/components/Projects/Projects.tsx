@@ -10,12 +10,15 @@ export default function Projects() {
 
   return (
     <section>
-      <Container>
+      <Container className="max-w-7xl">
         <SectionTitle>projects.</SectionTitle>
-        <div className="flex flex-wrap items-start justify-center gap-20 mt-10">
-          {keys.map((project) => {
+        <div className="flex flex-wrap items-start justify-around xl:justify-between gap-20 mt-10">
+          {keys.map((project, index) => {
+            const id = `${project}.title`;
             return (
               <ProjectCard
+                key={id}
+                featured={index === 0}
                 title={t(`${project}.title`)}
                 summary={t(`${project}.summary`)}
                 slug={t(`${project}.slug`)}
@@ -24,6 +27,26 @@ export default function Projects() {
               />
             );
           })}
+        </div>
+        <div className="my-44">
+          <SectionTitle>freelance projects.</SectionTitle>
+          <div className="flex flex-wrap items-start gap-20 xl:gap-5 justify-center xl:justify-between mt-10">
+            {keys.map((project) => {
+              const id = `${project}.title`;
+
+              return (
+                <ProjectCard
+                  key={id}
+                  className="max-w-fit"
+                  title={t(`${project}.title`)}
+                  summary={t(`${project}.summary`)}
+                  slug={t(`${project}.slug`)}
+                  imageLink={t(`${project}.imageLink`)}
+                  liveLink={t(`${project}.liveLink`)}
+                />
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>
