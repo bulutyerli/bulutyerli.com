@@ -27,7 +27,9 @@ export default function ProjectCard({
     <div
       className={clsx(
         'flex flex-col',
-        featured ? 'w-full md:text-center' : 'max-w-full md:max-w-[45%]',
+        featured
+          ? 'w-full md:text-center md:mb-20'
+          : 'max-w-full md:max-w-[45%]',
         className
       )}
     >
