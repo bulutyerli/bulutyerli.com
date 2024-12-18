@@ -46,7 +46,7 @@ export default function ProjectCard({
           <Image
             className={clsx(
               'hover:scale-110 transition-transform duration-500 object-cover',
-              featured ? 'aspect-[4/2] lg:aspect-[4/1]' : 'aspect-[2/1]'
+              featured ? 'aspect-4/2 lg:aspect-4/1' : 'aspect-2/1'
             )}
             src={formattedLinks(imageLink)}
             alt={`${title} screenshot`}
@@ -58,7 +58,7 @@ export default function ProjectCard({
 
       <div
         className={clsx(
-          ' flex flex-col gap-3 max-w-96  bg-radial-[at_25%_25%] from-white to-zinc-800 to-100%',
+          'flex flex-col gap-3 max-w-96',
           featured ? 'md:self-center' : 'self-start '
         )}
       >
@@ -74,7 +74,6 @@ export default function ProjectCard({
             Live Link
           </Link>
         </div>
-        <div className="h-full w-full absolute bottom-0 bg-conic/[in_hsl_longer_hue] from-red-600 to-red-600 size-24 rounded-full"></div>
       </div>
     </div>
   );

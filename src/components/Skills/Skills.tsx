@@ -38,7 +38,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-zinc-100 via-zinc-150 to-zinc-100 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 relative my-10 lg:my-36">
+    <section className="bg-linear-to-b from-zinc-100 via-zinc-150 to-zinc-100 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 relative my-10 lg:my-36">
       <svg
         id="visual"
         viewBox="0 0 900 50"
