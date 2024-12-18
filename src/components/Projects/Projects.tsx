@@ -12,7 +12,7 @@ export default function Projects() {
     <section>
       <Container className="max-w-7xl">
         <SectionTitle>projects.</SectionTitle>
-        <div className="flex flex-wrap justify-around xl:justify-between gap-20 md:gap-5 mt-10">
+        <div className="flex flex-wrap justify-around xl:justify-between gap-20 md:gap-5">
           {keys.map((project, index) => {
             const id = `${project}.title`;
             return (
@@ -30,7 +30,7 @@ export default function Projects() {
         </div>
         <div className="my-44">
           <SectionTitle>freelance projects.</SectionTitle>
-          <div className="flex flex-wrap md:flex-nowrap items-start gap-20 md:gap-5 justify-center xl:justify-between mt-10">
+          <div className="flex flex-wrap md:flex-nowrap items-start gap-20 md:gap-5 justify-center xl:justify-between">
             {keys.map((project) => {
               const id = `${project}.title`;
 

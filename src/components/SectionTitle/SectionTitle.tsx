@@ -9,7 +9,7 @@ export default function SectionTitle({
   className?: string;
 }) {
   return (
-    <div className="relative max-w-3xl mx-auto">
+    <div className="relative max-w-3xl mx-auto mb-10">
       <div className="absolute inset-0 flex items-center" aria-hidden="true">
         <div className="w-full border-t border-zinc-200 dark:border-zinc-600" />
       </div>
