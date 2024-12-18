@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { formattedLinks } from './ProjectCard.helpers';
 import { spartan } from 'fonts';
 import clsx from 'clsx';
+import BgPattern from 'components/BgPattern/BgPattern';
+import ProjectCardBg from './ProjectCardBg';
 
 interface ProjectCardType {
   title: string;
@@ -12,6 +14,7 @@ interface ProjectCardType {
   imageLink: string;
   className?: string;
   featured?: boolean;
+  freelance?: boolean;
 }
 
 export default function ProjectCard({
@@ -22,11 +25,12 @@ export default function ProjectCard({
   imageLink,
   featured,
   className,
+  freelance = false,
 }: ProjectCardType) {
   return (
     <div
       className={clsx(
-        'flex flex-col',
+        'flex flex-col relative',
         featured
           ? 'w-full md:text-center md:mb-20'
           : 'max-w-full md:max-w-[45%]',
@@ -54,7 +58,7 @@ export default function ProjectCard({
 
       <div
         className={clsx(
-          ' flex flex-col gap-3 max-w-96',
+          ' flex flex-col gap-3 max-w-96  bg-radial-[at_25%_25%] from-white to-zinc-800 to-100%',
           featured ? 'md:self-center' : 'self-start '
         )}
       >
@@ -70,6 +74,7 @@ export default function ProjectCard({
             Live Link
           </Link>
         </div>
+        <div className="h-full w-full absolute bottom-0 bg-conic/[in_hsl_longer_hue] from-red-600 to-red-600 size-24 rounded-full"></div>
       </div>
     </div>
   );

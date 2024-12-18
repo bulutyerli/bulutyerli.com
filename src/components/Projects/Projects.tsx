@@ -43,6 +43,7 @@ export default function Projects() {
                   slug={t(`${project}.slug`)}
                   imageLink={t(`${project}.imageLink`)}
                   liveLink={t(`${project}.liveLink`)}
+                  freelance={true}
                 />
               );
             })}
