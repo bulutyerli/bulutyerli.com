@@ -49,7 +49,7 @@ export default function ProjectCard({
   return (
     <div
       className={clsx(
-        'flex flex-col relative group',
+        'flex flex-col relative group pb-6',
         featured
           ? 'w-full md:text-center md:mb-20'
           : 'max-w-full md:max-w-[45%]',
