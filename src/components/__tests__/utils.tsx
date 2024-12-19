@@ -2,7 +2,7 @@
 import { render } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import pick from 'lodash/pick';
-import messages from '../../messages/en.json';
+import messages from '../../../messages/en.json';
 import React, { ReactElement, ReactNode } from 'react';
 import { type RenderOptions, type RenderResult } from '@testing-library/react';
 import { ThemeProvider } from 'next-themes';
