@@ -3,6 +3,7 @@
 import { useLocale } from 'next-intl';
 import { useTransition } from 'react';
 import { usePathname, useRouter } from '../../navigation';
+import clsx from 'clsx';
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
@@ -21,11 +22,11 @@ export default function LocaleSwitcher() {
     <div className="flex gap-1 pr-2">
       <button
         aria-label="Switch to English"
-        className={`${
+        className={clsx(
           locale === 'en'
             ? 'text-zinc-700 font-semibold dark:text-zinc-300'
-            : 'text-zinc-500 dark:text-zinc-400'
-        }`}
+            : 'text-zinc-500 dark:text-zinc-400 cursor-pointer'
+        )}
         onClick={() => {
           onLanguageChange('en');
         }}
@@ -35,11 +36,11 @@ export default function LocaleSwitcher() {
       <div className="border border-l-0 border-zinc-400"></div>
       <button
         aria-label="Switch to Turkish"
-        className={`${
+        className={clsx(
           locale === 'tr'
             ? 'text-zinc-700 font-semibold dark:text-zinc-300'
-            : 'text-zinc-500 dark:text-zinc-400'
-        }`}
+            : 'text-zinc-500 dark:text-zinc-400 cursor-pointer'
+        )}
         onClick={() => {
           onLanguageChange('tr');
         }}
