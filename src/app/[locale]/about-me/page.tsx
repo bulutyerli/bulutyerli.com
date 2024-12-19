@@ -1,4 +1,3 @@
-import { unstable_setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Container from 'components/Container/Container';
 import AboutMe from 'components/AboutMe/AboutMe';
@@ -14,8 +13,6 @@ export default async function AboutMePage({
 }: {
   params: { locale: string };
 }) {
-  unstable_setRequestLocale(locale);
-
   return (
     <Container className="mt-auto">
       <AboutMe />

@@ -1,3 +1,4 @@
+import { Pathnames } from 'i18n/routing';
 import { FC, SVGProps } from 'react';
 
 export interface Icons {
@@ -8,5 +9,5 @@ export interface Icons {
 
 export type NavLink = {
   title: string;
-  href: '/about-me' | '/contact';
+  href: Pathnames;
 };

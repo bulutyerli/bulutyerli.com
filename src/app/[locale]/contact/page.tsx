@@ -5,7 +5,6 @@ import {
   useMessages,
   useTranslations,
 } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
 import pick from 'lodash/pick';
 import type { Metadata } from 'next';
 import Container from 'components/Container/Container';
@@ -24,8 +23,6 @@ export default function ContactPage({
 }: {
   params: { locale: string };
 }) {
-  unstable_setRequestLocale(locale);
-
   const t = useTranslations('Contact');
   const messages = useMessages();
 

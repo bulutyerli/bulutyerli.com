@@ -1,8 +1,8 @@
 'use client';
 
-import { Link } from 'navigation';
 import { NavLink } from 'types/types';
 import LocaleSwitcher from 'components/LocaleSwitcher/LocaleSwitcher';
+import { Link } from 'i18n/routing';
 
 export default function MobileMenu({
   navLinks,

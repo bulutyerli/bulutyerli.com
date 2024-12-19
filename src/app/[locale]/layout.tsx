@@ -1,16 +1,14 @@
 import 'globals.css';
-
 import { roboto } from 'fonts';
-import pick from 'lodash/pick';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { locales } from 'navigation';
 import ThemeProvider from 'providers/ThemeProvider';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
-import Container from 'components/Container/Container';
+import { routing } from 'i18n/routing';
+import { notFound } from 'next/navigation';
+import { getMessages } from 'next-intl/server';
 
 export const metadata = {
   title: 'Bulut Yerli Full-Stack Web Developer ',
@@ -20,32 +18,33 @@ export const metadata = {
 };
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params: { locale },
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  unstable_setRequestLocale(locale);
-  const messages = useMessages();
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+
+  const messages = await getMessages();
 
   return (
     <html lang={locale} className={roboto.className} suppressHydrationWarning>
       <body className="dark:bg-zinc-900 flex min-h-screen justify-between">
         <ThemeProvider attribute="class">
-          <NextIntlClientProvider messages={pick(messages, 'Header')}>
+          <NextIntlClientProvider messages={messages}>
             <Header />
-          </NextIntlClientProvider>
-          <NextIntlClientProvider messages={pick(messages, 'Error')}>
             {children}
             <Analytics />
             <SpeedInsights />
+            <Footer locale={locale} />
           </NextIntlClientProvider>
-          <Footer locale={locale} />
         </ThemeProvider>
       </body>
     </html>

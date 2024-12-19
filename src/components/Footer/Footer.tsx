@@ -1,10 +1,7 @@
 import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
 import SocialIcons from '../SocialIcons/SocialIcons';
 
 export default function Footer({ locale }: { locale: string }) {
-  unstable_setRequestLocale(locale);
-
   const year = new Date().getFullYear();
   const t = useTranslations('Footer');
   return (

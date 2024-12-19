@@ -5,12 +5,12 @@ import { FiX } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
-import { Link } from 'navigation';
 import { NavLink } from 'types/types';
 import Logo from '../Logo/Logo';
 import LocaleSwitcher from 'components/LocaleSwitcher/LocaleSwitcher';
 import MobileMenu from 'components/MobileMenu/MobileMenu';
 import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
+import { Link } from 'i18n/routing';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,11 +29,11 @@ export default function Header() {
   const navLinks: NavLink[] = [
     {
       title: t('aboutMe'),
-      href: '/about-me',
+      href: 'about-me',
     },
     {
       title: t('contact'),
-      href: '/contact',
+      href: 'contact',
     },
   ];
 

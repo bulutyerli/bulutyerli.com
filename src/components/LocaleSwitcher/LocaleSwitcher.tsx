@@ -2,8 +2,8 @@
 
 import { useLocale } from 'next-intl';
 import { useTransition } from 'react';
-import { usePathname, useRouter } from '../../navigation';
 import clsx from 'clsx';
+import { usePathname, useRouter } from 'i18n/routing';
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
