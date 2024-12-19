@@ -1,0 +1,17 @@
+{
+  "patilerce": {
+    "imageLink": "/projects/patilerce/patilerce.webp",
+    "slug": "patilerce",
+    "liveLink": "https://www.patilerce.com"
+  },
+  "workwise": {
+    "imageLink": "/projects/workwise/work-wise.webp",
+    "slug": "workwise",
+    "liveLink": "https://work-wisee.vercel.app"
+  },
+  "nuvola-coffee-shop": {
+    "imageLink": "/projects/nuvola-coffee-shop/nuvola-coffee-shop.webp",
+    "slug": "nuvola-coffee-shop",
+    "liveLink": "https://www.nuvolacoffee.store"
+  }
+}

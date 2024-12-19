@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { formattedLinks } from './ProjectCard.helpers';
+import { formatLink } from './ProjectCard.helpers';
 import { spartan } from 'fonts';
 import clsx from 'clsx';
 import { HoverEffect } from './HoverEffect';
@@ -12,7 +12,7 @@ interface ProjectCardType {
   title: string;
   summary: string;
   liveLink: string;
-  slug: string;
+  slug?: string;
   imageLink: string;
   className?: string;
   featured?: boolean;
@@ -42,6 +42,10 @@ export default function ProjectCard({
     mouseY.set(clientY - top);
   }
 
+  const formattedImage = formatLink(imageLink);
+  const formattedSlug = slug ? formatLink(slug) : '';
+  const linkHref = freelance ? liveLink : formattedSlug;
+
   return (
     <div
       className={clsx(
@@ -59,13 +63,13 @@ export default function ProjectCard({
           'relative overflow-hidden rounded-lg shadow-md drop-shadow-md z-10'
         )}
       >
-        <Link href={formattedLinks(slug)}>
+        <Link href={linkHref}>
           <Image
             className={clsx(
               'hover:scale-110 transition-transform duration-500 object-cover',
               featured ? 'aspect-4/2 lg:aspect-4/1' : 'aspect-2/1'
             )}
-            src={formattedLinks(imageLink)}
+            src={formattedImage}
             alt={`${title} screenshot`}
             width={featured ? 2800 : 1400}
             height={700}
@@ -80,13 +84,19 @@ export default function ProjectCard({
           )}
         >
           <h2
-            className={`${spartan.className} text-3xl lg:text-4xl mt-6 tracking-tighter font-semibold text-zinc-800 dark:text-zinc-200`}
+            className={clsx(
+              spartan.className,
+              ' mt-6 text-zinc-800 dark:text-zinc-200',
+              freelance
+                ? 'text-2xl'
+                : 'text-3xl lg:text-4xl font-semibold tracking-tighter'
+            )}
           >
             {title}
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400">{summary}</p>
           <div className="flex justify-between w-full">
-            <Link href={formattedLinks(slug)}>Case Study</Link>
+            {!freelance && <Link href={linkHref}>Case Study</Link>}
             <Link href={liveLink} target="_blank">
               Live Link
             </Link>

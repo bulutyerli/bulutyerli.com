@@ -38,37 +38,32 @@
   },
 
   "projects": {
-    "patilerce": {
-      "title": "patilerce.com",
-      "summary": "A pet adoption website uses listings, community & breed sections and messaging.",
-      "imageLink": "/projects/patilerce/patilerce.webp",
-      "slug": "patilerce",
-      "liveLink": "https://www.patilerce.com",
-      "pattern": {
-        "y": 2,
-        "squares": [[0, 1]]
+    "self": {
+      "patilerce": {
+        "title": "patilerce.com",
+        "summary": "A pet adoption website uses listings, community & breed sections and messaging."
+      },
+      "workwise": {
+        "title": "workwise",
+        "summary": "Company management system with role based user access, graphics and more"
+      },
+      "nuvola-coffee-shop": {
+        "title": "nuvola coffee shop",
+        "summary": "Developed a e-commerce application with Next.js for a coffee roasting company."
       }
     },
-    "workwise": {
-      "title": "workwise",
-      "summary": "Company management system with role based user access, graphics and more",
-      "imageLink": "/projects/workwise/work-wise.webp",
-      "slug": "workwise",
-      "liveLink": "https://work-wisee.vercel.app",
-      "pattern": {
-        "y": 22,
-        "squares": [[0, 1]]
-      }
-    },
-    "nuvola-coffee-shop": {
-      "title": "nuvola coffee shop",
-      "summary": "Developed a e-commerce application with Next.js for a coffee roasting company.",
-      "imageLink": "/projects/nuvola-coffee-shop/nuvola-coffee-shop.webp",
-      "slug": "nuvola-coffee-shop",
-      "liveLink": "https://www.nuvolacoffee.store",
-      "pattern": {
-        "y": 22,
-        "squares": [[0, 1]]
+    "freelance": {
+      "denizweber-ceviri": {
+        "title": "denizweber.com",
+        "summary": "Developed a portfolio website with Next.js & Sanity for a book translator"
+      },
+      "denizweber-photo": {
+        "title": "denizweber.photography",
+        "summary": "Developed a photographer portfolio and landing page with Next.js & Sanity"
+      },
+      "tugayaslan": {
+        "title": "tugasyaslan.com",
+        "summary": "A portfolio website for a YouTube story teller."
       }
     }
   },

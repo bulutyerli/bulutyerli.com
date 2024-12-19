@@ -1,3 +1,3 @@
-export const formattedLinks = (link: string): string => {
+export const formatLink = (link: string): string => {
   return link.startsWith('/') ? link : `/${link}`;
 };
