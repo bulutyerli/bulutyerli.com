@@ -8,7 +8,7 @@ import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
 import { routing } from 'i18n/routing';
 import { notFound } from 'next/navigation';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 
 export const metadata = {
   title: 'Bulut Yerli Full-Stack Web Developer ',
@@ -31,6 +31,7 @@ export default async function LocaleLayout({
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
+  setRequestLocale(locale);
 
   const messages = await getMessages();
 
