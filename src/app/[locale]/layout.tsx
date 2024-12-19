@@ -6,7 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import ThemeProvider from 'providers/ThemeProvider';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
-import { routing } from 'i18n/routing';
+import { Locale, routing } from 'i18n/routing';
 import { notFound } from 'next/navigation';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 
@@ -21,14 +21,17 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default async function LocaleLayout({
-  children,
-  params: { locale },
-}: {
+export default async function LocaleLayout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  if (!routing.locales.includes(locale as any)) {
+  const params = await props.params;
+
+  const { locale } = params;
+
+  const { children } = props;
+
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
   setRequestLocale(locale);
@@ -44,7 +47,7 @@ export default async function LocaleLayout({
             {children}
             <Analytics />
             <SpeedInsights />
-            <Footer locale={locale} />
+            <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

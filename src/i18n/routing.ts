@@ -10,16 +10,16 @@ export const routing = defineRouting({
   pathnames: {
     '/': '/',
     projects: {
-      en: '/projects',
-      tr: '/projeler',
+      en: '/#projects',
+      tr: '/#projeler',
     },
     'about-me': {
-      en: '/about-me',
-      tr: '/hakkimda',
+      en: '/#about-me',
+      tr: '/#hakkimda',
     },
     contact: {
-      en: 'contact',
-      tr: 'iletisim',
+      en: '/#contact',
+      tr: '/#iletisim',
     },
   },
 });

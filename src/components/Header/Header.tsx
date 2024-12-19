@@ -15,7 +15,9 @@ import { Link } from 'i18n/routing';
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const path = usePathname();
-  const isActive = (href: string) => path === href;
+  const isActive = (href: string) => {
+    return path === `/${href}` || path === `/#${href}`;
+  };
   const t = useTranslations('Header');
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import SocialIcons from '../SocialIcons/SocialIcons';
 
-export default function Footer({ locale }: { locale: string }) {
+export default function Footer() {
   const year = new Date().getFullYear();
   const t = useTranslations('Footer');
   return (
