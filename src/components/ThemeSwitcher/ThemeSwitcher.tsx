@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import clsx from 'clsx';
 
 interface ThemeSwitcherProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -26,10 +27,10 @@ export default function ThemeSwitcher({
 
   return (
     <button
-      className={classname}
+      className={clsx('cursor-pointer', classname)}
       aria-label="Toggle Dark Mode"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-      {...rest} // Spread other props here
+      {...rest}
     >
       {theme === 'dark' ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
     </button>
