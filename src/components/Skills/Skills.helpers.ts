@@ -23,8 +23,6 @@ export const generatePositions = ({
     let y: number = 0;
     let attempts = 0;
 
-    console.log(iconSize);
-
     while (!isUnique && attempts < maxAttempts) {
       attempts++;
 
@@ -54,7 +52,6 @@ export const generatePositions = ({
 
     positions.push({ x, y, icon: skills[i] });
   }
-  console.log(positions);
 
   return positions;
 };

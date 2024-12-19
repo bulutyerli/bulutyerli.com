@@ -1,13 +1,12 @@
 import Container from 'components/Container/Container';
 import ProjectCard from 'components/ProjectCard/ProjectCard';
 import SectionTitle from 'components/SectionTitle/SectionTitle';
-import { useMessages, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import projectsData from 'data/projects.json';
 import freelanceProjectsData from 'data/freelanceProjects.json';
 
 export default function Projects() {
   const t = useTranslations('projects');
-  const keys = ['self', 'freelance'] as const;
 
   const selfProjects = Object.keys(projectsData).map((key) => ({
     ...projectsData[key],
@@ -20,8 +19,6 @@ export default function Projects() {
     title: t(`freelance.${key}.title`),
     summary: t(`freelance.${key}.summary`),
   }));
-
-  console.log(freelanceProjects);
 
   return (
     <section>

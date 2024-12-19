@@ -41,29 +41,29 @@
     "self": {
       "patilerce": {
         "title": "patilerce.com",
-        "summary": "A pet adoption website uses listings, community & breed sections and messaging."
+        "summary": "A pet adoption website featuring listings, community forums, breed information, and messaging features."
       },
       "workwise": {
         "title": "workwise",
-        "summary": "Company management system with role based user access, graphics and more"
+        "summary": "A company management system with role-based user access, graphical reports, and additional features."
       },
       "nuvola-coffee-shop": {
         "title": "nuvola coffee shop",
-        "summary": "Developed a e-commerce application with Next.js for a coffee roasting company."
+        "summary": "Developed an e-commerce application with Next.js for a coffee roasting company."
       }
     },
     "freelance": {
       "denizweber-ceviri": {
         "title": "denizweber.com",
-        "summary": "Developed a portfolio website with Next.js & Sanity for a book translator"
+        "summary": "Developed a portfolio website with Next.js, TailwindCSS & Sanity for a book translator"
       },
       "denizweber-photo": {
         "title": "denizweber.photography",
-        "summary": "Developed a photographer portfolio and landing page with Next.js & Sanity"
+        "summary": "Developed a photographer portfolio with Next.js, TailwindCSS & Sanity"
       },
       "tugayaslan": {
         "title": "tugasyaslan.com",
-        "summary": "A portfolio website for a YouTube story teller."
+        "summary": "A portfolio website for a YouTube story teller. Developed with Next.js, TailwindCSS & Sanity"
       }
     }
   },
