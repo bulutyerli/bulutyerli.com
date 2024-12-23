@@ -1,11 +1,6 @@
 import Image from 'next/image';
 
-import {
-  NextIntlClientProvider,
-  useMessages,
-  useTranslations,
-} from 'next-intl';
-import pick from 'lodash/pick';
+import { useTranslations } from 'next-intl';
 import Container from 'components/Container/Container';
 import BgPattern from 'components/BgPattern/BgPattern';
 import SocialIcons from 'components/SocialIcons/SocialIcons';
@@ -14,7 +9,6 @@ import SectionTitle from 'components/SectionTitle/SectionTitle';
 
 export default function ContactSection() {
   const t = useTranslations('Contact');
-  const messages = useMessages();
 
   return (
     <Container
@@ -46,9 +40,7 @@ export default function ContactSection() {
             }
             size={50}
           />
-          <NextIntlClientProvider messages={pick(messages, 'Contact')}>
-            <ContactForm />
-          </NextIntlClientProvider>
+          <ContactForm />
           <BgPattern classname="absolute inset-0 h-full w-full -z-10 stroke-zinc-300 dark:stroke-zinc-700 [mask-image:radial-gradient(22rem_12rem_at_center,white,transparent)]" />
         </div>
       </div>

@@ -68,7 +68,7 @@ export default function ContactForm() {
       <input
         type="text"
         id="name"
-        className="block w-full rounded-full border-0 px-4 py-1.5 text-zinc-900 dark:text-zinc-200 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-500 dark:shadow-none focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1"
+        className="block w-full rounded-full border-0 px-4 py-1.5 text-zinc-900 dark:text-zinc-200 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-500 dark:shadow-none focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1 bg-zinc-100 dark:bg-zinc-800"
         {...register('name', { required: true, maxLength: 100 })}
       />
       {errors.name && (
@@ -83,7 +83,7 @@ export default function ContactForm() {
       <input
         type="text"
         id="email"
-        className="block w-full rounded-full border-0 px-4 py-1.5 text-zinc-900 dark:text-zinc-200 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-500 dark:shadow-none focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1"
+        className="block w-full rounded-full border-0 px-4 py-1.5 text-zinc-900 dark:text-zinc-200 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-500 dark:shadow-none focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1 bg-zinc-100 dark:bg-zinc-800"
         {...register('email', {
           required: t('emailError'),
           maxLength: 100,
@@ -106,13 +106,13 @@ export default function ContactForm() {
       </label>
       <textarea
         id="message"
-        className="block w-full min-h-24 rounded-3xl border-0 px-4 py-1.5 text-zinc-900 dark:text-zinc-200 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-500 dark:shadow-none focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1"
+        className="block w-full min-h-24 rounded-3xl border-0 px-4 py-1.5 text-zinc-900 dark:text-zinc-200 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-500 dark:shadow-none focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-zinc-400 sm:text-sm sm:leading-6 shadow-zinc-300 shadow-inner mt-1 bg-zinc-100 dark:bg-zinc-800"
         {...register('message', { required: true, maxLength: 1000 })}
       />
       {errors.message && (
         <span className="text-red-600 text-sm pl-3">{t('write')}</span>
       )}
-      <button className="text-md border px-4 py-1 rounded-xl mt-4 items-center flex justify-center w-full bg-zinc-50 dark:bg-zinc-700 dark:border-none text-zinc-700 dark:text-zinc-200 shadow-md hover:font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-600">
+      <button className="text-md border px-4 py-1 rounded-xl mt-4 items-center flex justify-center w-full bg-zinc-50 dark:bg-zinc-700 dark:border-none text-zinc-700 dark:text-zinc-200 shadow-md hover:font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-600 cursor-pointer transition-all duration-500">
         {loading ? <Loading /> : t('send')}
       </button>
       {error && (
