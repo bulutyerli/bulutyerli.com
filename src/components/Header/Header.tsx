@@ -2,7 +2,7 @@
 
 import { FiMenu } from 'react-icons/fi';
 import { FiX } from 'react-icons/fi';
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { NavLink } from 'types/types';
 import Logo from '../Logo/Logo';
@@ -13,10 +13,13 @@ import { Link } from 'i18n/routing';
 import useActiveSection from 'hooks/useActiveSection';
 import { sectionNames } from './Header.constants';
 import { isActive } from './Header.helpers';
+import clsx from 'clsx';
+import { motion } from 'motion/react';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const path = useActiveSection(sectionNames);
+  const id = useId();
 
   const t = useTranslations('Header');
 
@@ -44,7 +47,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="max-w-7xl mx-auto w-full h-16 z-20 flex items-center justify-between mt-2 sticky top-0 bg-white/50 dark:bg-zinc-900/80 backdrop-blur-md">
+    <header className="max-w-7xl mx-auto w-full h-16 z-20 flex items-center justify-between sticky top-0 bg-white/50 dark:bg-zinc-900/80 backdrop-blur-md pt-2">
       <Link aria-label="Homepage" onClick={() => setMenuOpen(false)} href={'/'}>
         <div className="w-16 xl:w-24 h-auto cursor-pointer ml-2 mb-4">
           <Logo />
@@ -68,17 +71,25 @@ export default function Header() {
             setMenuOpen={() => setMenuOpen(false)}
           />
         )}
-        <ul aria-label="desktop-nav" className="gap-10 md:flex hidden ">
+        <ul aria-label="desktop-nav" className="gap-10 md:flex hidden">
           {navLinks.map((nav) => {
             return (
-              <li key={nav.title}>
-                <Link
-                  className={`${isActive(path, nav.href) && 'underline'}`}
-                  href={nav.href}
-                  id={nav.href}
-                >
+              <li
+                className={clsx(
+                  'p-2 relative rounded-sm',
+                  !isActive(path, nav.href) && 'hover:underline'
+                )}
+                key={nav.title}
+              >
+                <Link href={nav.href} id={nav.href}>
                   {nav.title}
                 </Link>
+                {isActive(path, nav.href) && (
+                  <motion.div
+                    layoutId="background"
+                    className="absolute inset-0 dark:bg-zinc-700 bg-zinc-100 -z-10 rounded-md"
+                  ></motion.div>
+                )}
               </li>
             );
           })}
