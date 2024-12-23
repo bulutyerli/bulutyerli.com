@@ -5,6 +5,12 @@ import { screen, within } from '@testing-library/dom';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 import userEvent from '@testing-library/user-event';
 
+global.IntersectionObserver = jest.fn().mockImplementation(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn(),
+}));
+
 jest.mock('../LocaleSwitcher/LocaleSwitcher', () => {
   const MockLocaleSwitcher = () => <div>locale switcher mock</div>;
   Object.assign(MockLocaleSwitcher, { displayName: 'LocaleSwitcher' });
