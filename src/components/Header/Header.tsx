@@ -73,9 +73,7 @@ export default function Header() {
             return (
               <li key={nav.title}>
                 <Link
-                  className={`${
-                    isActive({ path: path, href: nav.href }) && 'underline'
-                  }`}
+                  className={`${isActive(path, nav.href) && 'underline'}`}
                   href={nav.href}
                   id={nav.href}
                 >
