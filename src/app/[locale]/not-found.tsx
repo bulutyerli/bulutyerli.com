@@ -1,10 +1,11 @@
-import Link from 'next/link';
 import 'globals.css';
 import { useTranslations } from 'next-intl';
 import { spartan } from 'fonts';
+import { Link } from 'i18n/routing';
 
 export default function NotFound() {
   const t = useTranslations('NotFound');
+
   return (
     <div className="grid min-h-full place-items-center bg-white dark:bg-zinc-900 px-6 py-24 sm:py-32 lg:px-8 my-auto">
       <div className="text-center">

@@ -16,7 +16,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const path = usePathname();
   const isActive = (href: string) => {
-    return path === `/${href}` || path === `/#${href}`;
+    return path === `/` || path === `/#${href}`;
   };
   const t = useTranslations('Header');
 
@@ -30,12 +30,16 @@ export default function Header() {
 
   const navLinks: NavLink[] = [
     {
+      title: t('projects'),
+      href: '#projects',
+    },
+    {
       title: t('aboutMe'),
-      href: 'about-me',
+      href: '#about-me',
     },
     {
       title: t('contact'),
-      href: 'contact',
+      href: '#contact',
     },
   ];
 
@@ -69,8 +73,9 @@ export default function Header() {
             return (
               <li key={nav.title}>
                 <Link
-                  className={` ${isActive(nav.href) && 'underline'}`}
+                  className={`${isActive(nav.href) && 'underline'}`}
                   href={nav.href}
+                  id={nav.href}
                 >
                   {nav.title}
                 </Link>

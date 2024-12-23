@@ -17,7 +17,7 @@ export default function ContactSection() {
   const messages = useMessages();
 
   return (
-    <Container className="text-center relative mb-20">
+    <Container id="contact" className="text-center relative mb-20">
       <SectionTitle>contact.</SectionTitle>
       <div className="flex-col gap-3 mb-7">
         <h1 className="text-2xl lg:text-3xl text-zinc-700 dark:text-zinc-300">

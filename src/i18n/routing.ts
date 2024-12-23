@@ -9,17 +9,17 @@ export const routing = defineRouting({
   defaultLocale: 'en',
   pathnames: {
     '/': '/',
-    projects: {
-      en: '/#projects',
-      tr: '/#projeler',
+    '#projects': {
+      en: '#projects',
+      tr: '#projeler',
     },
-    'about-me': {
-      en: '/#about-me',
-      tr: '/#hakkimda',
+    '#about-me': {
+      en: '#about-me',
+      tr: '#hakkimda',
     },
-    contact: {
-      en: '/#contact',
-      tr: '/#iletisim',
+    '#contact': {
+      en: '#contact',
+      tr: '#iletisim',
     },
   },
 });
