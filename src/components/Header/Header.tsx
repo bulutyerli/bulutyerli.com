@@ -4,20 +4,20 @@ import { FiMenu } from 'react-icons/fi';
 import { FiX } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { usePathname } from 'next/navigation';
 import { NavLink } from 'types/types';
 import Logo from '../Logo/Logo';
 import LocaleSwitcher from 'components/LocaleSwitcher/LocaleSwitcher';
 import MobileMenu from 'components/MobileMenu/MobileMenu';
 import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
 import { Link } from 'i18n/routing';
+import useActiveSection from 'hooks/useActiveSection';
+import { sectionNames } from './Header.constants';
+import { isActive } from './Header.helpers';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const path = usePathname();
-  const isActive = (href: string) => {
-    return path === `/` || path === `/#${href}`;
-  };
+  const path = useActiveSection(sectionNames);
+
   const t = useTranslations('Header');
 
   useEffect(() => {
@@ -73,7 +73,9 @@ export default function Header() {
             return (
               <li key={nav.title}>
                 <Link
-                  className={`${isActive(nav.href) && 'underline'}`}
+                  className={`${
+                    isActive({ path: path, href: nav.href }) && 'underline'
+                  }`}
                   href={nav.href}
                   id={nav.href}
                 >
