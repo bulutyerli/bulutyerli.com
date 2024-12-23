@@ -10,6 +10,9 @@
 
   --animate-infinite-slider-100: infiniteSlider 75s linear infinite;
   --animate-bounce: bounceAnimation 10s infinite;
+  --footer-height: 4rem;
+  --header-height: 4rem;
+  --scroll-margin: 100px;
 
   @keyframes infiniteSlider {
     0% {
@@ -60,5 +63,7 @@ body {
 }
 
 [id] {
-  scroll-margin-top: 100px; /* Leaves some space at top for ID scrolling */
+  scroll-margin-top: var(
+    --scroll-margin
+  ); /* Leaves some space at top for ID scrolling */
 }

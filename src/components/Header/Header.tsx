@@ -2,7 +2,7 @@
 
 import { FiMenu } from 'react-icons/fi';
 import { FiX } from 'react-icons/fi';
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { NavLink } from 'types/types';
 import Logo from '../Logo/Logo';
@@ -19,7 +19,6 @@ import { motion } from 'motion/react';
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const path = useActiveSection(sectionNames);
-  const id = useId();
 
   const t = useTranslations('Header');
 
@@ -47,7 +46,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="max-w-7xl mx-auto w-full h-16 z-20 flex items-center justify-between sticky top-0 bg-white/50 dark:bg-zinc-900/80 backdrop-blur-md pt-2">
+    <header className="max-w-7xl mx-auto w-full h-(--header-height) z-20 flex items-center justify-between sticky top-0 bg-white/50 dark:bg-zinc-900/80 backdrop-blur-md py-2">
       <Link aria-label="Homepage" onClick={() => setMenuOpen(false)} href={'/'}>
         <div className="w-16 xl:w-24 h-auto cursor-pointer ml-2 mb-4">
           <Logo />
