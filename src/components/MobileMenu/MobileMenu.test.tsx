@@ -62,6 +62,6 @@ describe('MobileMenu Test Suite', () => {
       />
     );
 
-    expect(menu).toHaveClass('translate-x-full');
+    expect(menu).toHaveClass('translate-x-[200%]');
   });
 });

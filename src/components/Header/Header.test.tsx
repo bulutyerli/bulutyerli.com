@@ -90,11 +90,12 @@ describe('Header component test suite', () => {
     renderWithProvider(<HeaderComponent />, 'Header');
 
     const menuButton = screen.getByLabelText(/open menu/i);
-    const mobileMenu = screen.queryByTestId('mobile-menu');
+    const mobileMenu = screen.getByTestId('mobile-menu');
+    console.log(mobileMenu);
 
-    expect(mobileMenu).not.toBeInTheDocument();
+    expect(mobileMenu).toHaveClass('translate-x-[200%]');
 
     await user.click(menuButton);
-    expect(screen.getByTestId('mobile-menu')).toBeInTheDocument();
+    expect(mobileMenu).toHaveClass(/translate-x-0/i);
   });
 });
