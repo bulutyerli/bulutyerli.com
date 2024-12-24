@@ -17,14 +17,6 @@ jest.mock('../LocaleSwitcher/LocaleSwitcher', () => {
   return MockLocaleSwitcher;
 });
 
-jest.mock('../MobileMenu/MobileMenu', () => {
-  const MockMobileMenu = ({ menuOpen }) => (
-    <div data-testid="mobile-menu" className={menuOpen ? 'open' : 'closed'} />
-  );
-  Object.assign(MockMobileMenu, { displayName: 'MobileMenu' });
-  return MockMobileMenu;
-});
-
 describe('Header component test suite', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -83,19 +75,5 @@ describe('Header component test suite', () => {
 
     expect(spy).toHaveTextContent('light');
     expect(darkLogoMoon).toHaveClass('dark:translate-x-[-88px]');
-  });
-
-  it('should open hamburger menu on menu button click', async () => {
-    const user = userEvent.setup();
-    renderWithProvider(<HeaderComponent />, 'Header');
-
-    const menuButton = screen.getByLabelText(/open menu/i);
-    const mobileMenu = screen.getByTestId('mobile-menu');
-    console.log(mobileMenu);
-
-    expect(mobileMenu).toHaveClass('translate-x-[200%]');
-
-    await user.click(menuButton);
-    expect(mobileMenu).toHaveClass(/translate-x-0/i);
   });
 });

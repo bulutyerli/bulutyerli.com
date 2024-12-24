@@ -6,7 +6,7 @@ import { formatLink } from './ProjectCard.helpers';
 import { spartan } from 'fonts';
 import clsx from 'clsx';
 import { HoverEffect } from './HoverEffect';
-import { useMotionValue } from 'framer-motion';
+import { useMotionValue, motion } from 'motion/react';
 
 interface ProjectCardType {
   title: string;
@@ -47,7 +47,15 @@ export default function ProjectCard({
   const linkHref = freelance ? liveLink : formattedSlug;
 
   return (
-    <div
+    <motion.div
+      key={title}
+      initial={{ y: 50, opacity: 0, scale: freelance ? 0.9 : 1 }}
+      whileInView={{ y: 0, opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{
+        type: 'spring',
+        bounce: 0.25,
+      }}
       className={clsx(
         'flex flex-col relative group pb-6',
         featured
@@ -56,7 +64,6 @@ export default function ProjectCard({
         className
       )}
       onMouseMove={onMouseMove}
-      key={title}
     >
       <div
         className={clsx(
@@ -104,6 +111,6 @@ export default function ProjectCard({
         </div>
       </div>
       {!freelance && <HoverEffect mouseX={mouseX} mouseY={mouseY} />}
-    </div>
+    </motion.div>
   );
 }
