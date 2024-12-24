@@ -1,13 +1,12 @@
 {
-  "Hero": {
-    "title": "Merhaba, ben Bulut Yerli",
-    "secondTitle": "Full-Stack Yazılım Uzmanıyım"
+  "AboutMe": {
+    "title": "Merhaba, ben Bulut",
+    "secondTitle": "Full-Stack Developer"
   },
   "Header": {
     "projects": "Projeler",
     "aboutMe": "Hakkımda",
-    "contact": "İletişim",
-    "blog": "Blog"
+    "contact": "İletişim"
   },
   "ProjectPage": {
     "title": "projeler."

@@ -1,13 +1,12 @@
 {
-  "Hero": {
-    "title": "Hi, I am Bulut Yerli",
+  "AboutMe": {
+    "title": "Hi, I'm Bulut",
     "secondTitle": "a Full-Stack Developer"
   },
   "Header": {
     "projects": "Projects",
     "aboutMe": "About Me",
-    "contact": "Contact",
-    "blog": "Blog"
+    "contact": "Contact"
   },
   "ProjectPage": {
     "title": "projects."

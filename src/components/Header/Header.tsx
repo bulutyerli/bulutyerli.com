@@ -24,9 +24,9 @@ export default function Header() {
 
   useEffect(() => {
     if (menuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('overflow-y-hidden');
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.classList.remove('overflow-y-hidden');
     }
   }, [menuOpen]);
 
@@ -63,13 +63,11 @@ export default function Header() {
         >
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
-        {menuOpen && (
-          <MobileMenu
-            navLinks={navLinks}
-            menuOpen={menuOpen}
-            setMenuOpen={() => setMenuOpen(false)}
-          />
-        )}
+        <MobileMenu
+          navLinks={navLinks}
+          menuOpen={menuOpen}
+          setMenuOpen={() => setMenuOpen(false)}
+        />
         <ul aria-label="desktop-nav" className="gap-10 md:flex hidden">
           {navLinks.map((nav) => {
             return (
