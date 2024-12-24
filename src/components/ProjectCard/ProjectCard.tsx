@@ -76,13 +76,13 @@ export default function ProjectCard({
           />
         </Link>
       </div>
-      <div className="relative">
-        <div
-          className={clsx(
-            'flex flex-col gap-3 max-w-96',
-            featured ? 'md:self-center justify-self-center' : 'self-start '
-          )}
-        >
+      <div
+        className={clsx(
+          'flex flex-col gap-3 max-w-96',
+          featured ? 'md:self-center justify-self-center' : 'self-start '
+        )}
+      >
+        <div>
           <h2
             className={clsx(
               spartan.className,
