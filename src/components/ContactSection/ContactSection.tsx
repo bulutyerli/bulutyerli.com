@@ -15,10 +15,19 @@ export default function ContactSection() {
   return (
     <Container
       id="contact"
-      className="text-center min-h-[calc(100vh-var(--footer-height)-var(--header-height)-var(--scroll-margin))] flex flex-col justify-center gap-20"
+      className="text-center min-h-[calc(100vh-var(--footer-height))] flex flex-col justify-center gap-20"
     >
       <SectionTitle className="w-full">contact.</SectionTitle>
-      <div className="flex flex-col gap-20">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{
+          type: 'spring',
+          bounce: 0.25,
+        }}
+        className="flex flex-col gap-20"
+      >
         <div className="mb-7">
           <motion.h1
             initial={{ opacity: 0 }}
@@ -62,7 +71,7 @@ export default function ContactSection() {
           <ContactForm />
           <BgPattern classname="absolute inset-0 h-full w-full -z-10 stroke-zinc-300 dark:stroke-zinc-700 [mask-image:radial-gradient(22rem_12rem_at_center,white,transparent)]" />
         </div>
-      </div>
+      </motion.div>
     </Container>
   );
 }

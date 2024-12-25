@@ -40,7 +40,7 @@ export default async function LocaleLayout(props: {
 
   return (
     <html lang={locale} className={roboto.className} suppressHydrationWarning>
-      <body className="dark:bg-zinc-900 flex min-h-screen justify-between">
+      <body className="dark:bg-zinc-900">
         <ThemeProvider attribute="class">
           <NextIntlClientProvider messages={messages}>
             <Header />

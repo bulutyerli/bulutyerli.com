@@ -21,7 +21,6 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const path = useActiveSection(sectionNames);
   const t = useTranslations('Header');
-  console.log('rendered');
 
   useEffect(() => {
     if (menuOpen) {
@@ -47,7 +46,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="max-w-7xl mx-auto w-full h-(--header-height) z-20 flex items-center justify-between sticky top-0 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md py-2">
+    <header className="max-w-7xl mx-auto w-full h-(--header-height) z-20 flex items-center justify-between sticky top-0 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md py-2 overflow-x-clip">
       <Link aria-label="Homepage" onClick={() => setMenuOpen(false)} href={'/'}>
         <div className="w-16 xl:w-24 h-auto cursor-pointer ml-2 mb-4">
           <Logo />

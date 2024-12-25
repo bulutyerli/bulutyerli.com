@@ -21,7 +21,7 @@ export default function Projects() {
   }));
 
   return (
-    <Container id="projects" className="max-w-7xl">
+    <Container id="projects" className="max-w-7xl scroll-mt-28">
       <SectionTitle>projects.</SectionTitle>
       <div className="flex flex-wrap justify-around xl:justify-between gap-20 md:gap-5">
         {selfProjects.map((project, index) => {
@@ -39,7 +39,7 @@ export default function Projects() {
           );
         })}
       </div>
-      <div className="my-44">
+      <div className="mt-44">
         <SectionTitle>freelance projects.</SectionTitle>
         <div className="flex flex-wrap md:flex-nowrap items-start gap-20 md:gap-5 justify-center xl:justify-between">
           {freelanceProjects.map((project) => {

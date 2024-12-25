@@ -14,9 +14,11 @@ export default async function Home({ params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <main className="flex flex-col gap-20">
-      <AboutMe />
-      <Skills />
+    <main>
+      <div className="min-h-screen">
+        <AboutMe />
+        <Skills />
+      </div>
       <Projects />
       <ContactSection />
     </main>
