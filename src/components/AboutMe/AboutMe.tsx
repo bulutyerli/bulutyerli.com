@@ -1,30 +1,30 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
-import BgPattern from '../BgPattern/BgPattern';
-import { spartan } from 'fonts';
-import Container from 'components/Container/Container';
-import { useTranslations } from 'next-intl';
+import Image from "next/image";
+import { useState } from "react";
+import BgPattern from "../BgPattern/BgPattern";
+import { spartan } from "fonts";
+import Container from "components/Container/Container";
+import { useTranslations } from "next-intl";
 
 export default function AboutMe() {
   const [loki, setLoki] = useState(false);
-  const t = useTranslations('AboutMe');
+  const t = useTranslations("AboutMe");
 
   const imageClassNames = `rounded-2xl transform transition-all duration-500`;
 
   return (
     <Container id="about-me" className="relative -mb-1">
-      <article className="relative flex flex-col items-center gap-5 md:gap-10 sm:py-20 py-10 h-full">
+      <article className="relative flex h-full flex-col items-center gap-5 py-10 sm:py-20 md:gap-10">
         <div className="flex items-center justify-center gap-6">
           <h1
-            className={`${spartan.className} text-4xl md:text-6xl xl:text-7xl tracking-tighter font-semibold text-left`}
+            className={`${spartan.className} text-left text-4xl font-semibold tracking-tighter md:text-6xl xl:text-7xl`}
           >
-            {t('title')}
+            {t("title")}
             <br />
-            {t('secondTitle')}
+            {t("secondTitle")}
           </h1>
-          <div className="w-28 h-28 mr-5 md:w-48 md:h-48 relative overflow-y-clip shrink-0 self-end">
+          <div className="relative mr-5 h-28 w-28 shrink-0 self-end overflow-y-clip md:h-48 md:w-48">
             <Image
               src="/profilepicture.png"
               alt={`Bulut Yerli profile`}
@@ -35,8 +35,8 @@ export default function AboutMe() {
             <Image
               src="/lokiphoto.png"
               alt={`Profile image of Loki`}
-              className={`w-full h-full absolute translate-x-10 md:translate-x-20 translate-y-10 bottom-0 scale-[60%] ${imageClassNames} ${
-                !loki ? 'translate-y-full -rotate-45' : 'rotate-0'
+              className={`absolute bottom-0 h-full w-full translate-x-10 translate-y-10 scale-[60%] md:translate-x-20 ${imageClassNames} ${
+                !loki ? "translate-y-full -rotate-45" : "rotate-0"
               }`}
               width={800}
               height={800}
@@ -44,7 +44,7 @@ export default function AboutMe() {
           </div>
         </div>
 
-        <div className="max-w-sm sm:max-w-4xl space-y-2 columns-1 sm:columns-2 gap-24 text-zinc-700 dark:text-zinc-400 text-sm md:text-base">
+        <div className="max-w-sm columns-1 gap-24 space-y-2 text-sm text-zinc-700 sm:max-w-4xl sm:columns-2 md:text-base dark:text-zinc-400">
           <p className="break-inside-avoid">
             For 12 years, I worked in the logistics department of corporate
             aviation firms, where I developed strong problem-solving skills and
@@ -57,13 +57,13 @@ export default function AboutMe() {
           </p>
           <p className="break-inside-avoid">
             Currently, I am a full-stack developer, continuously working on
-            improving my skills.{' '}
+            improving my skills.{" "}
           </p>
           <p>
             Outside of work, I enjoy collecting LEGO sets and action figures.
-            For stress management, my greatest companion is our cat;{' '}
+            For stress management, my greatest companion is our cat;{" "}
             <button
-              className="underline font-semibold cursor-pointer hover:text-zinc-700 dark:hover:text-zinc-300 hover:scale-105 transition-all duration-300"
+              className="cursor-pointer font-semibold underline transition-all duration-300 hover:scale-105 hover:text-zinc-700 dark:hover:text-zinc-300"
               onClick={() => setLoki(!loki)}
             >
               Loki

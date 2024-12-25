@@ -1,12 +1,12 @@
-import Link from 'next/link';
-import { spartan } from 'fonts';
-import './globals.css';
+import Link from "next/link";
+import { spartan } from "fonts";
+import "./globals.css";
 
 export default function NotFound() {
   return (
     <html>
       <body>
-        <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8 my-auto">
+        <main className="my-auto grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
           <div className="text-center">
             <p className="text-base font-semibold text-red-600">404</p>
             <h1
