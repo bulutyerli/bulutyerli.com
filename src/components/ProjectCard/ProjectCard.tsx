@@ -2,11 +2,11 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { formatLink } from './ProjectCard.helpers';
 import { spartan } from 'fonts';
 import clsx from 'clsx';
-import { HoverEffect } from './HoverEffect';
 import { useMotionValue, motion } from 'motion/react';
+import { formatLink } from './ProjectCard.helpers';
+import { HoverEffect } from './HoverEffect';
 
 interface ProjectCardType {
   title: string;
@@ -57,24 +57,24 @@ export default function ProjectCard({
         bounce: 0.25,
       }}
       className={clsx(
-        'flex flex-col relative group pb-6',
+        'group relative flex flex-col pb-6',
         featured
-          ? 'w-full md:text-center md:mb-20'
+          ? 'w-full md:mb-20 md:text-center'
           : 'max-w-full md:max-w-[45%]',
-        className
+        className,
       )}
       onMouseMove={onMouseMove}
     >
       <div
         className={clsx(
-          'relative overflow-hidden rounded-lg shadow-md drop-shadow-md z-10'
+          'relative z-10 overflow-hidden rounded-lg shadow-md drop-shadow-md',
         )}
       >
         <Link href={linkHref}>
           <Image
             className={clsx(
-              'hover:scale-110 transition-transform duration-500 object-cover',
-              featured ? 'aspect-4/2 lg:aspect-4/1' : 'aspect-2/1'
+              'object-cover transition-transform duration-500 hover:scale-110',
+              featured ? 'aspect-4/2 lg:aspect-4/1' : 'aspect-2/1',
             )}
             src={formattedImage}
             alt={`${title} screenshot`}
@@ -85,24 +85,24 @@ export default function ProjectCard({
       </div>
       <div
         className={clsx(
-          'flex flex-col gap-3 max-w-96',
-          featured ? 'md:self-center justify-self-center' : 'self-start '
+          'flex max-w-96 flex-col gap-3',
+          featured ? 'justify-self-center md:self-center' : 'self-start',
         )}
       >
         <div>
           <h2
             className={clsx(
               spartan.className,
-              ' mt-6 text-zinc-800 dark:text-zinc-200',
+              'mt-6 text-zinc-800 dark:text-zinc-200',
               freelance
                 ? 'text-2xl'
-                : 'text-3xl lg:text-4xl font-semibold tracking-tighter'
+                : 'text-3xl font-semibold tracking-tighter lg:text-4xl',
             )}
           >
             {title}
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400">{summary}</p>
-          <div className="flex justify-between w-full">
+          <div className="flex w-full justify-between">
             {!freelance && <Link href={linkHref}>Case Study</Link>}
             <Link href={liveLink} target="_blank">
               Live Link

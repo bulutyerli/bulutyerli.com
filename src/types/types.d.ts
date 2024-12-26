@@ -1,4 +1,4 @@
-import { Pathnames } from 'i18n/routing';
+import { Pathnames } from '@/i18n/routing';
 import { FC, SVGProps } from 'react';
 
 export interface Icons {

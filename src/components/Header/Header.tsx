@@ -6,16 +6,16 @@ import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { NavLink } from 'types/types';
 import Logo from '../Logo/Logo';
-import LocaleSwitcher from 'components/LocaleSwitcher/LocaleSwitcher';
-import MobileMenu from 'components/MobileMenu/MobileMenu';
-import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
-import { Link } from 'i18n/routing';
-import useActiveSection from 'hooks/useActiveSection';
+import LocaleSwitcher from '@/components/LocaleSwitcher/LocaleSwitcher';
+import MobileMenu from '@/components/MobileMenu/MobileMenu';
+import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
+import { Link } from '@/i18n/routing';
 import { sectionNames } from './Header.constants';
 import { isActive } from './Header.helpers';
 import clsx from 'clsx';
 import { motion } from 'motion/react';
 import { spartan } from 'fonts';
+import useActiveSection from '@/hooks/useActiveSection';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,14 +46,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="max-w-7xl mx-auto w-full h-(--header-height) z-20 flex items-center justify-between sticky top-0 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md py-2 overflow-x-clip">
+    <header className="sticky top-0 z-20 mx-auto flex h-(--header-height) w-full max-w-7xl items-center justify-between overflow-x-clip bg-white/90 py-2 backdrop-blur-md dark:bg-zinc-900/80">
       <Link aria-label="Homepage" onClick={() => setMenuOpen(false)} href={'/'}>
-        <div className="w-16 xl:w-24 h-auto cursor-pointer ml-2 mb-4">
+        <div className="mb-4 ml-2 h-auto w-16 cursor-pointer xl:w-24">
           <Logo />
         </div>
       </Link>
-      <nav className="flex justify-between items-center px-3 gap-3">
-        <div className="md:hidden flex items-center">
+      <nav className="flex items-center justify-between gap-3 px-3">
+        <div className="flex items-center md:hidden">
           <ThemeSwitcher aria-label="Toggle Theme Mobile" />
         </div>
         <button
@@ -68,14 +68,14 @@ export default function Header() {
           menuOpen={menuOpen}
           setMenuOpen={() => setMenuOpen(false)}
         />
-        <ul aria-label="desktop-nav" className="gap-10 md:flex hidden ">
+        <ul aria-label="desktop-nav" className="hidden gap-10 md:flex">
           {navLinks.map((nav) => {
             return (
               <li
                 className={clsx(
                   spartan.className,
-                  'p-2 relative rounded-sm pb-1',
-                  !isActive(path, nav.href) && 'hover:underline'
+                  'relative rounded-sm p-2 pb-1',
+                  !isActive(path, nav.href) && 'hover:underline',
                 )}
                 key={nav.title}
               >
@@ -85,7 +85,7 @@ export default function Header() {
                 {isActive(path, nav.href) && (
                   <motion.div
                     layoutId="background"
-                    className="absolute inset-0 dark:bg-zinc-700 bg-zinc-100 -z-10 rounded-md"
+                    className="absolute inset-0 -z-10 rounded-md bg-zinc-100 dark:bg-zinc-700"
                   ></motion.div>
                 )}
               </li>

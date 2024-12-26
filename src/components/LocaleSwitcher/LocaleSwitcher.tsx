@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl';
 import { useTransition } from 'react';
 import clsx from 'clsx';
-import { usePathname, useRouter } from 'i18n/routing';
+import { usePathname, useRouter } from '@/i18n/routing';
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
@@ -24,8 +24,8 @@ export default function LocaleSwitcher() {
         aria-label="Switch to English"
         className={clsx(
           locale === 'en'
-            ? 'text-zinc-700 font-semibold dark:text-zinc-300'
-            : 'text-zinc-500 dark:text-zinc-400 cursor-pointer'
+            ? 'font-semibold text-zinc-700 dark:text-zinc-300'
+            : 'cursor-pointer text-zinc-500 dark:text-zinc-400',
         )}
         onClick={() => {
           onLanguageChange('en');
@@ -38,8 +38,8 @@ export default function LocaleSwitcher() {
         aria-label="Switch to Turkish"
         className={clsx(
           locale === 'tr'
-            ? 'text-zinc-700 font-semibold dark:text-zinc-300'
-            : 'text-zinc-500 dark:text-zinc-400 cursor-pointer'
+            ? 'font-semibold text-zinc-700 dark:text-zinc-300'
+            : 'cursor-pointer text-zinc-500 dark:text-zinc-400',
         )}
         onClick={() => {
           onLanguageChange('tr');

@@ -2,11 +2,11 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import Container from 'components/Container/Container';
-import BgPattern from 'components/BgPattern/BgPattern';
-import SocialIcons from 'components/SocialIcons/SocialIcons';
-import ContactForm from 'components/ContactForm/ContactForm';
-import SectionTitle from 'components/SectionTitle/SectionTitle';
+import Container from '@/components/Container/Container';
+import BgPattern from '@/components/BgPattern/BgPattern';
+import SocialIcons from '@/components/SocialIcons/SocialIcons';
+import ContactForm from '@/components/ContactForm/ContactForm';
+import SectionTitle from '@/components/SectionTitle/SectionTitle';
 import { motion } from 'motion/react';
 
 export default function ContactSection() {
@@ -15,7 +15,7 @@ export default function ContactSection() {
   return (
     <Container
       id="contact"
-      className="text-center min-h-[calc(100vh-var(--footer-height))] flex flex-col justify-center gap-20"
+      className="flex min-h-[calc(100vh-var(--footer-height))] flex-col justify-center gap-20 text-center"
     >
       <SectionTitle className="w-full">contact.</SectionTitle>
       <motion.div
@@ -36,7 +36,7 @@ export default function ContactSection() {
             transition={{
               duration: 1,
             }}
-            className="text-2xl lg:text-3xl text-zinc-700 dark:text-zinc-300 mb-3"
+            className="mb-3 text-2xl text-zinc-700 lg:text-3xl dark:text-zinc-300"
           >
             {t('title')}
           </motion.h1>
@@ -48,14 +48,14 @@ export default function ContactSection() {
               duration: 1,
               delay: 1,
             }}
-            className="text-md lg:text-lg text-zinc-600 dark:text-zinc-400"
+            className="text-md text-zinc-600 lg:text-lg dark:text-zinc-400"
           >
             {t('content')}
           </motion.p>
         </div>
-        <div className="relative flex flex-col-reverse gap-10 lg:flex-row justify-around items-center">
+        <div className="relative flex flex-col-reverse items-center justify-around gap-10 lg:flex-row">
           <Image
-            className="hidden lg:block max-h-72 w-auto"
+            className="hidden max-h-72 w-auto lg:block"
             src="/macbook2.webp"
             alt="laptop illustration"
             width={300}
@@ -64,7 +64,7 @@ export default function ContactSection() {
 
           <SocialIcons
             className={
-              'lg:flex lg:flex-col lg:gap-16 text-zinc-500 hidden z-20'
+              'z-20 hidden text-zinc-500 lg:flex lg:flex-col lg:gap-16'
             }
             size={50}
           />

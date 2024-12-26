@@ -1,9 +1,9 @@
-import Container from 'components/Container/Container';
-import ProjectCard from 'components/ProjectCard/ProjectCard';
-import SectionTitle from 'components/SectionTitle/SectionTitle';
+import Container from '@/components/Container/Container';
+import ProjectCard from '@/components/ProjectCard/ProjectCard';
+import SectionTitle from '@/components/SectionTitle/SectionTitle';
 import { useTranslations } from 'next-intl';
-import projectsData from 'data/projects.json';
-import freelanceProjectsData from 'data/freelanceProjects.json';
+import projectsData from '@/data/projects.json';
+import freelanceProjectsData from '@/data/freelanceProjects.json';
 
 export default function Projects() {
   const t = useTranslations('projects');
@@ -23,7 +23,7 @@ export default function Projects() {
   return (
     <Container id="projects" className="max-w-7xl scroll-mt-28">
       <SectionTitle>projects.</SectionTitle>
-      <div className="flex flex-wrap justify-around xl:justify-between gap-20 md:gap-5">
+      <div className="flex flex-wrap justify-around gap-20 md:gap-5 xl:justify-between">
         {selfProjects.map((project, index) => {
           const id = project.title;
           return (
@@ -41,7 +41,7 @@ export default function Projects() {
       </div>
       <div className="mt-44">
         <SectionTitle>freelance projects.</SectionTitle>
-        <div className="flex flex-wrap md:flex-nowrap items-start gap-20 md:gap-5 justify-center xl:justify-between">
+        <div className="flex flex-wrap items-start justify-center gap-20 md:flex-nowrap md:gap-5 xl:justify-between">
           {freelanceProjects.map((project) => {
             const id = project.title;
 

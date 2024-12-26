@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Icons } from 'types/types';
+import { Icons } from '@/types/types';
 import { generatePositions } from './Skills.helpers';
-import IconSlider from 'components/IconSlider/IconSlider';
+import IconSlider from '@/components/IconSlider/IconSlider';
 import skills from './Skills.constants';
 import clsx from 'clsx';
 
@@ -38,29 +38,29 @@ export default function Skills() {
   }, []);
 
   return (
-    <section className="bg-linear-to-b from-zinc-100 via-zinc-150 to-zinc-100 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 relative my-10 lg:my-36">
+    <section className="via-zinc-150 relative my-10 bg-linear-to-b from-zinc-100 to-zinc-100 lg:my-36 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950">
       <svg
         id="visual"
         viewBox="0 0 900 50"
-        className="w-full h-auto fill-zinc-100 bg-white dark:fill-zinc-950 dark:bg-zinc-900 absolute top-0 -translate-y-full z-0"
+        className="absolute top-0 z-0 h-auto w-full -translate-y-full bg-white fill-zinc-100 dark:bg-zinc-900 dark:fill-zinc-950"
         version="1.1"
       >
         <path d="M0 25L50 20.8C100 16.7 200 8.3 300 9.7C400 11 500 22 600 23C700 24 800 15 850 10.5L900 6L900 51L850 51C800 51 700 51 600 51C500 51 400 51 300 51C200 51 100 51 50 51L0 51Z"></path>
       </svg>
       <div
         className={clsx(
-          'relative min-h-[200px] xl:h-[250px] 2xl:h-[300px] max-w-7xl mx-auto z-10'
+          'relative z-10 mx-auto min-h-[200px] max-w-7xl xl:h-[250px] 2xl:h-[300px]',
         )}
       >
         <div
-          className={`text-inherit h-full min-w-full overflow-x-clip absolute inset-0 flex`}
+          className={`absolute inset-0 flex h-full min-w-full overflow-x-clip text-inherit`}
           ref={heroRef}
         >
           <ul
             aria-hidden
             className={clsx(
-              'relative min-w-[150%] md:min-w-full h-full animate-infinite-slider-100 transition-all duration-[3s]',
-              fadeIn ? 'opacity-100 dark:opacity-70' : 'opacity-0'
+              'animate-infinite-slider-100 relative h-full min-w-[150%] transition-all duration-[3s] md:min-w-full',
+              fadeIn ? 'opacity-100 dark:opacity-70' : 'opacity-0',
             )}
           >
             {positions.map((element) => {
@@ -74,15 +74,15 @@ export default function Skills() {
                 >
                   <div
                     className={clsx(
-                      'flex flex-col items-center justify-center cursor-pointer grayscale transition-all duration-[2s] opacity-75 dark:opacity-75',
+                      'flex cursor-pointer flex-col items-center justify-center opacity-75 grayscale transition-all duration-[2s] dark:opacity-75',
                       isAnimated === element.icon.id &&
-                        'scale-125 opacity-100 grayscale-0'
+                        'scale-125 opacity-100 grayscale-0',
                     )}
                   >
                     <span>
-                      <Icon className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14" />
+                      <Icon className="h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14" />
                     </span>
-                    <p className="text-xs md:text-base text-center text-zinc-800 dark:text-zinc-100">
+                    <p className="text-center text-xs text-zinc-800 md:text-base dark:text-zinc-100">
                       {element.icon.name}
                     </p>
                   </div>
@@ -92,8 +92,8 @@ export default function Skills() {
           </ul>
           <ul
             className={clsx(
-              'relative min-w-[150%] md:min-w-full h-full animate-infinite-slider-100 transition-all duration-[3s] will-change-transform, opacity z-50',
-              fadeIn ? 'opacity-100 dark:opacity-70' : 'opacity-0'
+              'animate-infinite-slider-100 will-change-transform, opacity relative z-50 h-full min-w-[150%] transition-all duration-[3s] md:min-w-full',
+              fadeIn ? 'opacity-100 dark:opacity-70' : 'opacity-0',
             )}
           >
             {positions.map((element) => {
@@ -107,15 +107,15 @@ export default function Skills() {
                 >
                   <div
                     className={clsx(
-                      'flex flex-col items-center justify-center cursor-pointer grayscale transition-all duration-[2s] opacity-75 dark:opacity-75',
+                      'flex cursor-pointer flex-col items-center justify-center opacity-75 grayscale transition-all duration-[2s] dark:opacity-75',
                       isAnimated === element.icon.id &&
-                        'scale-125 opacity-100 grayscale-0 relative'
+                        'relative scale-125 opacity-100 grayscale-0',
                     )}
                   >
                     <span>
-                      <Icon className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14" />
+                      <Icon className="h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14" />
                     </span>
-                    <p className="text-xs md:text-base text-center text-zinc-800 dark:text-zinc-100">
+                    <p className="text-center text-xs text-zinc-800 md:text-base dark:text-zinc-100">
                       {element.icon.name}
                     </p>
                   </div>
@@ -128,7 +128,7 @@ export default function Skills() {
       <svg
         id="visual"
         viewBox="0 0 900 50"
-        className="w-full h-auto fill-white dark:fill-zinc-900 bg-zinc-100 dark:bg-zinc-950 pt-2 absolute bottom-0 translate-y-full z-0"
+        className="absolute bottom-0 z-0 h-auto w-full translate-y-full bg-zinc-100 fill-white pt-2 dark:bg-zinc-950 dark:fill-zinc-900"
         version="1.1"
       >
         <path d="M0 25L50 20.8C100 16.7 200 8.3 300 9.7C400 11 500 22 600 23C700 24 800 15 850 10.5L900 6L900 51L850 51C800 51 700 51 600 51C500 51 400 51 300 51C200 51 100 51 50 51L0 51Z"></path>

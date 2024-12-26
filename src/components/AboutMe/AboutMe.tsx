@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useState } from "react";
-import BgPattern from "../BgPattern/BgPattern";
-import { spartan } from "fonts";
-import Container from "components/Container/Container";
-import { useTranslations } from "next-intl";
+import Image from 'next/image';
+import { useState } from 'react';
+import BgPattern from '../BgPattern/BgPattern';
+import { spartan } from 'fonts';
+import Container from '@/components/Container/Container';
+import { useTranslations } from 'next-intl';
 
 export default function AboutMe() {
   const [loki, setLoki] = useState(false);
-  const t = useTranslations("AboutMe");
+  const t = useTranslations('AboutMe');
 
   const imageClassNames = `rounded-2xl transform transition-all duration-500`;
 
@@ -20,9 +20,9 @@ export default function AboutMe() {
           <h1
             className={`${spartan.className} text-left text-4xl font-semibold tracking-tighter md:text-6xl xl:text-7xl`}
           >
-            {t("title")}
+            {t('title')}
             <br />
-            {t("secondTitle")}
+            {t('secondTitle')}
           </h1>
           <div className="relative mr-5 h-28 w-28 shrink-0 self-end overflow-y-clip md:h-48 md:w-48">
             <Image
@@ -36,7 +36,7 @@ export default function AboutMe() {
               src="/lokiphoto.png"
               alt={`Profile image of Loki`}
               className={`absolute bottom-0 h-full w-full translate-x-10 translate-y-10 scale-[60%] md:translate-x-20 ${imageClassNames} ${
-                !loki ? "translate-y-full -rotate-45" : "rotate-0"
+                !loki ? 'translate-y-full -rotate-45' : 'rotate-0'
               }`}
               width={800}
               height={800}
@@ -57,11 +57,11 @@ export default function AboutMe() {
           </p>
           <p className="break-inside-avoid">
             Currently, I am a full-stack developer, continuously working on
-            improving my skills.{" "}
+            improving my skills.{' '}
           </p>
           <p>
             Outside of work, I enjoy collecting LEGO sets and action figures.
-            For stress management, my greatest companion is our cat;{" "}
+            For stress management, my greatest companion is our cat;{' '}
             <button
               className="cursor-pointer font-semibold underline transition-all duration-300 hover:scale-105 hover:text-zinc-700 dark:hover:text-zinc-300"
               onClick={() => setLoki(!loki)}

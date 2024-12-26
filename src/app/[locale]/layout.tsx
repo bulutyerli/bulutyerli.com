@@ -3,12 +3,12 @@ import { roboto } from 'fonts';
 import { NextIntlClientProvider } from 'next-intl';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import ThemeProvider from 'providers/ThemeProvider';
-import Header from 'components/Header/Header';
-import Footer from 'components/Footer/Footer';
-import { Locale, routing } from 'i18n/routing';
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 import { notFound } from 'next/navigation';
 import { getMessages, setRequestLocale } from 'next-intl/server';
+import { Locale, routing } from '@/i18n/routing';
+import ThemeProvider from '@/providers/ThemeProvider';
 
 export const metadata = {
   title: 'Bulut Yerli Full-Stack Web Developer ',

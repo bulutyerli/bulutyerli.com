@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { spartan } from 'fonts';
-import Container from 'components/Container/Container';
+import Container from '@/components/Container/Container';
 import { useEffect } from 'react';
 
 export default function Error({
@@ -19,9 +19,9 @@ export default function Error({
   }, [error]);
 
   return (
-    <Container className="mt-auto gap-10 flex flex-col text-center">
+    <Container className="mt-auto flex flex-col gap-10 text-center">
       <h1
-        className={`${spartan.className} text-xl md:text-2xl lg:text-3xl text-red-600`}
+        className={`${spartan.className} text-xl text-red-600 md:text-2xl lg:text-3xl`}
       >
         {t('error')}
       </h1>
@@ -29,7 +29,7 @@ export default function Error({
         {t('title')}
       </h2>
       <button
-        className="bg-zinc-500 max-w-30 self-center px-4 py-2 rounded-xl hover:bg-zinc-400 text-zinc-100"
+        className="max-w-30 self-center rounded-xl bg-zinc-500 px-4 py-2 text-zinc-100 hover:bg-zinc-400"
         onClick={reset}
       >
         {t('retry')}

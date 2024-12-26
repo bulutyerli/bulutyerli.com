@@ -1,7 +1,7 @@
 import 'globals.css';
 import { useTranslations } from 'next-intl';
 import { spartan } from 'fonts';
-import { Link } from 'i18n/routing';
+import { Link } from '@/i18n/routing';
 
 export default function NotFound() {
   const t = useTranslations('NotFound');

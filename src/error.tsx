@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect } from 'react';
 
 // Error components must be Client Components
