@@ -85,6 +85,8 @@ export default function Header() {
                   className="cursor-pointer"
                   onClick={() => handleRoute(pathName, nav.href, router)}
                   id={nav.href}
+                  role="link"
+                  aria-label={`Navigate to ${nav.title} section`}
                 >
                   {nav.title}
                 </button>

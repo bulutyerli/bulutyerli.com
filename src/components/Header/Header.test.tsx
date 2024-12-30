@@ -53,10 +53,10 @@ describe('Header component test suite', () => {
     const desktopNav = getByLabelText('desktop-nav');
 
     expect(
-      within(desktopNav).getByRole('button', { name: /about/i }),
+      within(desktopNav).getByRole('link', { name: /about/i }),
     ).toBeInTheDocument();
     expect(
-      within(desktopNav).getByRole('button', { name: /contact/i }),
+      within(desktopNav).getByRole('link', { name: /contact/i }),
     ).toBeInTheDocument();
   });
 
