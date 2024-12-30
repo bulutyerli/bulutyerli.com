@@ -1,5 +1,5 @@
-/* import fs from 'fs';
 import { Locale } from '@/i18n/routing';
+import fs from 'fs';
 import path from 'path';
 
 export default async function Page({
@@ -16,7 +16,7 @@ export default async function Page({
 }
 
 export function generateStaticParams() {
-  const contentDir = path.join(process.cwd(), '@/content');
+  const contentDir = path.join(process.cwd(), 'src/content');
   const slugs = fs.readdirSync(contentDir); // Reads all folders/files in the content dir
 
   // Generate params for each slug
@@ -26,4 +26,3 @@ export function generateStaticParams() {
 }
 
 export const dynamicParams = false;
- */

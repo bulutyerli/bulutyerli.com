@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { spartan } from 'fonts';
 import clsx from 'clsx';
 import { useMotionValue, motion } from 'motion/react';
 import { formatLink } from './ProjectCard.helpers';
@@ -92,8 +91,7 @@ export default function ProjectCard({
         <div>
           <h2
             className={clsx(
-              spartan.className,
-              'mt-6 text-zinc-800 dark:text-zinc-200',
+              'font-spartan mt-6 text-zinc-800 dark:text-zinc-200',
               freelance
                 ? 'text-2xl'
                 : 'text-3xl font-semibold tracking-tighter lg:text-4xl',

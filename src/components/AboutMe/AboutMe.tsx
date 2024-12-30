@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import BgPattern from '../BgPattern/BgPattern';
-import { spartan } from 'fonts';
 import Container from '@/components/Container/Container';
 import { useTranslations } from 'next-intl';
+import clsx from 'clsx';
 
 export default function AboutMe() {
   const [loki, setLoki] = useState(false);
@@ -18,7 +18,9 @@ export default function AboutMe() {
       <article className="relative flex h-full flex-col items-center gap-5 py-10 sm:py-20 md:gap-10">
         <div className="flex items-center justify-center gap-6">
           <h1
-            className={`${spartan.className} text-left text-4xl font-semibold tracking-tighter md:text-6xl xl:text-7xl`}
+            className={clsx(
+              'font-spartan text-left text-4xl font-semibold tracking-tighter md:text-6xl xl:text-7xl',
+            )}
           >
             {t('title')}
             <br />

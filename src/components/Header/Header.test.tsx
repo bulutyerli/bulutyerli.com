@@ -35,7 +35,7 @@ describe('Header component test suite', () => {
         <ThemeSpy />
         <ThemeSwitcher aria-label="Toggle Dark Mode" />
       </>,
-      { theme }
+      { theme },
     );
     const spy = screen.getByTestId('theme-spy');
 
@@ -47,16 +47,16 @@ describe('Header component test suite', () => {
   it('should render nav links correctly', () => {
     const { getByLabelText } = renderWithProvider(
       <HeaderComponent />,
-      'Header'
+      'Header',
     );
 
     const desktopNav = getByLabelText('desktop-nav');
 
     expect(
-      within(desktopNav).getByRole('link', { name: /about/i })
+      within(desktopNav).getByRole('button', { name: /about/i }),
     ).toBeInTheDocument();
     expect(
-      within(desktopNav).getByRole('link', { name: /contact/i })
+      within(desktopNav).getByRole('button', { name: /contact/i }),
     ).toBeInTheDocument();
   });
 

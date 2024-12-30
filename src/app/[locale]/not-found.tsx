@@ -1,18 +1,15 @@
 import 'globals.css';
 import { useTranslations } from 'next-intl';
-import { spartan } from 'fonts';
 import { Link } from '@/i18n/routing';
 
 export default function NotFound() {
   const t = useTranslations('NotFound');
 
   return (
-    <div className="grid min-h-full place-items-center bg-white dark:bg-zinc-900 px-6 py-24 sm:py-32 lg:px-8 my-auto">
+    <div className="my-auto grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-zinc-900">
       <div className="text-center">
         <p className="text-base font-semibold text-red-600">404</p>
-        <h1
-          className={`mt-4 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 sm:text-5xl ${spartan.className}`}
-        >
+        <h1 className="font-spartan mt-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-200">
           {t('h1')}
         </h1>
         <p className="mt-6 text-base leading-7 text-zinc-600 dark:text-zinc-400">

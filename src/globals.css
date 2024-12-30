@@ -5,8 +5,8 @@
 @variant dark (&:is(.dark *));
 
 @theme {
-  --font-roboto: var(--font-roboto);
-  --font-title: var(--font-spartan);
+  --font-roboto: 'Roboto Flex';
+  --font-spartan: 'League Spartan';
 
   --animate-infinite-slider-100: infiniteSlider 75s linear infinite;
   --animate-bounce: bounceAnimation 10s infinite;

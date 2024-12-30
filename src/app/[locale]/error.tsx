@@ -1,7 +1,6 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { spartan } from 'fonts';
 import Container from '@/components/Container/Container';
 import { useEffect } from 'react';
 
@@ -20,12 +19,10 @@ export default function Error({
 
   return (
     <Container className="mt-auto flex flex-col gap-10 text-center">
-      <h1
-        className={`${spartan.className} text-xl text-red-600 md:text-2xl lg:text-3xl`}
-      >
+      <h1 className="font-spartantext-xl text-red-600 md:text-2xl lg:text-3xl">
         {t('error')}
       </h1>
-      <h2 className={`${spartan.className} text-3xl md:text-4xl lg:text-5xl`}>
+      <h2 className="font-spartan text-3xl md:text-4xl lg:text-5xl">
         {t('title')}
       </h2>
       <button

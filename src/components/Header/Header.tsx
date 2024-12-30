@@ -11,16 +11,19 @@ import MobileMenu from '@/components/MobileMenu/MobileMenu';
 import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
 import { Link } from '@/i18n/routing';
 import { sectionNames } from './Header.constants';
-import { isActive } from './Header.helpers';
+import { handleRoute, isActive } from './Header.helpers';
 import clsx from 'clsx';
 import { motion } from 'motion/react';
-import { spartan } from 'fonts';
 import useActiveSection from '@/hooks/useActiveSection';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const path = useActiveSection(sectionNames);
+  const pathName = usePathname();
+  const router = useRouter();
   const t = useTranslations('Header');
+  console.log(pathName, 'path');
 
   useEffect(() => {
     if (menuOpen) {
@@ -73,15 +76,18 @@ export default function Header() {
             return (
               <li
                 className={clsx(
-                  spartan.className,
-                  'relative rounded-sm p-2 pb-1',
+                  'font-spartan relative rounded-sm p-2 pb-1',
                   !isActive(path, nav.href) && 'hover:underline',
                 )}
                 key={nav.title}
               >
-                <Link href={nav.href} id={nav.href}>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => handleRoute(pathName, nav.href, router)}
+                  id={nav.href}
+                >
                   {nav.title}
-                </Link>
+                </button>
                 {isActive(path, nav.href) && (
                   <motion.div
                     layoutId="background"
