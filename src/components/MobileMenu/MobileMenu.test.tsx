@@ -28,6 +28,7 @@ describe('MobileMenu Test Suite', () => {
         navLinks={mockNavLinks as NavLink[]}
         menuOpen={menuOpen}
         setMenuOpen={mockSetMenuOpen}
+        handleRoute={jest.fn()}
       />,
     );
 
@@ -46,7 +47,7 @@ describe('MobileMenu Test Suite', () => {
         navLinks={mockNavLinks as NavLink[]}
         menuOpen={menuOpen}
         setMenuOpen={mockSetMenuOpen}
-        handleRoute={}
+        handleRoute={jest.fn()}
       />,
     );
 
@@ -60,6 +61,7 @@ describe('MobileMenu Test Suite', () => {
         navLinks={mockNavLinks as NavLink[]}
         menuOpen={menuOpen}
         setMenuOpen={mockSetMenuOpen}
+        handleRoute={jest.fn()}
       />,
     );
 

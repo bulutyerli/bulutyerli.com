@@ -30,11 +30,7 @@ export default function MobileMenu({
         {navLinks.map((nav) => {
           return (
             <li onClick={() => setMenuOpen()} key={nav.title}>
-              <button
-                role="link"
-                onClick={() => handleRoute(nav.href)}
-                aria-label={`Navigate to ${nav.title} section`}
-              >
+              <button role="link" onClick={() => handleRoute(nav.href)}>
                 {nav.title}
               </button>
             </li>
