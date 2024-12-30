@@ -15,7 +15,7 @@ export default function ContactSection() {
   return (
     <Container
       id="contact"
-      className="flex min-h-[calc(100vh-var(--footer-height))] flex-col justify-center gap-20 text-center"
+      className="flex min-h-[calc(100vh-var(--footer-height))] scroll-mt-20 flex-col justify-center text-center md:scroll-mt-0 md:gap-20"
     >
       <SectionTitle className="w-full">contact.</SectionTitle>
       <motion.div
