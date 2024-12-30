@@ -28,7 +28,7 @@ describe('MobileMenu Test Suite', () => {
         navLinks={mockNavLinks as NavLink[]}
         menuOpen={menuOpen}
         setMenuOpen={mockSetMenuOpen}
-      />
+      />,
     );
 
     const localeSwitcher = screen.getByText(/locale switcher mock component/i);
@@ -46,7 +46,8 @@ describe('MobileMenu Test Suite', () => {
         navLinks={mockNavLinks as NavLink[]}
         menuOpen={menuOpen}
         setMenuOpen={mockSetMenuOpen}
-      />
+        handleRoute={}
+      />,
     );
 
     const menu = screen.getByTestId('mobile-menu');
@@ -59,7 +60,7 @@ describe('MobileMenu Test Suite', () => {
         navLinks={mockNavLinks as NavLink[]}
         menuOpen={menuOpen}
         setMenuOpen={mockSetMenuOpen}
-      />
+      />,
     );
 
     expect(menu).toHaveClass('translate-x-full');

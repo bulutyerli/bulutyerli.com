@@ -70,6 +70,7 @@ export default function Header() {
           navLinks={navLinks}
           menuOpen={menuOpen}
           setMenuOpen={() => setMenuOpen(false)}
+          handleRoute={(href) => handleRoute(pathName, href, router)}
         />
         <ul aria-label="desktop-nav" className="hidden gap-10 md:flex">
           {navLinks.map((nav) => {

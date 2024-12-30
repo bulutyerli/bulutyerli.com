@@ -2,17 +2,18 @@
 
 import { NavLink } from '@/types/types';
 import LocaleSwitcher from '@/components/LocaleSwitcher/LocaleSwitcher';
-import { Link } from '@/i18n/routing';
 import clsx from 'clsx';
 
 export default function MobileMenu({
   navLinks,
   menuOpen,
   setMenuOpen,
+  handleRoute,
 }: {
   navLinks: NavLink[];
   menuOpen: boolean;
   setMenuOpen: () => void;
+  handleRoute: (href: string) => void;
 }) {
   return (
     <div
@@ -29,7 +30,13 @@ export default function MobileMenu({
         {navLinks.map((nav) => {
           return (
             <li onClick={() => setMenuOpen()} key={nav.title}>
-              <Link href={nav.href}>{nav.title}</Link>
+              <button
+                role="link"
+                onClick={() => handleRoute(nav.href)}
+                aria-label={`Navigate to ${nav.title} section`}
+              >
+                {nav.title}
+              </button>
             </li>
           );
         })}
