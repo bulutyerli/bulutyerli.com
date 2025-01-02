@@ -43,7 +43,6 @@ export default function ProjectCard({
   }
 
   const formattedImage = formatLink(imageLink);
-  const linkHref = freelance ? liveLink : slug;
 
   return (
     <motion.div

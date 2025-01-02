@@ -4,6 +4,7 @@ import { useLocale } from 'next-intl';
 import { useTransition } from 'react';
 import clsx from 'clsx';
 import { usePathname, useRouter } from '@/i18n/routing';
+import { useParams } from 'next/navigation';
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
@@ -11,10 +12,12 @@ export default function LocaleSwitcher() {
   const [, startTransition] = useTransition();
   const router = useRouter();
   const pathname = usePathname();
+  const params = useParams();
 
   function onLanguageChange(lang: string) {
     startTransition(() => {
-      router.replace({ pathname }, { locale: lang });
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+      router.replace({ pathname, params: params as any }, { locale: lang });
     });
   }
 

@@ -24,6 +24,8 @@ export default function Header() {
   const router = useRouter();
   const t = useTranslations('Header');
 
+  console.log(path);
+
   useEffect(() => {
     if (menuOpen) {
       document.body.classList.add('overflow-y-hidden');
