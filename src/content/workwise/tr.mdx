@@ -1,9 +1,130 @@
-<h2>türkçe</h2>
+# WorkWise
 
-<p>türkçe detay:</p>
+WorkWise, şirketlerin günlük işlerini daha kolay yönetmelerine yardımcı olmak için geliştirilmiştir. Kullanıcı rollerine dayalı olarak farklı özelliklere erişim sağlar. Çalışanlar ve yöneticiler, finans kayıtlarını kontrol etmek, personel yönetimi, şirket yapısını ve izin taleplerini yönetmek için kullanabilir. WorkWise, zaman kazandırmayı ve herkes için işleri daha verimli hale getirmeyi amaçlamaktadır.
 
-<ul>
-  <li>bir</li>
-  <li>iki</li>
-  <li>üç</li>
-</ul>
+<ProjectDetails
+  stackList={[
+    'typescript',
+    'react',
+    'node.js',
+    'express',
+    'postgresql',
+    'kysely',
+    'tailwind',
+    'recharts',
+    'docker',
+    'jest',
+  ]}
+  liveSite={'https://work-wisee.vercel.app/'}
+  gitHub={'https://github.com/bulutyerli/WorkWise-Frontend'}
+/>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/workwise/workwise-homepage.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Homepage',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Proje Amacı
+
+WorkWise'ı, rol tabanlı erişim kontrolüne (RBAC) odaklanan bir şirket yönetim uygulaması ve MVP (Minimum Viable Product) olarak geliştirmeye karar verdim. Projenin amacı, farklı kullanıcı rollerinin yalnızca yetkilendirildikleri özelliklere erişebileceği bir sistem yaratmaktı. Böylece çalışanlar, yöneticiler ve İK, neyi görebilecekleri ve ne yapabilecekleri konusunda net sınırlarla belirlenmiş oldu. Bunu PostgreSQL yardımıyla oluşturdum.
+
+- İK, çalışanları ekleyebilir, düzenleyebilir, silebilir, maaşları değiştirebilir ve uygulamanın her bölümüne erişebilir.
+- Yöneticiler, yıllık izin taleplerini onaylayabilir veya reddedebilir ve kendi departmanlarındaki çalışanların maaş bilgilerini görüntüleyebilir.
+- Çalışanlar sınırlı erişime sahiptir, personel listesine (hassas veriler hariç) göz atabilir ve yıllık izin talepleri oluşturabilir.
+
+Rol tabanlı sisteme ek olarak, diğer bir önemli hedef, şirketin finansal verileri için veri görselleştirmeleri oluşturmak oldu. Gelir ve giderleri görselleştiren bir finansal gösterge panosu geliştirdim.
+
+<div className="flex lg:gap-14 items-center flex-wrap lg:flex-nowrap">
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/workwise/workwise-annual.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Homepage',
+    },
+  ]}
+  className="shadow-lg"
+/>
+
+<div className="min-w-1/2">
+
+## Teknoloji
+
+WorkWise için, kullanımı kolay ama aynı zamanda projeye güçlü şekilde destek olabilecek teknolojileri seçtim:
+
+- TypeScript: Hem frontend hem de backend tarafında kullandım, böylece kod daha güvenli ve yönetilmesi kolay oldu, özellikle de verilerle çalışırken...
+- Frontend: React Vite ile geliştirdim. Routing için TanStack React Router, API isteklerini yönetmek için de TanStack Query kullandım. İkisini de TypeScript ile çok uyumlu oldukları için özellikle tercih ettim.
+- Backend: Node.js ve Express kullandım, yine TypeScript ile daha geliştirilebilir ve yönetimi kolay şekilde dizayn ettim.
+- Veritabanı: PostgreSQL’i tercih ettim çünkü esnek ve rol tabanlı erişim sistemleri için bence en iyi seçenek. ORM yerine, SQL tarzında direkt query yazabilmemi sağlayan ve güvenli olan Kysely’i kullandım.
+- Kimlik Doğrulama: Firebase Auth ile kullanıcı doğrulaması sağladım.
+- Veri Görselleştirme: Finansal verileri ve organizasyon yapısını görselleştirmek için Recharts ve d3-org-chart kullandım.
+- Test ve Linting: Testler için Jest ve React Testing Library, kod düzeni için de ESLint ve Prettier tercih ettim.
+- Deploy: Backend’i Docker ile Google Cloud’a, frontend’i ise Vercel’e yükledim.
+
+</div>
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/workwise/workwise1.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Login Page',
+    },
+    {
+      src: '/projects/workwise/workwise2.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Finance Charts',
+    },
+    {
+      src: '/projects/workwise/workwise3.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Income Records',
+    },
+    {
+      src: '/projects/workwise/workwise4.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Staff List',
+    },
+  ]}
+  className="max-w-[45%] shadow-lg"
+/>
+
+<div className="justify-self-center text-center">
+
+## Zorluklar
+
+WorkWise projesinde zorlandığım kısımların başında projenin genel yapısının dizayn edilmesi, RBAC ve finans grafikleri oluşturma geliyordu. Backend tarafında, Model-View-Controller (MVC) dizaynı kullanarak her şeyin daha düzenli olmasını sağladım. Front End tarafında ise mümkün olduğunca yeniden kullanılabilir componentler yaratmaya özen gösterdim. Bu sayede yeni özellikleri eklemek çok daha kolay hale geldi.
+
+Grafik oluşturmak ise ilk kez yaptığım bir şeydi. Recharts’ı öğrenmek biraz zaman alsa da sonunda buna değdi çünkü finansal grafikler uygulamanın önemli bir parçası oldu. Bu süreç, veri görselleştirme araçlarıyla daha fazla deneyim kazanmamı sağladı.
+
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/workwise/workwise5.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Homepage',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Öğrendiklerim
+
+WorkWise'i geliştirmek bana birçok şey öğretti, özellikle proje yapısı, RBAC ve PostgreSQL hakkında. MVC dizaynını kullanmak projeyi düzenli ve ölçeklenebilir tutmamı sağladı. RBAC'yi uygulamak, kullanıcı erişimini güvenli ve verimli bir şekilde kontrol etmek için çok önemliydi. Ayrıca PostgreSQL ile çalışmak benim için ilk deneyimdi ve gerçekten çok keyif aldım – esnekliği ve gücü, projeye çok uygun oldu. Genel olarak, bu deneyimler bana gelecekteki projelere daha fazla güvenle ve daha iyi stratejilerle yaklaşmamı sağladı.

@@ -1,9 +1,133 @@
-<h1>This is a heading workwıse</h1>
+# WorkWise
 
-<p>This is a list in markdown:</p>
+WorkWise is a tool built to help companies manage their daily tasks more
+easily. It gives access to different features based on user roles. Employees
+and managers can use it to check finances, manage staff, view the company’s
+structure, and handle leave requests. WorkWise is designed to save time and
+make work smoother for everyone.
 
-<ul>
-  <li>One</li>
-  <li>Two</li>
-  <li>Three</li>
-</ul>
+<ProjectDetails
+  stackList={[
+    'typescript',
+    'react',
+    'node.js',
+    'express',
+    'postgresql',
+    'kysely',
+    'tailwind',
+    'recharts',
+    'docker',
+    'jest',
+  ]}
+  liveSite={'https://work-wisee.vercel.app/'}
+  gitHub={'https://github.com/bulutyerli/WorkWise-Frontend'}
+/>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/workwise/workwise-homepage.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Homepage',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Project Purpose
+
+I decided to build WorkWise as an MVP for a company management app that focuses on role-based access control (RBAC). The goal of the project was to create a system where different user roles could access only the features they are authorized to use, ensuring that employees, managers, and HR have clear boundaries in what they can view and do. I created that with the help of Postgresql.
+
+- HR can add, edit, delete employees, change salaries, and access every section of the app.
+- Managers can approve or decline annual leave requests and view salary information for employees in their department.
+- Employees have limited access, can view the staff list (without sensitive data), and can create annual leave requests.
+
+In addition to the role-based system, another key objective was to build data visualizations for the company's financial data. I developed a financial dashboard that visualizes income and expenses.
+
+<div className="flex lg:gap-14 items-center flex-wrap lg:flex-nowrap">
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/workwise/workwise-annual.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Homepage',
+    },
+  ]}
+  className="shadow-lg"
+/>
+
+<div className="min-w-1/2">
+
+## Stack
+
+For WorkWise, I chose tools and technologies that were simple to use but also powerful enough for the project:
+
+- TypeScript: Used for both the front end and back end to make the code safer and easier to work with, especially when dealing with lots of data.
+- Frontend: Built with React Vite. I used TanStack React Router for navigation and TanStack Query for handling API requests and caching. Both works great with TS.
+- Backend: Developed with Node.js and Express, also in TypeScript, to make the backend scalable and easier to manage.
+- Database: PostgreSQL was my choice for its flexibility and because it works well with role-based access systems. Instead of using an ORM, I used Kysely, a query builder that let me write SQL-like queries in a safer way.
+- Authentication: Firebase Auth handled user authentication.
+- Data Visualization: I used Recharts and d3-org-chart to create charts for financial data and the organizational structure.
+- Testing and Linting: I used Jest and React Testing Library for testing, and ESLint and Prettier for formatting.
+- Deployment: The backend was containerized with Docker and deployed to Google Cloud, while the frontend was hosted on Vercel.
+
+</div>
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/workwise/workwise1.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Login Page',
+    },
+    {
+      src: '/projects/workwise/workwise2.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Finance Charts',
+    },
+    {
+      src: '/projects/workwise/workwise3.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Income Records',
+    },
+    {
+      src: '/projects/workwise/workwise4.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Staff List',
+    },
+  ]}
+  className="max-w-[45%] shadow-lg"
+/>
+
+<div className="justify-self-center text-center">
+## Challenges
+
+WorkWise had a few challenges, mainly with project structure, RBAC, and making charts. For the backend, I used the Model-View-Controller (MVC) pattern to keep everything organized and scalable. I also focused on creating reusable components to make the app easier to maintain in the future. This approach paid off, as it simplified adding new features later.
+
+Creating charts was new for me. It took time to understand Recharts, but the effort was worth it, as the financial visualizations became a key feature of the app. This experience also helped me build confidence in working with data visualization tools.
+
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/workwise/workwise5.webp',
+      width: 1260,
+      height: 850,
+      alt: 'WorkWise Homepage',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Lessons Learned
+
+Building WorkWise taught me a lot, especially about project structure, RBAC, and PostgreSQL. The MVC pattern helped keep the project organized and scalable. Implementing RBAC was key for controlling user access securely and efficiently. It was also my first time working with PostgreSQL, and I really enjoyed it – its flexibility and power made it a great fit for the project. Overall, these lessons helped me approach future projects with more confidence and better strategies.

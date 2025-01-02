@@ -36,7 +36,7 @@
     "success": "Thank you for your message!"
   },
 
-  "projects": {
+  "Projects": {
     "self": {
       "patilerce": {
         "title": "patilerce.com",
@@ -65,6 +65,10 @@
         "summary": "A portfolio website for a YouTube story teller. Developed with Next.js, TailwindCSS & Sanity"
       }
     }
+  },
+  "ProjectDetails": {
+    "stack": "STACK",
+    "liveSite": "VISIT"
   },
   "Footer": {
     "copyright": "All rights reserved."

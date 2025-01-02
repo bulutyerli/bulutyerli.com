@@ -9,7 +9,6 @@ export default async function Page({
 }) {
   const slug = (await params).slug;
   const locale = (await params).locale;
-  console.log(slug, locale);
   const { default: Post } = await import(`@/content/${slug}/${locale}.mdx`);
 
   return <Post />;
