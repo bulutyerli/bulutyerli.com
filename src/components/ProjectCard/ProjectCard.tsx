@@ -1,11 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import clsx from 'clsx';
 import { useMotionValue, motion } from 'motion/react';
 import { formatLink } from './ProjectCard.helpers';
 import { HoverEffect } from './HoverEffect';
+import { Link as I18Link } from '@/i18n/routing';
+import Link from 'next/link';
 
 interface ProjectCardType {
   title: string;
@@ -42,8 +43,7 @@ export default function ProjectCard({
   }
 
   const formattedImage = formatLink(imageLink);
-  const formattedSlug = slug ? formatLink(slug) : '';
-  const linkHref = freelance ? liveLink : formattedSlug;
+  const linkHref = freelance ? liveLink : slug;
 
   return (
     <motion.div
@@ -69,7 +69,12 @@ export default function ProjectCard({
           'relative z-10 overflow-hidden rounded-lg shadow-md drop-shadow-md',
         )}
       >
-        <Link href={linkHref}>
+        <I18Link
+          href={{
+            pathname: '/project-detail/[slug]',
+            params: { slug: slug },
+          }}
+        >
           <Image
             className={clsx(
               'object-cover transition-transform duration-500 hover:scale-110',
@@ -80,7 +85,7 @@ export default function ProjectCard({
             width={featured ? 2800 : 1400}
             height={700}
           />
-        </Link>
+        </I18Link>
       </div>
       <div
         className={clsx(
@@ -101,7 +106,16 @@ export default function ProjectCard({
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400">{summary}</p>
           <div className="flex w-full justify-between">
-            {!freelance && <Link href={linkHref}>Case Study</Link>}
+            {!freelance && (
+              <I18Link
+                href={{
+                  pathname: '/project-detail/[slug]',
+                  params: { slug: slug },
+                }}
+              >
+                Case Study
+              </I18Link>
+            )}
             <Link href={liveLink} target="_blank">
               Live Link
             </Link>

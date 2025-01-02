@@ -6,7 +6,7 @@ import projectsData from '@/data/projects.json';
 import freelanceProjectsData from '@/data/freelanceProjects.json';
 
 export default function Projects() {
-  const t = useTranslations('projects');
+  const t = useTranslations('Projects');
 
   const selfProjects = Object.keys(projectsData).map((key) => ({
     ...projectsData[key],

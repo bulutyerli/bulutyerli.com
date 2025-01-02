@@ -21,6 +21,10 @@ export const routing = defineRouting({
       en: '#contact',
       tr: '#iletisim',
     },
+    '/project-detail/[slug]': {
+      en: '/project-detail/[slug]',
+      tr: '/proje-detay/[slug]',
+    },
   },
 });
 

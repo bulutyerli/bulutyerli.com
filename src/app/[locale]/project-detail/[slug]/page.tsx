@@ -11,7 +11,12 @@ export default async function Page({
   const locale = (await params).locale;
   const { default: Post } = await import(`@/content/${slug}/${locale}.mdx`);
 
-  return <Post />;
+  return (
+    <>
+      <Post />
+      test
+    </>
+  );
 }
 
 export function generateStaticParams() {

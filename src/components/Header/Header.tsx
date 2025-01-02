@@ -23,7 +23,6 @@ export default function Header() {
   const pathName = usePathname();
   const router = useRouter();
   const t = useTranslations('Header');
-  console.log(pathName, 'path');
 
   useEffect(() => {
     if (menuOpen) {
