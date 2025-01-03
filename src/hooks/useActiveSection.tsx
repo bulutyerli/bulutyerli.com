@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 
-export default function useActiveSection(sectionIds: string[]) {
+export default function useActiveSection(
+  sectionIds: string[],
+  pathName: string,
+) {
   const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
@@ -8,11 +11,17 @@ export default function useActiveSection(sectionIds: string[]) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+            const newActiveSection = entry.target.id;
+            setActiveSection(newActiveSection);
+
+            // Update the hash in the URL without reloading the page
+            if (window.location.hash !== `#${newActiveSection}`) {
+              history.replaceState(null, '', `#${newActiveSection}`);
+            }
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     sectionIds.forEach((id) => {
@@ -23,7 +32,7 @@ export default function useActiveSection(sectionIds: string[]) {
     });
 
     return () => observer.disconnect();
-  }, [sectionIds]);
+  }, [sectionIds, pathName]);
 
   return activeSection;
 }

@@ -1,1 +1,4 @@
-export const sectionNames = ['about-me', 'projects', 'contact'];
+export const sectionNames = {
+  en: ['about-me', 'projects', 'contact'],
+  tr: ['hakkimda', 'projeler', 'iletisim'],
+};

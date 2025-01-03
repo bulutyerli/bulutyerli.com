@@ -3,7 +3,7 @@
 import { FiMenu } from 'react-icons/fi';
 import { FiX } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { NavLink } from 'types/types';
 import Logo from '../Logo/Logo';
 import LocaleSwitcher from '@/components/LocaleSwitcher/LocaleSwitcher';
@@ -15,17 +15,15 @@ import { isActive } from './Header.helpers';
 import clsx from 'clsx';
 import { motion } from 'motion/react';
 import useActiveSection from '@/hooks/useActiveSection';
-import { useRouter } from 'next/navigation';
+import { useHash } from '@/hooks/useHash';
 
 export default function Header() {
+  const locale = useLocale();
   const [menuOpen, setMenuOpen] = useState(false);
-  const path = useActiveSection(sectionNames);
   const pathName = usePathname();
-  const router = useRouter();
+  const path = useActiveSection(sectionNames[locale], pathName);
   const t = useTranslations('Header');
   const isHomepage = pathName === '/';
-
-  console.log(pathName);
 
   useEffect(() => {
     if (menuOpen) {
