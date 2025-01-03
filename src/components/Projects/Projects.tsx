@@ -35,6 +35,7 @@ export default function Projects() {
               slug={project.slug}
               imageLink={project.imageLink}
               liveLink={project.liveLink}
+              gitHubLink={project.github}
             />
           );
         })}

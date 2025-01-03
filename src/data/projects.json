@@ -2,16 +2,19 @@
   "patilerce": {
     "imageLink": "/projects/patilerce/patilerce.webp",
     "slug": "patilerce",
-    "liveLink": "https://www.patilerce.com"
+    "liveLink": "https://www.patilerce.com",
+    "github": "https://github.com/bulutyerli/patilerce"
   },
   "workwise": {
     "imageLink": "/projects/workwise/work-wise.webp",
     "slug": "workwise",
-    "liveLink": "https://work-wisee.vercel.app"
+    "liveLink": "https://work-wisee.vercel.app",
+    "github": "https://github.com/bulutyerli/WorkWise-Frontend"
   },
   "nuvola-coffee-shop": {
     "imageLink": "/projects/nuvola-coffee-shop/nuvola-coffee-shop.webp",
     "slug": "nuvola-coffee-shop",
-    "liveLink": "https://www.nuvolacoffee.store"
+    "liveLink": "https://www.nuvolacoffee.store",
+    "github": "https://github.com/bulutyerli/nuvola-coffee-shop"
   }
 }

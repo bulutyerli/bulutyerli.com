@@ -22,6 +22,7 @@ interface ProjectCardType {
   className?: string;
   featured?: boolean;
   freelance?: boolean;
+  gitHubLink?: string;
 }
 
 export default function ProjectCard({
@@ -33,6 +34,7 @@ export default function ProjectCard({
   featured,
   className,
   freelance = false,
+  gitHubLink,
 }: ProjectCardType) {
   const t = useTranslations('Projects');
 
@@ -110,14 +112,16 @@ export default function ProjectCard({
                 {t('case-study')}
               </I18Link>
             )}
-            <Link
-              className="group flex items-center gap-2 hover:underline"
-              href={liveLink}
-              target="_blank"
-            >
-              <FaGithub className="transition-transform duration-500 group-hover:scale-125" />
-              GitHub
-            </Link>
+            {!freelance && (
+              <Link
+                className="group flex items-center gap-2 hover:underline"
+                href={gitHubLink}
+                target="_blank"
+              >
+                <FaGithub className="transition-transform duration-500 group-hover:scale-125" />
+                GitHub
+              </Link>
+            )}
             <Link
               className="group flex items-center gap-2 hover:underline"
               href={liveLink}
