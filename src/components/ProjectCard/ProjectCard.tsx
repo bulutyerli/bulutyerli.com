@@ -70,7 +70,7 @@ export default function ProjectCard({
       >
         <I18Link
           href={{
-            pathname: '/project-detail/[slug]',
+            pathname: '/case-study/[slug]',
             params: { slug: slug },
           }}
         >
@@ -108,7 +108,7 @@ export default function ProjectCard({
             {!freelance && (
               <I18Link
                 href={{
-                  pathname: '/project-detail/[slug]',
+                  pathname: '/case-study/[slug]',
                   params: { slug: slug },
                 }}
               >

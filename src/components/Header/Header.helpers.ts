@@ -14,18 +14,3 @@ export const isActive = (path: string, href: string): boolean => {
 
   return path === newHref;
 };
-
-export const handleRoute = (
-  pathName: string,
-  href: string,
-  router: ReturnType<typeof useRouter>,
-) => {
-  if (pathName === '/') {
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  } else {
-    router.push(`/${href}`);
-  }
-};

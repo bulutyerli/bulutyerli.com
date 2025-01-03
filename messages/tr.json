@@ -1,5 +1,6 @@
 {
   "AboutMe": {
+    "id": "hakkimda",
     "title": "Merhaba, ben Bulut",
     "secondTitle": "Full-Stack Developer"
   },
@@ -22,6 +23,7 @@
     "retry": "Tekrar Dene"
   },
   "Contact": {
+    "id": "iletisim",
     "title": "Aklınızda bir proje var ya da sadece merhaba demek mi istiyorsunuz?",
     "content": "Aşağıdaki formu doldurarak ya da sosyal medya üzerinden bana ulaşabilirsiniz.",
     "name": "Ad Soyad",
@@ -37,6 +39,7 @@
   },
 
   "Projects": {
+    "id": "projeler",
     "self": {
       "patilerce": {
         "title": "patilerce.com",

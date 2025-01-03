@@ -9,13 +9,13 @@ import Logo from '../Logo/Logo';
 import LocaleSwitcher from '@/components/LocaleSwitcher/LocaleSwitcher';
 import MobileMenu from '@/components/MobileMenu/MobileMenu';
 import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
-import { Link } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 import { sectionNames } from './Header.constants';
-import { handleRoute, isActive } from './Header.helpers';
+import { isActive } from './Header.helpers';
 import clsx from 'clsx';
 import { motion } from 'motion/react';
 import useActiveSection from '@/hooks/useActiveSection';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,8 +23,9 @@ export default function Header() {
   const pathName = usePathname();
   const router = useRouter();
   const t = useTranslations('Header');
+  const isHomepage = pathName === '/';
 
-  console.log(path);
+  console.log(pathName);
 
   useEffect(() => {
     if (menuOpen) {
@@ -37,15 +38,15 @@ export default function Header() {
   const navLinks: NavLink[] = [
     {
       title: t('aboutMe'),
-      href: '#about-me',
+      href: '/#about-me',
     },
     {
       title: t('projects'),
-      href: '#projects',
+      href: '/#projects',
     },
     {
       title: t('contact'),
-      href: '#contact',
+      href: '/#contact',
     },
   ];
 
@@ -71,7 +72,6 @@ export default function Header() {
           navLinks={navLinks}
           menuOpen={menuOpen}
           setMenuOpen={() => setMenuOpen(false)}
-          handleRoute={(href) => handleRoute(pathName, href, router)}
         />
         <ul aria-label="desktop-nav" className="hidden gap-10 md:flex">
           {navLinks.map((nav) => {
@@ -83,16 +83,8 @@ export default function Header() {
                 )}
                 key={nav.title}
               >
-                <button
-                  className="cursor-pointer"
-                  onClick={() => handleRoute(pathName, nav.href, router)}
-                  id={nav.href}
-                  role="link"
-                  aria-label={`Navigate to ${nav.title} section`}
-                >
-                  {nav.title}
-                </button>
-                {isActive(path, nav.href) && (
+                <Link href={nav.href}>{nav.title}</Link>
+                {isHomepage && isActive(path, nav.href) && (
                   <motion.div
                     layoutId="background"
                     className="absolute inset-0 -z-10 rounded-md bg-zinc-100 dark:bg-zinc-700"

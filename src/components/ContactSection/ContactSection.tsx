@@ -14,7 +14,7 @@ export default function ContactSection() {
 
   return (
     <Container
-      id="contact"
+      id={t('id')}
       className="flex min-h-[calc(100vh-var(--footer-height))] scroll-mt-20 flex-col justify-center text-center md:scroll-mt-0 md:gap-20"
     >
       <SectionTitle className="w-full">contact.</SectionTitle>

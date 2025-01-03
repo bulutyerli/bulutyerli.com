@@ -21,7 +21,7 @@ export default function Projects() {
   }));
 
   return (
-    <Container id="projects" className="max-w-7xl scroll-mt-20 md:scroll-mt-28">
+    <Container id={t('id')} className="max-w-7xl scroll-mt-20 md:scroll-mt-28">
       <SectionTitle>projects.</SectionTitle>
       <div className="flex flex-wrap justify-around gap-20 md:gap-5 xl:justify-between">
         {selfProjects.map((project, index) => {

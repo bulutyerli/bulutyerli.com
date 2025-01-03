@@ -1,5 +1,6 @@
 {
   "AboutMe": {
+    "id": "about-me",
     "title": "Hi, I'm Bulut",
     "secondTitle": "a Full-Stack Developer"
   },
@@ -22,6 +23,7 @@
     "retry": "Try Again"
   },
   "Contact": {
+    "id": "contact",
     "title": "Have a project in mind or just want to say hi?",
     "content": "Fill out the form below or reach out to me directly via social links",
     "name": "Full Name",
@@ -37,6 +39,7 @@
   },
 
   "Projects": {
+    "id": "projects",
     "self": {
       "patilerce": {
         "title": "patilerce.com",

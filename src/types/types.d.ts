@@ -7,7 +7,9 @@ export interface Icons {
   icon: FC<SVGProps<SVGElement>>;
 }
 
+type StaticPathnames = Exclude<Pathnames, '/case-study/[slug]'>;
+
 export type NavLink = {
   title: string;
-  href: Pathnames;
+  href: StaticPathnames;
 };
