@@ -21,7 +21,7 @@ export default function useActiveSection(
           }
         });
       },
-      { threshold: 0.3 },
+      { threshold: 0.5 },
     );
 
     sectionIds.forEach((id) => {

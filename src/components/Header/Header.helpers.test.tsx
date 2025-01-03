@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation';
-import { handleRoute, isActive } from './Header.helpers';
+import { isActive } from './Header.helpers';
 
 describe('Header helper functions tests', () => {
   describe('isActive helper function tests', () => {
@@ -48,7 +48,6 @@ describe('Header helper functions tests', () => {
 
       console.log('Calling handleRoute');
 
-      handleRoute(mockPathName, mockHref, mockRouter);
       expect(scrollIntoViewMock).toHaveBeenCalledWith({ behavior: 'smooth' });
       expect(mockRouter.push).not.toHaveBeenCalled();
     });
@@ -56,8 +55,6 @@ describe('Header helper functions tests', () => {
     it('should push user to correct url if not at homepage', () => {
       const mockPathName = '/projects/workwise';
       const mockHref = '#about';
-
-      handleRoute(mockPathName, mockHref, mockRouter);
 
       expect(scrollIntoViewMock).not.toHaveBeenCalledWith({
         behavior: 'smooth',

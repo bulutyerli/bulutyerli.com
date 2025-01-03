@@ -15,7 +15,6 @@ import { isActive } from './Header.helpers';
 import clsx from 'clsx';
 import { motion } from 'motion/react';
 import useActiveSection from '@/hooks/useActiveSection';
-import { useHash } from '@/hooks/useHash';
 
 export default function Header() {
   const locale = useLocale();
@@ -73,6 +72,8 @@ export default function Header() {
         />
         <ul aria-label="desktop-nav" className="hidden gap-10 md:flex">
           {navLinks.map((nav) => {
+            console.log(nav);
+
             return (
               <li
                 className={clsx(
@@ -85,6 +86,7 @@ export default function Header() {
                 {isHomepage && isActive(path, nav.href) && (
                   <motion.div
                     layoutId="background"
+                    style={{ originY: '0px' }}
                     className="absolute inset-0 -z-10 rounded-md bg-zinc-100 dark:bg-zinc-700"
                   ></motion.div>
                 )}

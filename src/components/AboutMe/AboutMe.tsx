@@ -14,7 +14,7 @@ export default function AboutMe() {
   const imageClassNames = `rounded-2xl transform transition-all duration-500`;
 
   return (
-    <Container id={t('id')} className="relative -mb-1">
+    <Container id={t('id')} className="relative -mb-1 -scroll-m-10">
       <article className="relative flex h-full flex-col items-center gap-5 py-10 sm:py-20 md:gap-10">
         <div className="flex items-center justify-center gap-6">
           <h1

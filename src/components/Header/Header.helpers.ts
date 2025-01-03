@@ -1,5 +1,3 @@
-import { useRouter } from 'next/navigation';
-
 export const isActive = (path: string, href: string): boolean => {
   let newHref: string;
 
@@ -7,7 +5,7 @@ export const isActive = (path: string, href: string): boolean => {
   const isHash = href.includes('#');
 
   if (isHash) {
-    newHref = href.slice(1); // Remove the hash
+    newHref = href.slice(2); // Remove the / and hash
   } else {
     newHref = href;
   }
