@@ -9,9 +9,6 @@
     "aboutMe": "Hakkımda",
     "contact": "İletişim"
   },
-  "ProjectPage": {
-    "title": "projeler."
-  },
   "NotFound": {
     "h1": "sayfa bulunamadı.",
     "h2": "Üzgünüz, böyle bir sayfa yok",
@@ -24,8 +21,9 @@
   },
   "Contact": {
     "id": "iletisim",
-    "title": "Aklınızda bir proje var ya da sadece merhaba demek mi istiyorsunuz?",
-    "content": "Aşağıdaki formu doldurarak ya da sosyal medya üzerinden bana ulaşabilirsiniz.",
+    "title": "iletişim.",
+    "welcome-message-1": "Aklınızda bir proje var ya da sadece merhaba demek mi istiyorsunuz?",
+    "welcome-message-2": "Aşağıdaki formu doldurarak ya da sosyal medya üzerinden bana ulaşabilirsiniz.",
     "name": "Ad Soyad",
     "email": "E-Posta",
     "message": "Mesaj",
@@ -40,32 +38,36 @@
 
   "Projects": {
     "id": "projeler",
+    "title": "projeler.",
+    "freelance-title": "freelance projeler.",
+    "case-study": "Proje Detayı",
+    "visit": "Canlı Site",
     "self": {
       "patilerce": {
         "title": "patilerce.com",
-        "summary": "A pet adoption website uses listings, community & breed sections and messaging."
+        "summary": "Evcil hayvan sahiplenme sitesi, ilanlar, topluluk ve ırk bilgileri ile mesajlaşma özellikleri."
       },
       "workwise": {
         "title": "workwise",
-        "summary": "Company management system with role based user access, graphics and more"
+        "summary": "Rol tabanlı kullanıcı erişimi, grafikler ve daha fazlasını içeren bir şirket yönetim sistemi."
       },
       "nuvola-coffee-shop": {
         "title": "nuvola coffee shop",
-        "summary": "Developed a e-commerce application with Next.js for a coffee roasting company."
+        "summary": "Bir kahve kavurma şirketi için Next.js ile geliştirilen e-ticaret uygulaması."
       }
     },
     "freelance": {
       "denizweber-ceviri": {
         "title": "denizweber.com",
-        "summary": "Developed a portfolio website with Next.js & Sanity for a book translator"
+        "summary": "Bir kitap çevirmeni için Next.js ve Sanity ile geliştirilen portföy web sitesi."
       },
       "denizweber-photo": {
         "title": "denizweber.photography",
-        "summary": "Developed a photographer portfolio and landing page with Next.js & Sanity"
+        "summary": "Bir fotoğrafçı için Next.js ve Sanity ile geliştirilen portföy ve açılış sayfası."
       },
       "tugayaslan": {
         "title": "tugasyaslan.com",
-        "summary": "A portfolio website for a YouTube story teller."
+        "summary": "Bir YouTube hikaye anlatıcısı için portföy web sitesi."
       }
     }
   },

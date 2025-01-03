@@ -17,7 +17,7 @@ export default function ContactSection() {
       id={t('id')}
       className="flex min-h-[calc(100vh-var(--footer-height))] scroll-mt-20 flex-col justify-center text-center md:gap-20"
     >
-      <SectionTitle className="w-full">contact.</SectionTitle>
+      <SectionTitle className="w-full">{t('title')}</SectionTitle>
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -38,7 +38,7 @@ export default function ContactSection() {
             }}
             className="mb-3 text-2xl text-zinc-700 lg:text-3xl dark:text-zinc-300"
           >
-            {t('title')}
+            {t('welcome-message-1')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -50,7 +50,7 @@ export default function ContactSection() {
             }}
             className="text-md text-zinc-600 lg:text-lg dark:text-zinc-400"
           >
-            {t('content')}
+            {t('welcome-message-2')}
           </motion.p>
         </div>
         <div className="relative flex flex-col-reverse items-center justify-around gap-10 lg:flex-row">

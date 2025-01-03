@@ -2,11 +2,16 @@
 
 import Image from 'next/image';
 import clsx from 'clsx';
-import { useMotionValue, motion } from 'motion/react';
+import { motion } from 'motion/react';
 import { formatLink } from './ProjectCard.helpers';
-import { HoverEffect } from './HoverEffect';
 import { Link as I18Link } from '@/i18n/routing';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import {
+  FaGithub,
+  FaExternalLinkSquareAlt,
+  FaRegFileAlt,
+} from 'react-icons/fa';
 
 interface ProjectCardType {
   title: string;
@@ -29,18 +34,7 @@ export default function ProjectCard({
   className,
   freelance = false,
 }: ProjectCardType) {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  function onMouseMove({
-    currentTarget,
-    clientX,
-    clientY,
-  }: React.MouseEvent<HTMLDivElement>) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
+  const t = useTranslations('Projects');
 
   const formattedImage = formatLink(imageLink);
 
@@ -55,13 +49,12 @@ export default function ProjectCard({
         bounce: 0.25,
       }}
       className={clsx(
-        'group relative flex flex-col pb-6',
+        'relative flex flex-col pb-6',
         featured
           ? 'w-full md:mb-20 md:text-center'
           : 'max-w-full md:max-w-[45%]',
         className,
       )}
-      onMouseMove={onMouseMove}
     >
       <div
         className={clsx(
@@ -76,7 +69,7 @@ export default function ProjectCard({
         >
           <Image
             className={clsx(
-              'object-cover transition-transform duration-500 hover:scale-110',
+              'object-cover transition-transform duration-500 hover:scale-105',
               featured ? 'aspect-4/2 lg:aspect-4/1' : 'aspect-2/1',
             )}
             src={formattedImage}
@@ -104,24 +97,38 @@ export default function ProjectCard({
             {title}
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400">{summary}</p>
-          <div className="flex w-full justify-between">
+          <div className="mt-6 flex w-full justify-between">
             {!freelance && (
               <I18Link
+                className="group flex items-center gap-2 hover:underline"
                 href={{
                   pathname: '/case-study/[slug]',
                   params: { slug: slug },
                 }}
               >
-                Case Study
+                <FaRegFileAlt className="transition-transform duration-500 group-hover:scale-125" />
+                {t('case-study')}
               </I18Link>
             )}
-            <Link href={liveLink} target="_blank">
-              Live Link
+            <Link
+              className="group flex items-center gap-2 hover:underline"
+              href={liveLink}
+              target="_blank"
+            >
+              <FaGithub className="transition-transform duration-500 group-hover:scale-125" />
+              GitHub
+            </Link>
+            <Link
+              className="group flex items-center gap-2 hover:underline"
+              href={liveLink}
+              target="_blank"
+            >
+              <FaExternalLinkSquareAlt className="transition-transform duration-500 group-hover:scale-125" />
+              {t('visit')}
             </Link>
           </div>
         </div>
       </div>
-      {!freelance && <HoverEffect mouseX={mouseX} mouseY={mouseY} />}
     </motion.div>
   );
 }

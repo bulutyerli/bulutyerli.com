@@ -22,7 +22,7 @@ export default function Projects() {
 
   return (
     <Container id={t('id')} className="max-w-7xl scroll-mt-20 md:scroll-mt-28">
-      <SectionTitle>projects.</SectionTitle>
+      <SectionTitle>{t('title')}</SectionTitle>
       <div className="flex flex-wrap justify-around gap-20 md:gap-5 xl:justify-between">
         {selfProjects.map((project, index) => {
           const id = project.title;
@@ -40,7 +40,7 @@ export default function Projects() {
         })}
       </div>
       <div className="mt-44">
-        <SectionTitle>freelance projects.</SectionTitle>
+        <SectionTitle>{t('freelance-title')}</SectionTitle>
         <div className="flex flex-wrap items-start justify-center gap-20 md:flex-nowrap md:gap-5 xl:justify-between">
           {freelanceProjects.map((project) => {
             const id = project.title;

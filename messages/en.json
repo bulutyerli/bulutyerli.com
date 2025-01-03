@@ -9,9 +9,6 @@
     "aboutMe": "About Me",
     "contact": "Contact"
   },
-  "ProjectPage": {
-    "title": "projects."
-  },
   "NotFound": {
     "h1": "page not found.",
     "h2": "Sorry, there is no page that you are looking for.",
@@ -24,8 +21,9 @@
   },
   "Contact": {
     "id": "contact",
-    "title": "Have a project in mind or just want to say hi?",
-    "content": "Fill out the form below or reach out to me directly via social links",
+    "title": "contact.",
+    "welcome-message-1": "Have a project in mind or just want to say hi?",
+    "welcome-message-2": "Fill out the form below or reach out to me directly via social links",
     "name": "Full Name",
     "email": "E-Mail",
     "message": "Message",
@@ -40,6 +38,11 @@
 
   "Projects": {
     "id": "projects",
+    "title": "projects.",
+    "freelance-title": "freelance projects.",
+    "case-study": "Case Study",
+    "visit": "Live Site",
+
     "self": {
       "patilerce": {
         "title": "patilerce.com",
