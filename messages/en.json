@@ -2,7 +2,13 @@
   "AboutMe": {
     "id": "about-me",
     "title": "Hi, I'm Bulut",
-    "secondTitle": "a Full-Stack Developer"
+    "secondTitle": "a Full-Stack Developer",
+    "content": [
+      "For 12 years, I worked in the logistics departments of corporate aviation firms, honing strong problem-solving skills and the ability to perform effectively under pressure.",
+      "Driven by a long-standing passion for software development, I pursued a degree in computer programming, which inspired me to transition into a new career.",
+      "Today, I am a full-stack developer dedicated to continuously expanding my knowledge and expertise.",
+      "Beyond work, I enjoy collecting LEGO sets and action figures. For relaxation and stress management, my greatest companion is our cat, <button>Loki</button>."
+    ]
   },
   "Header": {
     "projects": "Projects",

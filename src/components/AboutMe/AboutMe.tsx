@@ -47,30 +47,24 @@ export default function AboutMe() {
         </div>
 
         <div className="max-w-sm columns-1 gap-24 space-y-2 text-sm text-zinc-700 sm:max-w-4xl sm:columns-2 md:text-base dark:text-zinc-400">
-          <p className="break-inside-avoid">
-            For 12 years, I worked in the logistics department of corporate
-            aviation firms, where I developed strong problem-solving skills and
-            the ability to work effectively under time constraints.
-          </p>
-          <p className="break-inside-avoid">
-            However, due to my long-standing interest in software development, I
-            pursued a degree in computer programming and decided to change my
-            career path.
-          </p>
-          <p className="break-inside-avoid">
-            Currently, I am a full-stack developer, continuously working on
-            improving my skills.{' '}
-          </p>
-          <p>
-            Outside of work, I enjoy collecting LEGO sets and action figures.
-            For stress management, my greatest companion is our cat;{' '}
-            <button
-              className="cursor-pointer font-semibold underline transition-all duration-300 hover:scale-105 hover:text-zinc-700 dark:hover:text-zinc-300"
-              onClick={() => setLoki(!loki)}
-            >
-              Loki
-            </button>
-          </p>
+          {t.raw('content')?.map((p: string, index: number) => {
+            return (
+              <p className="break-inside-avoid" key={index}>
+                {p.includes('<button>')
+                  ? t.rich(`content.${index}`, {
+                      button: (chunks) => (
+                        <button
+                          className="cursor-pointer font-semibold underline transition-all duration-300 hover:scale-105 hover:text-zinc-700 dark:hover:text-zinc-300"
+                          onClick={() => setLoki(!loki)}
+                        >
+                          {chunks}
+                        </button>
+                      ),
+                    })
+                  : p}
+              </p>
+            );
+          })}
         </div>
         <BgPattern classname="absolute inset-0 h-full w-full -z-10 stroke-zinc-300 dark:stroke-zinc-700 [mask-image:radial-gradient(22rem_22rem_at_center,white,transparent)]" />
       </article>
