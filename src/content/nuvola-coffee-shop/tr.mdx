@@ -1,0 +1,119 @@
+# Nuvola Coffee Shop
+
+Nuvola Coffee Shop, hayali bır kahve şirketi için yapılmış e-ticaret sitesi. Bu projeyi tamamen kendim tasarladım ve Next.js ve SCSS modules ile geliştirdim. Ayrıca kahve türleri ve kafeler için içerikler oluşturdum.
+
+<ProjectDetails
+  stackList={[
+    'typescript',
+    'next.js',
+    'scss modules',
+    'postgresql',
+    'stripe',
+    'redux',
+    'aws cognito',
+  ]}
+  liveSite={'https://www.nuvolacoffee.store/'}
+  gitHub={'https://github.com/bulutyerli/nuvola-coffee-shop'}
+/>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/nuvola-coffee-shop/nuvola-homepage.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Nuvola Coffee Shop Homepage',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Project Purpose
+
+Nuvola Coffee Shop müşterilerin kahve siparişi verebildiği basit ama güvenli bir e-ticaret platformu olarak geliştirildi. Buradaki hedef güvenli ödeme ve kullanıcı girişi ve sipariş takibi ile iyi bir alışveriş deneyimi sunmaktı.
+
+<div className="flex lg:gap-14 items-center flex-wrap lg:flex-nowrap">
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/nuvola-coffee-shop/nuvola-1.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Nuvola Coffee Shop Caring',
+    },
+  ]}
+  className="shadow-lg"
+/>
+
+<div className="min-w-1/2">
+
+## Stack
+
+Hem front-end hem de back-end'i aynı ortamda ve kolayca geliştirmek için Next.js tercih ettim. CSS yönetimi için ise SCSS modules kullandım böylece yine yönetimi daha kolay olmakla birlikte css sınıf isimlerinin çakışmasını önlemiş oldum.
+
+Kullanıcı girişi sisteminde; entegre etmenin kolaylığı, güvenirliliği ve kullanıcı hesaplarının kolay yönetimi için AWS Cognito'yu seçtimç Database olarak ise PostgreSQL ile beraber ORM yerine query ve type güvenliği için Kysely kullandım.
+
+Alışveriş sepeti ve diğer global state yönetimi için Redux kullandım. Bu sayede uygulamadaki değişikliklerin takibi kolaylaştığı gibi performansı da iyileşmiş oldu.
+
+Son olarak güvenli ödeme sistemi için Stripe'ı entegre ettim.
+
+</div>
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/nuvola-coffee-shop/nuvola-2.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Nuvola Coffee Shop Who We Are',
+    },
+    {
+      src: '/projects/nuvola-coffee-shop/nuvola-3.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Nuvola Coffee Shop Coffee Collection',
+    },
+    {
+      src: '/projects/nuvola-coffee-shop/nuvola-4.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Nuvola Coffee Shop Locations',
+    },
+    {
+      src: '/projects/nuvola-coffee-shop/nuvola-5.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Nuvola Coffee Shop About Us',
+    },
+  ]}
+  className="max-w-[45%] shadow-lg"
+/>
+
+<div className="justify-self-center text-center">
+## Zorluklar
+
+Açıkçası bu proje için en büyük zorluk koddan bağımsız olarak dizayn kısmı oldu. Her şeyin mümkün olduğunca benzersiz olmasını istediğim için sitedeki tüm resim ve içerikleri kendim tasarladım.
+
+Kod yazma ile ilgili olarak ve ikinci en büyük zorluk ise Redux'ı entegre etmek diyebilirim. Bu projeyi yaptığım sırada Redux'ı henüz hiç kullanmamıştım. Doğru şekilde kullanmak biraz vakit alsa da en sonunda tüm çabaya değdi.
+
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/nuvola-coffee-shop/nuvola-6.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Nuvola Coffee Shop Sign In Page',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Öğrendiklerim
+
+Zorluklar bölümünde bahsettiğim gibi bu proje sayesinde Redux'ı öğrendim. Redux sayesinde uygulamanın state takibi ve geliştirilmesi çok daha kolaylaştı.
+
+Bir başka önemli ders ise iyi şekilde organize edilmiş dosya sistemi diyebilirim. Temiz kod yazmanın ve tekrar kullanılabilir bileşenler ile oluşturmanın önemini birkez daha anladım. Bu şekilde çalışarak proje daha hızlı bitti ve süreç de daha kolay ilerledi.

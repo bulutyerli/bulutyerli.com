@@ -1,9 +1,133 @@
-<h2>This is a heading patılerce</h2>
+# Patilerce
 
-<p>This is a list in markdown:</p>
+Patilerce is a website created for cat and dog adoptions. It has many features. After signing up and confirming their email, users can:
 
-<ul>
-  <li>One</li>
-  <li>Two</li>
-  <li>Three</li>
-</ul>
+- Create new pet adoption listings.
+- Save listings to their favorites.
+- Ask and answer questions in the Q&A section.
+- Chat privately with other users.
+- Edit their profiles.
+- Learn about different cat and dog breeds, complete with pictures and details.
+
+All new adoption listings and Q&A posts must be approved by an admin before they appear on the site.
+
+<ProjectDetails
+  stackList={[
+    'javascript',
+    'next.js',
+    'css modules',
+    'mongoDB',
+    'next-auth',
+    'aws s3',
+    'jest',
+    'react testing library',
+  ]}
+  liveSite={'https://www.patilerce.com/'}
+  gitHub={'https://github.com/bulutyerli/patilerce'}
+/>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/patilerce/patilerce-homepage.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Homepage',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Project Purpose
+
+Patilerce was built to make pet adoption easier and more accessible. The main goal was to provide a platform where users can share and find adoption listings with ease. I also wanted to include features like a Q&A section and private messaging to create a sense of community. Admin approval ensures only high-quality and safe listings are published.
+
+<div className="flex lg:gap-14 items-center flex-wrap lg:flex-nowrap">
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/patilerce/patilerce-1.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Adopt Listings',
+    },
+  ]}
+  className="shadow-lg"
+/>
+
+<div className="min-w-1/2">
+
+## Stack
+
+I chose Next.js because it has full-stack capabilities. For styling, I decided not to use any libraries or pre-made UI. Instead, I designed everything with pure CSS and used CSS modules to easily create unique class names.
+
+Since the database for Patilerce is not very complex, I decided to use MongoDB, as it doesn't need relationships between data entries.
+
+For authentication, I used the Next-Auth package and set up JWT for authentication, using bcryptjs to handle password security.
+
+Since the website handles a lot of images, I integrated AWS S3 as an image container. With Next.js's built-in image optimization, the images load more efficiently.
+
+</div>
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/patilerce/patilerce-6.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Profile Page',
+    },
+    {
+      src: '/projects/patilerce/patilerce-3.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Breed Info Section',
+    },
+    {
+      src: '/projects/patilerce/patilerce-4.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Community Section',
+    },
+    {
+      src: '/projects/patilerce/patilerce-5.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Login Page',
+    },
+  ]}
+  className="max-w-[45%] shadow-lg"
+/>
+
+<div className="justify-self-center text-center">
+## Challenges
+
+Since Patilerce was my first big project, I faced many challenges. One of the biggest was making sure the authentication was secure. Using Next-Auth with JWT and bcryptjs was easy, but I had to be careful with user data and passwords. I learned how to manage tokens and keep passwords safe.
+
+Another challenge was building the site without using pre-made UI components or libraries. I had to make everything from scratch, which took more time, but I had full control over the design and learned a lot about CSS.
+
+Lastly, I had some trouble making the database structure work well, especially since I chose MongoDB. It’s flexible, but I had to plan the database carefully to make sure it could grow as the site did.
+
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/patilerce/patilerce-2.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Cat Breeds Page',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Lessons Learned
+
+Working on Patilerce taught me several valuable lessons. I learned the importance of good planning, especially when building a design from scratch. It made me appreciate the time and effort that goes into creating a custom design and how crucial it is to understand CSS thoroughly.
+
+I also learned how to handle authentication and passwords securely. It's important to manage user data carefully and use the right methods to ensure security.
+
+Lastly, I learned the importance of planning the database structure from the beginning. Even with a flexible system like MongoDB, a well-designed schema is key to making sure the project can grow without issues.

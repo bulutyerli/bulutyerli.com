@@ -72,8 +72,6 @@ export default function Header() {
         />
         <ul aria-label="desktop-nav" className="hidden gap-10 md:flex">
           {navLinks.map((nav) => {
-            console.log(nav);
-
             return (
               <li
                 className={clsx(

@@ -1,9 +1,133 @@
-<h2>türkçe</h2>
+# Patilerce
 
-<p>türkçe detay:</p>
+Patilerce, kedi ve köpek sahiplendirme için oluşturulmuş bir web sitesidir. Kullanıcılar, kaydolup e-posta adreslerini onayladıktan sonra şunları yapabilirler:
 
-<ul>
-  <li>bir</li>
-  <li>iki</li>
-  <li>üç</li>
-</ul>
+- Yeni sahiplendirme ilanları oluşturabilirler.
+- İlanları favorilerine kaydedebilirler.
+- Soru-Cevap bölümünde soru sorabilir ve yanıt verebilirler.
+- Diğer kullanıcılarla özel olarak sohbet edebilirler.
+- Profillerini düzenleyebilirler.
+- Farklı kedi ve köpek ırklarını, resimler ve detaylarla birlikte öğrenebilirler.
+
+Tüm yeni sahiplendirme ilanları ve Soru-Cevap gönderileri, sitede yayınlanmadan önce bir yönetici tarafından onaylanmalıdır.
+
+<ProjectDetails
+  stackList={[
+    'javascript',
+    'next.js',
+    'css modülleri',
+    'mongoDB',
+    'next-auth',
+    'aws s3',
+    'jest',
+    'react testing library',
+  ]}
+  liveSite={'https://www.patilerce.com/'}
+  gitHub={'https://github.com/bulutyerli/patilerce'}
+/>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/patilerce/patilerce-homepage.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Anasayfa',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Proje Amacı
+
+Patilerce, sahiplendirme sürecini daha kolay ve erişilebilir hale getirmek için yapıldı. Ana hedef, kullanıcıların sahiplendirme ilanlarını kolayca paylaşabileceği ve bulabileceği bir platform sağlamaktı. Ayrıca, bir Soru-Cevap bölümü ve özel mesajlaşma gibi özellikler ekleyerek topluluk hissi yaratmak istedim. Yönetici onayı ile, yalnızca kaliteli ve güvenli ilanların siteye yayınlanmasını sagladım.
+
+<div className="flex lg:gap-14 items-center flex-wrap lg:flex-nowrap">
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/patilerce/patilerce-1.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Anasayfa',
+    },
+  ]}
+  className="shadow-lg"
+/>
+
+<div className="min-w-1/2">
+
+## Teknoloji Yığını
+
+Next.js’i full-stack özellikleri olduğu için tercih ettim. Dizayn için hiçbir kütüphane veya hazır UI kullanmadım. Bunun yerine her şeyi sadece CSS ile tasarladım ve CSS modüllerini kullanarak benzersız className yazma sorununu çözmüş oldum.
+
+Patilerce’nin veritabanı çok karmaşık olmadığı için, kayıtlar arasında ilişki gerektirmediğinden MongoDB kullanmaya karar verdim.
+
+Kimlik doğrulama için Next-Auth paketini JWT ile kullandım, şifre güvenliğini sağlamak için bcryptjs kullandım.
+
+Web sitesi çok sayıda görsel içerdiği için AWS S3’ü entegre ettim. Next.js’in yerleşik resim optimizasyonu sayesinde, görseller daha verimli bir şekilde yükleniyor.
+
+</div>
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/patilerce/patilerce-6.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Giriş Sayfası',
+    },
+    {
+      src: '/projects/patilerce/patilerce-3.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Finans Grafik',
+    },
+    {
+      src: '/projects/patilerce/patilerce-4.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Gelir Kayıtları',
+    },
+    {
+      src: '/projects/patilerce/patilerce-5.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Çalışanlar Listesi',
+    },
+  ]}
+  className="max-w-[45%] shadow-lg"
+/>
+
+<div className="justify-self-center text-center">
+## Zorluklar
+
+Patilerce, benim ilk büyük projem olduğundan, birçok zorlukla karşılaştım. Bunlardan en büyüğü, kimlik doğrulamanın güvenli olmasını sağlamaktı. Next-Auth ile JWT ve bcryptjs kullanmak çok zor değildi, ancak kullanıcı verilerini ve şifrelerini güvende tutmak için dikkat gerekiyordu. Token'ları nasıl yöneteceğimi ve şifreleri nasıl güvenli bir şekilde saklayacağımı öğrendim.
+
+Bir diğer zorluk, siteyi hazır UI bileşenleri veya kütüphaneleri kullanmadan yapmaktı. Her şeyi sıfırdan yapmak, haliyle daha fazla zaman aldı, ancak tasarım üzerinde tam kontrol sahibi oldum ve CSS hakkında çok şey öğrenmiştim.
+
+Son olarak, veritabanı yapısının düzgün çalışmasını sağlamakta zorlandım, özellikle MongoDB’yi seçtiğim için. MongoDB esnek bir yapıya sahip, ancak veritabanını dikkatlice planlamam gerekti, böylece site büyüdükçe veritabanı da büyüyebilecekti.
+
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/patilerce/patilerce-2.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Patilerce Anasayfa',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Öğrendiklerim
+
+Patilerce üzerinde çalışmak bana çok şey öğretti. Özellikle tasarımı sıfırdan yaparken iyi planlamanın önemini öğrendim. Özel bir tasarım yaratmanın ne kadar zaman ve çaba gerektirdiğini fark ettim ve CSS’i derinlemesine öğrenmenin ne kadar önemli olduğunu anladım.
+
+Ayrıca kimlik doğrulama ve şifre güvenliğinin nasıl doğru bir şekilde yapılacağını öğrendim. Kullanıcı verilerini dikkatlice yönetmek ve güvenliği sağlamak için doğru yöntemleri kullanmanın önemini gördüm.
+
+Son olarak, veritabanı yapısının baştan doğru planlanmasının önemini öğrendim. MongoDB gibi esnek bir sistemde bile, iyi tasarlanmış bir şema, projenin sorunsuz bir şekilde büyümesini sağlamak için çok önemli.
