@@ -65,15 +65,15 @@
     "freelance": {
       "denizweber-ceviri": {
         "title": "denizweber.com",
-        "summary": "Bir kitap çevirmeni için Next.js ve Sanity ile geliştirilen portföy web sitesi."
+        "summary": "Bir kitap çevirmeni için Next.js ve Sanity ile geliştirilen portfolyo sitesi."
       },
       "denizweber-photo": {
         "title": "denizweber.photography",
-        "summary": "Bir fotoğrafçı için Next.js ve Sanity ile geliştirilen portföy ve açılış sayfası."
+        "summary": "Bir fotoğrafçı için Next.js ve Sanity ile geliştirilen portfolyo sitesi."
       },
       "tugayaslan": {
         "title": "tugasyaslan.com",
-        "summary": "Bir YouTube hikaye anlatıcısı için portföy web sitesi."
+        "summary": "Bir YouTube hikaye anlatıcısı için portföy web sitesi. Next.js, TailwindCSS & Sanity ile geliştirildi."
       }
     }
   },
