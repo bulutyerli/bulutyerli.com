@@ -63,23 +63,38 @@ export default function ProjectCard({
           'relative z-10 overflow-hidden rounded-lg shadow-md drop-shadow-md',
         )}
       >
-        <I18Link
-          href={{
-            pathname: '/case-study/[slug]',
-            params: { slug: slug },
-          }}
-        >
-          <Image
-            className={clsx(
-              'object-cover transition-transform duration-500 hover:scale-105',
-              featured ? 'aspect-4/2 lg:aspect-4/1' : 'aspect-2/1',
-            )}
-            src={formattedImage}
-            alt={`${title} screenshot`}
-            width={featured ? 2800 : 1400}
-            height={700}
-          />
-        </I18Link>
+        {!freelance ? (
+          <I18Link
+            href={{
+              pathname: '/case-study/[slug]',
+              params: { slug: slug },
+            }}
+          >
+            <Image
+              className={clsx(
+                'object-cover transition-transform duration-500 hover:scale-105',
+                featured ? 'aspect-4/2 lg:aspect-4/1' : 'aspect-2/1',
+              )}
+              src={formattedImage}
+              alt={`${title} screenshot`}
+              width={featured ? 2800 : 1400}
+              height={700}
+            />
+          </I18Link>
+        ) : (
+          <Link href={liveLink} rel="noopener noreferrer" target="_blank">
+            <Image
+              className={clsx(
+                'object-cover transition-transform duration-500 hover:scale-105',
+                featured ? 'aspect-4/2 lg:aspect-4/1' : 'aspect-2/1',
+              )}
+              src={formattedImage}
+              alt={`${title} screenshot`}
+              width={1400}
+              height={700}
+            />
+          </Link>
+        )}
       </div>
       <div
         className={clsx(
