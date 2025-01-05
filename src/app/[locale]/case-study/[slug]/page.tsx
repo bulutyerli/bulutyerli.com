@@ -1,4 +1,6 @@
+import FilteredCards from '@/components/Mdx/FilteredCards/FilteredCards';
 import MotionWrapper from '@/components/Mdx/MotionWrapper/MotionWrapper';
+import SectionTitle from '@/components/SectionTitle/SectionTitle';
 import { Locale } from '@/i18n/routing';
 import fs from 'fs';
 import path from 'path';
@@ -38,7 +40,10 @@ export default async function Page({
   return (
     <>
       <Post components={overrideComponents} />
-      test
+      <section className="mt-20">
+        <SectionTitle className="not-prose">other projects.</SectionTitle>
+        <FilteredCards slug={slug} />
+      </section>
     </>
   );
 }
