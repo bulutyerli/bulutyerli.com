@@ -3,6 +3,7 @@ import MotionWrapper from '@/components/Mdx/MotionWrapper/MotionWrapper';
 import SectionTitle from '@/components/SectionTitle/SectionTitle';
 import { Locale } from '@/i18n/routing';
 import fs from 'fs';
+import { getTranslations } from 'next-intl/server';
 import path from 'path';
 
 const overrideComponents = {
@@ -36,12 +37,13 @@ export default async function Page({
   const slug = (await params).slug;
   const locale = (await params).locale;
   const { default: Post } = await import(`@/content/${slug}/${locale}.mdx`);
+  const t = await getTranslations('ProjectDetails');
 
   return (
     <>
       <Post components={overrideComponents} />
       <section className="mt-20">
-        <SectionTitle className="not-prose">other projects.</SectionTitle>
+        <SectionTitle className="not-prose">{t('other')}</SectionTitle>
         <FilteredCards slug={slug} />
       </section>
     </>

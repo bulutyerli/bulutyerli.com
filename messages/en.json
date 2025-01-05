@@ -80,7 +80,8 @@
   },
   "ProjectDetails": {
     "stack": "STACK",
-    "liveSite": "VISIT"
+    "liveSite": "VISIT",
+    "other": "other projects."
   },
   "Footer": {
     "copyright": "All rights reserved."

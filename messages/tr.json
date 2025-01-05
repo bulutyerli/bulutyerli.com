@@ -79,7 +79,8 @@
   },
   "ProjectDetails": {
     "stack": "TEKNOLOJİ",
-    "liveSite": "ZİYARET"
+    "liveSite": "ZİYARET",
+    "other": "diğer projeler."
   },
   "Footer": {
     "copyright": "Tüm hakları saklıdır."
