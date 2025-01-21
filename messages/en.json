@@ -9,9 +9,9 @@
     ]
   },
   "Header": {
-    "projects": "Projects",
-    "aboutMe": "About Me",
-    "contact": "Contact"
+    "projects": "projects",
+    "aboutMe": "about me",
+    "contact": "contact"
   },
   "NotFound": {
     "h1": "page not found.",

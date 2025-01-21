@@ -9,9 +9,9 @@
     ]
   },
   "Header": {
-    "projects": "Projeler",
-    "aboutMe": "Hakkımda",
-    "contact": "İletişim"
+    "projects": "projeler",
+    "aboutMe": "hakkımda",
+    "contact": "iletişim"
   },
   "NotFound": {
     "h1": "sayfa bulunamadı.",

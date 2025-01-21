@@ -76,12 +76,12 @@ export default function Header() {
               <li
                 className={clsx(
                   'font-spartan relative rounded-sm p-2 pb-1',
-                  !isActive(path, nav.href) && 'hover:underline',
+                  !isActive(path, nav.title) && 'hover:underline',
                 )}
                 key={nav.title}
               >
                 <Link href={nav.href}>{nav.title}</Link>
-                {isHomepage && isActive(path, nav.href) && (
+                {isHomepage && isActive(path, nav.title) && (
                   <motion.div
                     layoutId="background"
                     style={{ originY: '0px' }}
