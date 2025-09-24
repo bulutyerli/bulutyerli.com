@@ -40,17 +40,19 @@ export default function ProjectDetails({
         </ul>
       </div>
       <div className="flex max-w-prose gap-6 text-sm">
-        <div className="group flex items-center gap-2">
-          <FaGithub className="cursor-pointer text-xl transition-transform duration-500 will-change-transform group-hover:scale-125" />
-          <Link
-            className="not-prose font-bold group-hover:underline"
-            href={gitHub}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            GITHUB
-          </Link>
-        </div>
+        {gitHub && (
+          <div className="group flex items-center gap-2">
+            <FaGithub className="cursor-pointer text-xl transition-transform duration-500 will-change-transform group-hover:scale-125" />
+            <Link
+              className="not-prose font-bold group-hover:underline"
+              href={gitHub}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              GITHUB
+            </Link>
+          </div>
+        )}
         <div className="group flex items-center gap-2">
           <FaExternalLinkSquareAlt className="cursor-pointer text-xl transition-transform duration-500 will-change-transform group-hover:scale-125" />
           <Link

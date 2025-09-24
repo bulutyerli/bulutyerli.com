@@ -28,9 +28,8 @@ export default async function Page({
 
 export function generateStaticParams() {
   const contentDir = path.join(process.cwd(), 'src/content');
-  const slugs = fs.readdirSync(contentDir); // Reads all folders/files in the content dir
+  const slugs = fs.readdirSync(contentDir);
 
-  // Generate params for each slug
   const params = slugs.map((slug) => ({ slug }));
 
   return params;

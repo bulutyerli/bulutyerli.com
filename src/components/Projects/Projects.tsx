@@ -29,7 +29,7 @@ export default function Projects() {
           return (
             <ProjectCard
               key={id}
-              featured={index === 0}
+              featured={index === 0 || index === selfProjects.length - 1}
               title={project.title}
               summary={project.summary}
               slug={project.slug}

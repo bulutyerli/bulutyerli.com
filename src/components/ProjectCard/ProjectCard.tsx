@@ -121,7 +121,7 @@ export default function ProjectCard({
                 {t('case-study')}
               </I18Link>
             )}
-            {!freelance && (
+            {!freelance && gitHubLink && (
               <Link
                 className="group flex items-center gap-2 hover:underline"
                 href={gitHubLink}

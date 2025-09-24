@@ -22,7 +22,7 @@ Tüm yeni sahiplendirme ilanları ve Soru-Cevap gönderileri, sitede yayınlanma
     'jest',
     'react testing library',
   ]}
-  liveSite={'https://www.patilerce.com/'}
+  liveSite={'https://patilerce.vercel.app'}
   gitHub={'https://github.com/bulutyerli/patilerce'}
 />
 
@@ -58,7 +58,7 @@ Patilerce, sahiplendirme sürecini daha kolay ve erişilebilir hale getirmek iç
 
 <div className="min-w-1/2">
 
-## Teknoloji Yığını
+## Teknoloji
 
 Next.js’i full-stack özellikleri olduğu için tercih ettim. Dizayn için hiçbir kütüphane veya hazır UI kullanmadım. Bunun yerine her şeyi sadece CSS ile tasarladım ve CSS modüllerini kullanarak benzersız className yazma sorununu çözmüş oldum.
 
@@ -74,34 +74,23 @@ Web sitesi çok sayıda görsel içerdiği için AWS S3’ü entegre ettim. Next
 <ImageComponent
   images={[
     {
-      src: '/projects/patilerce/patilerce-6.webp',
-      width: 1260,
-      height: 850,
-      alt: 'Patilerce Giriş Sayfası',
-    },
-    {
       src: '/projects/patilerce/patilerce-3.webp',
       width: 1260,
       height: 850,
-      alt: 'Patilerce Finans Grafik',
+      alt: 'Patilerce Tür Özellikleri',
     },
     {
       src: '/projects/patilerce/patilerce-4.webp',
       width: 1260,
       height: 850,
-      alt: 'Patilerce Gelir Kayıtları',
+      alt: 'Patilerce Soru Cevap',
     },
-    {
-      src: '/projects/patilerce/patilerce-5.webp',
-      width: 1260,
-      height: 850,
-      alt: 'Patilerce Çalışanlar Listesi',
-    },
-  ]}
-  className="max-w-[45%] shadow-lg"
+
+]}
+className="max-w-[45%] shadow-lg"
 />
 
-<div className="justify-self-center text-center">
+<div className="flex flex-col items-center justify-center text-center">
 ## Zorluklar
 
 Patilerce, benim ilk büyük projem olduğundan, birçok zorlukla karşılaştım. Bunlardan en büyüğü, kimlik doğrulamanın güvenli olmasını sağlamaktı. Next-Auth ile JWT ve bcryptjs kullanmak çok zor değildi, ancak kullanıcı verilerini ve şifrelerini güvende tutmak için dikkat gerekiyordu. Token'ları nasıl yöneteceğimi ve şifreleri nasıl güvenli bir şekilde saklayacağımı öğrendim.

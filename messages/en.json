@@ -48,9 +48,9 @@
     "visit": "Live Site",
 
     "self": {
-      "patilerce": {
-        "title": "patilerce.com",
-        "summary": "A pet adoption website featuring listings, community forums, breed information, and messaging features."
+      "watchlabb": {
+        "title": "Watchlabb.com",
+        "summary": "End-to-end development of a live luxury watch listing & auction platform with real revenue and thousands of active users."
       },
       "workwise": {
         "title": "workwise",
@@ -59,6 +59,10 @@
       "nuvola-coffee-shop": {
         "title": "nuvola coffee shop",
         "summary": "Developed an e-commerce application with Next.js for a coffee roasting company."
+      },
+      "patilerce": {
+        "title": "patilerce",
+        "summary": "A pet adoption website featuring listings, community forums, breed information, and messaging features."
       }
     },
     "freelance": {

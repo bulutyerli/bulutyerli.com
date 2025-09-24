@@ -1,0 +1,114 @@
+# Watchlabb
+
+Watchlabb, Vision Ventures şirketi için sıfırdan geliştirdiğim bir proje. Bu platformda kullanıcılar orijinal saatlerini satışa çıkarabilir veya gerçek zamanlı açık artırmalar oluşturabilir. Şirkette tek full-stack geliştirici olarak, projenin tamamından sorumluydum — front-end'den back-end'e, proje mimarisinden DevOps’a kadar her şeyi kendim geliştirdim.
+
+<ProjectDetails
+  stackList={['typescript', 'next.js', 'supabase', 'postgresql', 'tailwindcss']}
+  liveSite={'https://watchlabb.com'}
+  gitHub={''}
+/>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/watchlabb/watchlabb-1.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Watchlabb',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Projenin Amacı
+
+Watchlabb, saat alıcıları ve satıcıları için güvenli bir pazar yeri sağlamak amacıyla geliştirildi. Platform, kullanıcıların saatlerini satışa çıkarmasına veya gerçek zamanlı açık artırmalara katılmasına olanak tanır, ancak en önemlisi her kullanıcı ve saat, listeye eklenmeden önce editörler tarafından doğrulanır.
+
+Projede tek geliştirici olarak, bu güveni sağlamak amacıyla TC kimlik numarası doğrulaması, hem kullanıcılar hem de yöneticiler için SMS doğrulaması, ve kullanıcıların listeleme formunda oluşturulan rastgele bir zamanı gösteren saat fotoğrafları yüklemesi sistemini uyguladım. Bu özellikler, her ilanın gerçek olduğunu garanti etmiş olur ve sahte ilan riskini azaltır.
+
+<div className="flex lg:gap-14 items-center flex-wrap lg:flex-nowrap">
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/watchlabb/watchlabb-2.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Watchlabb',
+    },
+  ]}
+  className="shadow-lg"
+/>
+
+<div className="min-w-1/2">
+
+## Teknoloji ve Özellikler
+
+Modern, ölçeklenebilir ve özel özellikleri etkin bir şekilde uygulamama olanak sağlayan araç ve teknolojileri seçtim:
+
+- Frontend: Next.js + React ile geliştirildi ve stil için Tailwind CSS kullanıldı. Saat fotoğrafları için sliderlar, sürükle-bırak ve galeri özellikleri uygulandı.
+- Backend & Database: Kimlik doğrulama, veritabanı ve depolama için Supabase (PostgreSQL) kullanıldı. Açık artırmalar, listelemeler ve doğrulama iş akışları için özel sorgular ve sunucu tarafı mantığı geliştirildi. RBAC ile kullanıcılar, yöneticiler ve editörler için güvenli rol tabanlı erişim sağlandı.
+- Authentication & Verification: Temel kimlik doğrulama Supabase Auth ile sağlandı, ayrıca TC kimlik numarası doğrulaması ile özel bir SMS doğrulama sistemi geliştirdim.
+- Ödemeler ve Faturalar: Ödemeler için Iyzico ve faturalama için Parasut entegre edildi, webhooks ve cron jobs ile süreç tamamen otomatik hale getirildi.
+- Gerçek Zamanlı Özellikler: Supabase Realtime ile açık artırmalar canlı olarak takip ediliyor, teklifler anlık güncelleniyor ve açık artırmalar otomatik olarak sonuçlanıyor.
+- Bildirimler & E-Postalar: Hesap doğrulama, açık artırmalar, teklifler ve işlemler için otomatik e-posta ve bildirimler React Email + Resend kullanılarak sağlandı.
+- PDF & QR Code Yaratılması: Faturalar, satılan saat sertifikaları ve benzersiz QR kodları PDF-lib ve qrcode kullanılarak otomatik olarak oluşturuldu.
+- Tablolar & Veri Görselleştirme: Kullanıcı ve yönetici panoları için listeleme, açık artırma ve finansal verileri içeren istatistik ve grafikler Recharts ile oluşturuldu.
+- Rate Limiting: Sistem performansını korumak ve kötüye kullanımı önlemek için rate limiting uygulandı.
+- DevOps & Deployment: Yeni özellikleri üretime almadan önce test etmek için bir staging ortamı kurdum. Tüm dağıtımlar GitHub Actions ve PostgreSQL migrations ile otomatik hale getirildi, böylece sorunsuz ve güvenilir sürümler sağlandı.
+
+</div>
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/Watchlabb/Watchlabb-3.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Watchlabb',
+    },
+    {
+      src: '/projects/Watchlabb/Watchlabb-4.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Watchlabb',
+    },
+
+]}
+className="max-w-[45%] shadow-lg"
+/>
+
+<div className="justify-self-center text-center">
+
+## Zorluklar
+
+Watchlabb’ı geliştirirken birkaç zorlukla karşılaştım. Gerçek kullanıcıları olan bir platform olarak, temel hedef güvenli ve ölçeklenebilir bir sistem inşa etmekti. Projenin en önemli özelliklerinden biri olan gerçek zamanlı saat açık artırmaları, tekliflerin ve açık artırma bitişlerinin otomatik ve güvenilir bir şekilde işlenmesini sağlayacak bir sistem gerektiriyordu.
+
+Bir diğer önemli zorluk, işlemleri sıralı şekilde işleyen ve ödeme sağlayıcılarının rate limitlerine uyan otomatik bir faturalama sistemi oluşturmaktı. Platform büyük ölçüde yüksek kaliteli görsellere dayandığı için, performansın sorunsuz olması adına önbellekleme ve rate limiting de kritik öneme sahipti.
+
+Bu zorlukların üstesinden gelmek, karmaşık, güvenilir ve ölçeklenebilir sistemleri üretim ortamları için tasarlama ve uygulama yeteneğimi güçlendirdi.
+
+</div>
+
+<ImageComponent
+  images={[
+    {
+      src: '/projects/watchlabb/watchlabb-3.webp',
+      width: 1260,
+      height: 850,
+      alt: 'Watchlabb',
+    },
+  ]}
+  className="shadow-2xl"
+/>
+
+## Öğrendiklerim
+
+Watchlabb üzerinde çalışmak, güvenilir, güvenli ve sürdürülebilir sistemler kurmanın önemini pekiştirdi.
+
+- End-to-End Düşünce: Canlı bir platform için hem front-end hem back-end geliştirmesi yapmak, sistemin bir parçasındaki kararların diğer parçaları nasıl etkilediğini gösterdi.
+- Ölçeklenebilir Tasarım: Gerçek zamanlı açık artırmalar ve binlerce kullanıcı, veritabanı sorguları, cache ve arka plan süreçlerinin dikkatli planlanmasını gerektirdi.
+- Güvenlik ve Kullanıcı Deneyimi Dengesi: Doğrulama sistemlerini uygulamak, güvenlik önlemlerini güçlü tutarken kullanıcı deneyimini etkilemeden tasarlamanın önemini gösterdi.
+- Otomasyon ve Güvenilirlik: Ödeme, faturalama ve bildirim iş akışlarını otomatikleştirmek, manuel işleri azaltırken sistemin tutarlı olmasını sağladı.
+- Üretim Hazırlığı: Dağıtımların, staging ortamlarının ve migration’ların yönetimi, canlı bir ürünün güvenli ve düzgün bir şekilde piyasaya sürülmesi için en iyi uygulamaları pekiştirdi.

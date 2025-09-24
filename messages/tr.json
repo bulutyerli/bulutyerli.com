@@ -47,10 +47,11 @@
     "case-study": "Proje Detayı",
     "visit": "Canlı Site",
     "self": {
-      "patilerce": {
-        "title": "patilerce.com",
-        "summary": "Evcil hayvan sahiplenme sitesi, ilanlar, topluluk ve ırk bilgileri ile mesajlaşma özellikleri."
+      "watchlabb": {
+        "title": "Watchlabb.com",
+        "summary": "Gerçek gelir elde eden ve binlerce aktif kullanıcıya sahip canlı bir lüks saat listeleme ve açık artırma platformunun uçtan uca geliştirilmesi."
       },
+
       "workwise": {
         "title": "workwise",
         "summary": "Rol tabanlı kullanıcı erişimi, grafikler ve daha fazlasını içeren bir şirket yönetim sistemi."
@@ -58,6 +59,10 @@
       "nuvola-coffee-shop": {
         "title": "nuvola coffee shop",
         "summary": "Bir kahve kavurma şirketi için Next.js ile geliştirilen e-ticaret uygulaması."
+      },
+      "patilerce": {
+        "title": "patilerce",
+        "summary": "Evcil hayvan sahiplenme sitesi, ilanlar, topluluk ve ırk bilgileri ile mesajlaşma özellikleri."
       }
     },
     "freelance": {

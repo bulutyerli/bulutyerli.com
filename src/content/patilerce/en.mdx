@@ -22,7 +22,7 @@ All new adoption listings and Q&A posts must be approved by an admin before they
     'jest',
     'react testing library',
   ]}
-  liveSite={'https://www.patilerce.com/'}
+  liveSite={'https://patilerce.vercel.app'}
   gitHub={'https://github.com/bulutyerli/patilerce'}
 />
 
@@ -73,12 +73,7 @@ Since the website handles a lot of images, I integrated AWS S3 as an image conta
 
 <ImageComponent
   images={[
-    {
-      src: '/projects/patilerce/patilerce-6.webp',
-      width: 1260,
-      height: 850,
-      alt: 'Patilerce Profile Page',
-    },
+
     {
       src: '/projects/patilerce/patilerce-3.webp',
       width: 1260,
@@ -91,17 +86,12 @@ Since the website handles a lot of images, I integrated AWS S3 as an image conta
       height: 850,
       alt: 'Patilerce Community Section',
     },
-    {
-      src: '/projects/patilerce/patilerce-5.webp',
-      width: 1260,
-      height: 850,
-      alt: 'Patilerce Login Page',
-    },
-  ]}
-  className="max-w-[45%] shadow-lg"
+
+]}
+className="max-w-[45%] shadow-lg"
 />
 
-<div className="justify-self-center text-center">
+<div className="flex flex-col items-center justify-center text-center">
 ## Challenges
 
 Since Patilerce was my first big project, I faced many challenges. One of the biggest was making sure the authentication was secure. Using Next-Auth with JWT and bcryptjs was easy, but I had to be careful with user data and passwords. I learned how to manage tokens and keep passwords safe.
